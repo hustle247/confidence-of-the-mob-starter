@@ -1,0 +1,12 @@
+[
+  {
+    "id": "001",
+    "title": "Iaconi Memo",
+    "date": "1957-03-10",
+    "type": "Memo",
+    "entities": ["Iaconi", "Fred Pastore"],
+    "location": "Worcester, MA",
+    "summary": "Internal memo on Frank Iaconi investigation.",
+    "tags": ["Mafia", "IRS", "Gambling"]
+  }
+]
