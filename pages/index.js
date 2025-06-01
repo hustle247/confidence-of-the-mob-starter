@@ -1,8 +1,5 @@
 export default function Home() {
   return (
-    <main>
-export default function Home() {
-  return (
     <main className="px-6 py-12 max-w-4xl mx-auto text-center space-y-8">
       <h1 className="text-4xl md:text-5xl font-bold leading-tight">
         What if the Mob wasn’t your biggest threat—your own government was?
@@ -57,9 +54,6 @@ export default function Home() {
           Become an Insider
         </a>
       </div>
-    </main>
-  );
-}
     </main>
   );
 }
