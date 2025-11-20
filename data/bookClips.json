@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "clipNumber": 1,
+    "page": 11,
+    "person": "Various",
+    "topic": "Main companion podcast intro",
+    "audioFile": "clip-1.mp3"
+  },
+  {
+    "id": 2,
+    "clipNumber": 2,
+    "page": 76,
+    "person": "Jim Donahue",
+    "topic": "IRS Patriarca org chart origin",
+    "audioFile": "clip-2.mp3"
+  },
+  {
+    "id": 3,
+    "clipNumber": 3,
+    "page": 117,
+    "person": "Bobby Pastore",
+    "topic": "Julio as confidential informant (emotional segment)",
+    "audioFile": "clip-3.mp3"
+  },
+  {
+    "id": 4,
+    "clipNumber": 4,
+    "page": 131,
+    "person": "Henry Vara",
+    "topic": "Trust story (mother confirming Fred)",
+    "audioFile": "clip-4.mp3"
+  },
+  {
+    "id": 5,
+    "clipNumber": 5,
+    "page": 131,
+    "person": "Irwin Chafetz",
+    "topic": "Referral from Henry & early Vegas business",
+    "audioFile": "clip-5.mp3"
+  },
+  {
+    "id": 6,
+    "clipNumber": 6,
+    "page": 132,
+    "person": "Frank DiMento",
+    "topic": "Partnership & early years working with Fred",
+    "audioFile": "clip-6.mp3"
+  },
+  {
+    "id": 7,
+    "clipNumber": 7,
+    "page": 138,
+    "person": "Multiple",
+    "topic": "C + R = J commentary compilation",
+    "audioFile": "clip-7.mp3"
+  },
+  {
+    "id": 8,
+    "clipNumber": 8,
+    "page": 163,
+    "person": "Eddy Inserra",
+    "topic": "Flemmi office encounter & receptionist incident",
+    "audioFile": "clip-8.mp3"
+  },
+  {
+    "id": 9,
+    "clipNumber": 9,
+    "page": 178,
+    "person": "Bobby Pastore",
+    "topic": "Hawaiian jeweler recognizing Nina",
+    "audioFile": "clip-9.mp3"
+  },
+  {
+    "id": 10,
+    "clipNumber": 10,
+    "page": 165,
+    "person": "Frank DiMento",
+    "topic": "Sharman's Doll life lesson story",
+    "audioFile": "clip-10.mp3"
+  }
+]
+
