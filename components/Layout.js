@@ -9,31 +9,31 @@ export default function Layout({ children }) {
       {/* Header & Navigation */}
       <header className="sticky top-0 z-50 header-bg border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="text-xl font-bold tracking-wider text-white rounded-lg p-2 hover:text-accent-red transition duration-300 font-mono-file">
               <span className="text-accent-red">//</span> CONFIDENCE OF THE MOB
             </a>
           </Link>
           <nav className="hidden md:flex space-x-6 text-sm font-medium">
-            <Link href="/podcast">
+            <Link href="/podcast" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Podcast</a>
             </Link>
-            <Link href="/files">
+            <Link href="/files" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Case Files</a>
             </Link>
-            <Link href="/mob-web">
+            <Link href="/mob-web" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Mob Web</a>
             </Link>
-            <Link href="/book">
+            <Link href="/book" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Book</a>
             </Link>
-            <Link href="/timeline">
+            <Link href="/timeline" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Timeline</a>
             </Link>
-            <Link href="/ask-fred">
+            <Link href="/ask-fred" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Ask Fred</a>
             </Link>
-            <Link href="/subscribe">
+            <Link href="/subscribe" legacyBehavior>
               <a className="text-gray-300 hover:text-accent-red transition duration-300">Subscribe</a>
             </Link>
           </nav>
@@ -51,25 +51,25 @@ export default function Layout({ children }) {
 
       {/* Mobile Menu (Dropdown) */}
       <div className={`md:hidden bg-gray-800 border-t border-gray-700 ${mobileMenuOpen ? 'block' : 'hidden'} absolute w-full z-40`}>
-        <Link href="/podcast">
+        <Link href="/podcast" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Podcast</a>
         </Link>
-        <Link href="/files">
+        <Link href="/files" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Case Files</a>
         </Link>
-        <Link href="/mob-web">
+        <Link href="/mob-web" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Mob Web</a>
         </Link>
-        <Link href="/book">
+        <Link href="/book" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Book</a>
         </Link>
-        <Link href="/timeline">
+        <Link href="/timeline" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Timeline</a>
         </Link>
-        <Link href="/ask-fred">
+        <Link href="/ask-fred" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Ask Fred</a>
         </Link>
-        <Link href="/subscribe">
+        <Link href="/subscribe" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Subscribe</a>
         </Link>
       </div>

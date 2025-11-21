@@ -41,12 +41,12 @@ export default function Home() {
 
           {/* Primary Actions */}
           <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link href="/podcast">
+            <Link href="/podcast" legacyBehavior>
               <a className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300">
                 🎧 Start Listening: Agent Zero
               </a>
             </Link>
-            <Link href="/files">
+            <Link href="/files" legacyBehavior>
               <a className="cta-button bg-gray-700 text-white border border-gray-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-gray-600 transition duration-300">
                 📂 Browse the Original Files
               </a>
@@ -67,7 +67,7 @@ export default function Home() {
               <p className="text-gray-400 mb-4 text-sm">
                 Engage with an AI assistant trained on hundreds of Fred Pastore's real government memos and wiretap logs. Ask it anything about the investigation.
               </p>
-              <Link href="/ask-fred">
+              <Link href="/ask-fred" legacyBehavior>
                 <a className="inline-block text-accent-red font-bold hover:underline font-mono-file text-sm">
                   🤖 Access the AI Database &rarr;
                 </a>
@@ -81,7 +81,7 @@ export default function Home() {
               <p className="text-gray-400 mb-4 text-sm">
                 Explore the dynamic visual maps of the crime syndicates. See who connected to who, tracing the line from the street to the corporation.
               </p>
-              <Link href="/mob-web">
+              <Link href="/mob-web" legacyBehavior>
                 <a className="inline-block text-accent-red font-bold hover:underline font-mono-file text-sm">
                   📜 View Dynamic Maps &rarr;
                 </a>
@@ -95,7 +95,7 @@ export default function Home() {
               <p className="text-gray-400 mb-4 text-sm">
                 Search and filter hundreds of primary source documents: internal raid plans, deposition transcripts, and FBI/IRS communications.
               </p>
-              <Link href="/files">
+              <Link href="/files" legacyBehavior>
                 <a className="inline-block text-accent-red font-bold hover:underline font-mono-file text-sm">
                   🔍 Search the Files &rarr;
                 </a>
@@ -119,7 +119,7 @@ export default function Home() {
               <p className="text-gray-400 mb-8 leading-relaxed">
                 The podcast lays out the narrative, but the companion book provides the chilling evidence: the documents proving corruption that stretched from the streets of Boston to the White House.
               </p>
-              <Link href="/book">
+              <Link href="/book" legacyBehavior>
                 <a className="cta-button bg-gray-700 text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-gray-600 transition duration-300">
                   Pre-Order The Book
                 </a>
