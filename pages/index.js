@@ -115,11 +115,19 @@ export default function Home() {
               Fred uncovered high-stakes corruption at Raytheon and a bribery scheme that led straight to the highest
               offices in D.C. These revelations led to a career-ending confrontation. The truth is now in the open.
             </p>
-            <Link href="/book">
-              <a className="cta-button bg-gray-700 text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-gray-600 transition duration-300">
-                Explore The Book
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/book">
+                <a className="cta-button bg-gray-700 text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-gray-600 transition duration-300 text-center">
+                  Explore The Book
+                </a>
+              </Link>
+              <a
+                href="#"
+                className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300 text-center"
+              >
+                Purchase on Amazon
               </a>
-            </Link>
+            </div>
           </div>
           {/* Book Cover */}
           <div className="mt-12 md:mt-0 md:order-1 flex justify-center">
