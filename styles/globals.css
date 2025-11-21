@@ -51,10 +51,11 @@ a:hover {
 }
 
 /* Hero Background with Overlay */
+/* Hero Background with Overlay */
 .hero-background {
   background-image: url('/images/thebox.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 30%; /* Adjusted for better centering */
   background-attachment: fixed; /* Creates parallax effect */
   position: relative; /* Needed for pseudo-element positioning */
   z-index: 0; /* Ensures content is above image */
@@ -67,11 +68,11 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75); /* Dark overlay for readability */
+  background-color: rgba(0, 0, 0, 0.9); /* Increased darkness for readability (90% black opacity) */
   z-index: -1; /* Puts overlay behind text but above background image */
 }
 
 .hero-background > * {
   position: relative;
-  z-index: 1; /* Ensures all content is above the overlay */
+  z-index: 10; /* Ensures all content is above the overlay */
 }
