@@ -24,15 +24,15 @@ export default function Home() {
       </Head>
 
       {/* 1. Hero / Main Hook Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 md:pt-24 md:pb-24 text-center">
+      <section className="hero-background max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 md:pt-24 md:pb-24 text-center">
         <p className="text-xs sm:text-sm text-accent-red font-mono-file mb-4 tracking-widest uppercase">
           THE FLORIDA CITRUS BOX
         </p>
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 text-white">
           I thought my grandfather was just an accountant.<br className="hidden sm:inline" /> Then I opened{' '}
           <span className="text-accent-red">The Box.</span>
         </h1>
-        <p className="mt-4 text-lg text-gray-400 max-w-4xl mx-auto">
+        <p className="mt-4 text-lg text-gray-200 max-w-4xl mx-auto">
           My mother found a dusty Florida orange crate full of my grandfather Fred Pastore's old papers. I expected
           boring ledgers. I found secret files, wiretap logs, and evidence he was a racket-busting IRS agent... and a
           target of the White House.
