@@ -121,11 +121,11 @@ export default function Home() {
               </a>
             </Link>
           </div>
-          {/* Mock Book Cover/Image Placeholder */}
+          {/* Book Cover */}
           <div className="mt-12 md:mt-0 md:order-1 flex justify-center">
             <img
-              src="https://placehold.co/400x550/333333/ef4444?text=BOOK+COVER+MOCKUP"
-              alt="Mockup of the Confidence of The Mob book cover"
+              src="/images/IMG_1324.JPG"
+              alt="Confidence of The Mob book cover - The IRS Agent Who Took Down the Mafia- Then Advised Them by Eddy Manfred Inserra III"
               className="w-2/3 md:w-full max-w-xs rounded-xl border-4 border-gray-700 shadow-file hover:border-accent-red transition duration-500"
             />
           </div>
