@@ -137,7 +137,7 @@ export default function Home() {
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gray-800 p-8 rounded-2xl shadow-file border-2 border-accent-red/50">
           <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">UNLOCK PREMIUM ACCESS</p>
           <h2 className="text-3xl font-bold mb-4">
-            Become an <span className="text-accent-red">Insider</span>
+            <span className="text-accent-red">Unlock Insider Access</span>
           </h2>
           <p className="text-gray-400 mb-8">
             Your subscription funds the digitization of hundreds of documents and the maintenance of the AI tools. Get
@@ -156,7 +156,7 @@ export default function Home() {
               type="submit"
               className="cta-button w-full bg-accent-red text-white font-bold py-3 px-8 rounded-lg hover:bg-red-600 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              Join the Investigation
+              Get Premium Access
             </button>
             {message && (
               <p className={`text-sm mt-3 font-mono-file ${message.includes('CONFIRMED') ? 'text-green-400' : 'text-red-400'}`}>
