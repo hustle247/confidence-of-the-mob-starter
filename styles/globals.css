@@ -1,13 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #1a1a1a; /* Deep Charcoal */
+  color: #f0f0f0; /* Off-White for high contrast */
+  scroll-behavior: smooth;
+  /* Subtle dark paper grain texture */
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 0), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 10px 10px;
   margin: 0;
   padding: 0;
 }
+
+.text-accent-red {
+  color: #ef4444; /* Tailwind Red-500 for urgency */
+}
+
+.font-mono-file {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.header-bg {
+  background-color: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(5px);
+}
+
+.shadow-file {
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
 a {
   text-decoration: none;
-  color: #0070f3;
 }
+
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }

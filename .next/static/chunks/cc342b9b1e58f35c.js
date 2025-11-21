@@ -1,0 +1,7 @@
+__turbopack_load_page_chunks__("/mob-web", [
+  "static/chunks/251bfb1dccfa512a.js",
+  "static/chunks/db2bfe74d307fa57.js",
+  "static/chunks/926e9f44b3b335fc.js",
+  "static/chunks/2a84824e97b519e4.js",
+  "static/chunks/turbopack-e936e795418cf9ac.js"
+])
