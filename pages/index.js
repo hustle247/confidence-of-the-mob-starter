@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Home() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 
   const handleSubscription = (e) => {
     e.preventDefault();
@@ -24,41 +24,9 @@ export default function Home() {
         <meta name="description" content="I thought my grandfather was just an accountant. Then I opened The Box. The never-before-seen files of IRS Agent Fred Pastore." />
       </Head>
 
-      {/* Header & Navigation */}
-      <header className="sticky top-0 z-50 header-bg border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <Link href="/">
-            <a className="text-xl font-bold tracking-wider text-white rounded-lg p-2 hover:text-accent-red transition duration-300 font-mono-file">
-              <span className="text-accent-red">//</span> CONFIDENCE OF THE MOB
-            </a>
-          </Link>
-          <nav className="hidden md:flex space-x-6 text-sm font-medium">
-            <Link href="/podcast"><a className="text-gray-300 hover:text-accent-red transition duration-300">Podcast</a></Link>
-            <Link href="/files"><a className="text-gray-300 hover:text-accent-red transition duration-300">Case Files</a></Link>
-            <Link href="/mob-web"><a className="text-gray-300 hover:text-accent-red transition duration-300">Mob Web</a></Link>
-            <Link href="#subscribe"><a className="text-gray-300 hover:text-accent-red transition duration-300">Subscribe</a></Link>
-          </nav>
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-white hover:bg-gray-700 transition duration-300"
-          >
-            {/* Hamburger Icon */}
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </header>
 
-      {/* Mobile Menu (Dropdown) */}
-      {isMobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden bg-gray-800 border-t border-gray-700 absolute w-full z-40">
-          <Link href="/podcast"><a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setIsMobileMenuOpen(false)}>Podcast</a></Link>
-          <Link href="/files"><a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setIsMobileMenuOpen(false)}>Case Files</a></Link>
-          <Link href="/mob-web"><a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setIsMobileMenuOpen(false)}>Mob Web</a></Link>
-          <Link href="#subscribe"><a className="block px-4 py-3 text-sm text-gray-200 hover:bg-gray-700 transition duration-300" onClick={() => setIsMobileMenuOpen(false)}>Subscribe</a></Link>
-        </div>
-      )}
+
+
 
       <main>
         {/* 1. Hero / Main Hook Section */}
@@ -208,19 +176,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:flex md:justify-between md:items-center text-center md:text-left">
-          <p className="text-sm text-gray-500 mb-4 md:mb-0 font-mono-file">
-            // END OF FILE // &copy; 2024 Confidence of The Mob.
-          </p>
-          <div className="flex justify-center md:justify-start space-x-6">
-            <a href="#" className="text-gray-400 hover:text-accent-red transition duration-300 text-sm">Privacy</a>
-            <a href="#" className="text-gray-400 hover:text-accent-red transition duration-300 text-sm">Contact</a>
-            <a href="#" className="text-gray-400 hover:text-accent-red transition duration-300 text-sm">Social</a>
-          </div>
-        </div>
-      </footer>
+
     </>
   );
 }
