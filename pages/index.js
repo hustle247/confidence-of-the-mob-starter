@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import { useState } from 'react';
 
 export default function Home() {
@@ -17,30 +18,36 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Confidence of The Mob - The Box, The Agent, The Files</title>
+        <meta name="description" content="I thought my grandfather was just an accountant. Then I opened The Box. The never-before-seen files of IRS Agent Fred Pastore." />
+      </Head>
+
       {/* 1. Hero / Main Hook Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 md:pt-24 md:pb-24 text-center">
         <p className="text-xs sm:text-sm text-accent-red font-mono-file mb-4 tracking-widest uppercase">
-          IRS SPECIAL AGENT FRED G. PASTORE - CASE FILES 1953-1960
+          THE FLORIDA CITRUS BOX
         </p>
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
-          What if the Mob wasn't your biggest threat—<br className="hidden sm:inline" /> your own{' '}
-          <span className="text-accent-red">government</span> was?
+          I thought my grandfather was just an accountant.<br className="hidden sm:inline" /> Then I opened{' '}
+          <span className="text-accent-red">The Box.</span>
         </h1>
         <p className="mt-4 text-lg text-gray-400 max-w-4xl mx-auto">
-          The never-before-seen files of the IRS's top mob hunter. What he uncovered—from illicit gambling to corporate
-          corruption and a White House bribery chain—made him a target. Now, his grandson opens the archive.
+          My mother found a dusty Florida orange crate full of my grandfather Fred Pastore's old papers. I expected
+          boring ledgers. I found secret files, wiretap logs, and evidence he was a racket-busting IRS agent... and a
+          target of the White House.
         </p>
 
         {/* Primary Actions */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
           <Link href="/podcast">
             <a className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300">
-              🎧 Listen to the Podcast
+              🎧 Start Listening: Agent Zero
             </a>
           </Link>
           <Link href="/files">
             <a className="cta-button bg-gray-700 text-white border border-gray-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-gray-600 transition duration-300">
-              📂 Browse the Case Files
+              📂 Browse the Original Files
             </a>
           </Link>
         </div>
@@ -49,7 +56,7 @@ export default function Home() {
       {/* 2. Feature Grid / Interactive Archive Links */}
       <section id="archive" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-gray-800">
         <h2 className="text-3xl font-bold text-center mb-12">
-          The <span className="text-accent-red">Interactive</span> Archive
+          The <span className="text-accent-red">Fred Pastore</span> Archive
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Feature 1: AI Assistant (Ask Fred) */}
@@ -105,15 +112,17 @@ export default function Home() {
           {/* Text Content */}
           <div className="md:order-2">
             <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">The Full Story</p>
-            <h2 className="text-3xl font-bold mb-6">More Than a Podcast: The Companion Book</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              The IRS Agent Who Took Down the Mafia—Then Advised Them
+            </h2>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              "Confidence of the Mob" is an immersive, multi-platform project. While the podcast lays out the narrative,
-              the companion book and digital archive provide the evidence—the documents that were locked away for
-              decades.
+              This story began with a box of dusty papers. It led to uncovering Fred Pastore's secret life as "The Elliot
+              Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the
+              IRS... only to go to work on "the other side."
             </p>
             <p className="text-gray-400 mb-8 leading-relaxed">
-              Fred uncovered high-stakes corruption at Raytheon and a bribery scheme that led straight to the highest
-              offices in D.C. These revelations led to a career-ending confrontation. The truth is now in the open.
+              The podcast lays out the narrative, but the companion book provides the chilling evidence: the documents
+              proving corruption that stretched from the streets of Boston to the White House.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/book">
@@ -133,8 +142,12 @@ export default function Home() {
           <div className="mt-12 md:mt-0 md:order-1 flex justify-center">
             <img
               src="/images/IMG_1324.JPG"
-              alt="Confidence of The Mob book cover - The IRS Agent Who Took Down the Mafia- Then Advised Them by Eddy Manfred Inserra III"
-              className="w-2/3 md:w-full max-w-xs rounded-xl border-4 border-gray-700 shadow-file hover:border-accent-red transition duration-500"
+              alt="Book Cover: Confidence of The Mob by Eddy Manfred Inserra III"
+              className="w-2/3 md:w-full max-w-xs rounded-xl border-4 border-gray-700 shadow-file hover:border-accent-red transition duration-500 aspect-[4/6] object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://placehold.co/400x600/333333/ef4444?text=BOOK+COVER+PENDING+UPLOAD';
+              }}
             />
           </div>
         </div>
