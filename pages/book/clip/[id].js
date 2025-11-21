@@ -12,10 +12,14 @@ export default function BookClip() {
 
   if (!clip) {
     return (
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-        <h1>Clip Not Found</h1>
-        <p>The audio clip you're looking for doesn't exist.</p>
-        <Link href="/book"><a>← Back to Book</a></Link>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl font-bold mb-4 text-white">Clip Not Found</h1>
+          <p className="text-gray-400 mb-6">The audio clip you're looking for doesn't exist.</p>
+          <Link href="/book">
+            <a className="text-accent-red hover:underline font-mono-file">← Back to Book</a>
+          </Link>
+        </div>
       </div>
     );
   }
@@ -23,96 +27,56 @@ export default function BookClip() {
   const audioPath = `/audio/book/${clip.audioFile}`;
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-      <Link href="/book">
-        <a style={{ color: '#0066cc', textDecoration: 'none', marginBottom: '20px', display: 'inline-block' }}>
-          ← Back to Book
-        </a>
-      </Link>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="max-w-4xl mx-auto">
+        <Link href="/book">
+          <a className="text-accent-red hover:underline font-mono-file mb-6 inline-block transition duration-300">
+            ← Back to Book
+          </a>
+        </Link>
 
-      <div style={{ marginTop: '30px' }}>
-        <div style={{ 
-          backgroundColor: '#f8f9fa', 
-          padding: '15px', 
-          borderRadius: '8px', 
-          marginBottom: '20px',
-          fontSize: '14px',
-          color: '#666'
-        }}>
-          <strong>Book Page {clip.page}</strong> • Clip #{clip.clipNumber}
-        </div>
+        <div className="mt-8">
+          <div className="bg-gray-800 p-4 rounded-lg mb-6 text-sm text-gray-400 font-mono-file border border-gray-700">
+            <strong className="text-accent-red">Book Page {clip.page}</strong> • Clip #{clip.clipNumber}
+          </div>
 
-        <h1 style={{ fontSize: '32px', marginBottom: '10px' }}>
-          {clip.topic}
-        </h1>
-        
-        <p style={{ fontSize: '18px', color: '#555', marginBottom: '30px' }}>
-          Featuring: <strong>{clip.person}</strong>
-        </p>
-
-        <AudioPlayer 
-          src={audioPath} 
-          title={`Audio Clip #${clip.clipNumber}`}
-        />
-
-        {/* Podcast Upsell Section */}
-        <div style={{
-          marginTop: '50px',
-          padding: '30px',
-          backgroundColor: '#1a1a1a',
-          color: '#fff',
-          borderRadius: '12px',
-          textAlign: 'center'
-        }}>
-          <h2 style={{ fontSize: '28px', marginBottom: '15px' }}>
-            Want to hear the full story?
-          </h2>
-          <p style={{ fontSize: '18px', marginBottom: '25px', color: '#e0e0e0' }}>
-            This is just a preview. Listen to the complete companion podcast series 
-            featuring extended interviews, deeper analysis, and never-before-heard stories.
+          <h1 className="text-4xl font-bold mb-4 text-white">
+            {clip.topic}
+          </h1>
+          
+          <p className="text-lg text-gray-400 mb-8">
+            Featuring: <strong className="text-gray-300">{clip.person}</strong>
           </p>
-          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/podcast">
-              <a style={{
-                backgroundColor: '#fff',
-                color: '#1a1a1a',
-                padding: '15px 30px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                fontSize: '16px',
-                display: 'inline-block',
-                transition: 'background-color 0.2s'
-              }}
-              onMouseOver={(e) => e.target.style.backgroundColor = '#f0f0f0'}
-              onMouseOut={(e) => e.target.style.backgroundColor = '#fff'}
-              >
-                🎧 Listen to Full Podcast
-              </a>
-            </Link>
-            <Link href="/subscribe">
-              <a style={{
-                backgroundColor: 'transparent',
-                color: '#fff',
-                padding: '15px 30px',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                fontSize: '16px',
-                display: 'inline-block',
-                border: '2px solid #fff',
-                transition: 'background-color 0.2s'
-              }}
-              onMouseOver={(e) => e.target.style.backgroundColor = 'rgba(255,255,255,0.1)'}
-              onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
-              >
-                Subscribe for Updates
-              </a>
-            </Link>
+
+          <AudioPlayer 
+            src={audioPath} 
+            title={`Audio Clip #${clip.clipNumber}`}
+          />
+
+          {/* Podcast Upsell Section */}
+          <div className="mt-12 p-8 bg-gray-900 rounded-2xl shadow-file border-2 border-accent-red/50 text-center">
+            <h2 className="text-3xl font-bold mb-4 text-white">
+              Want to hear the <span className="text-accent-red">full story</span>?
+            </h2>
+            <p className="text-lg mb-8 text-gray-300">
+              This is just a preview. Listen to the complete companion podcast series 
+              featuring extended interviews, deeper analysis, and never-before-heard stories.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link href="/podcast">
+                <a className="cta-button bg-white text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
+                  🎧 Listen to Full Podcast
+                </a>
+              </Link>
+              <Link href="/subscribe">
+                <a className="cta-button bg-transparent text-white font-bold py-3 px-8 rounded-lg border-2 border-white hover:bg-white/10 transition duration-300">
+                  Subscribe for Updates
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
