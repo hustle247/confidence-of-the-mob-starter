@@ -128,7 +128,7 @@ export default function Home() {
             {/* Book Cover Image */}
             <div className="mt-12 md:mt-0 md:order-1 flex justify-center">
               <img
-                src="/images/IMG_1324.JPG"
+                src="/images/book_no_bg.png"
                 alt="Book Cover: Confidence of The Mob by Eddy Manfred Inserra III"
                 className="w-2/3 md:w-full max-w-xs rounded-xl border-4 border-gray-700 shadow-file hover:border-accent-red transition duration-500 aspect-[4/6] object-cover"
                 onError={(e) => {
