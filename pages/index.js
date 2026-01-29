@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { useState } from 'react';
+import PreorderPopup from '../components/PreorderPopup';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -174,6 +175,7 @@ export default function Home() {
             </form>
           </div>
         </section>
+        <PreorderPopup />
       </main>
 
 
