@@ -118,7 +118,7 @@ export default function Home() {
                 The podcast lays out the narrative, but the companion book provides the chilling evidence: the documents proving corruption that stretched from the streets of Boston to the White House.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/book" legacyBehavior>
+                <Link href="/buy-book" legacyBehavior>
                   <a className="cta-button bg-stone-700 text-white font-bold py-3 px-6 rounded-lg shadow-file hover:bg-stone-600 transition duration-300 text-center">
                     Pre-Order The Book
                   </a>
