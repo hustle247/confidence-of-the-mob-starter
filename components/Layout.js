@@ -18,9 +18,9 @@ export default function Layout({ children }) {
             <Link href="/podcast" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Podcast</a>
             </Link>
-            <Link href="/files" legacyBehavior>
+            {/* <Link href="/files" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Case Files</a>
-            </Link>
+            </Link> */}
             <Link href="/mob-web" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Mob Web</a>
             </Link>
@@ -54,9 +54,9 @@ export default function Layout({ children }) {
         <Link href="/podcast" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Podcast</a>
         </Link>
-        <Link href="/files" legacyBehavior>
+        {/* <Link href="/files" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Case Files</a>
-        </Link>
+        </Link> */}
         <Link href="/mob-web" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Mob Web</a>
         </Link>
