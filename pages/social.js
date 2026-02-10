@@ -1,35 +1,41 @@
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Social() {
     const socials = [
         {
             name: 'YouTube',
-            url: 'https://youtube.com', // Placeholder
-            icon: '▶', // Or an SVG/Image if available, simplified for now
+            url: 'https://www.youtube.com/@ConfidenceofTheMob',
+            icon: '▶',
             color: 'hover:text-red-600',
             description: 'Watch video episodes, documentaries, and exclusive clips.'
         },
         {
             name: 'Instagram',
-            url: 'https://instagram.com', // Placeholder
+            url: 'https://www.instagram.com/confidenceofthemob',
             icon: '📸',
             color: 'hover:text-pink-600',
             description: 'Behind the scenes photos, historical documents, and daily updates.'
         },
         {
             name: 'Facebook',
-            url: 'https://facebook.com', // Placeholder
+            url: 'https://www.facebook.com/confidenceofthemob/',
             icon: '👍',
             color: 'hover:text-blue-600',
             description: 'Join the community discussion and share your theories.'
         },
         {
             name: 'TikTok',
-            url: 'https://tiktok.com', // Placeholder
+            url: 'https://www.tiktok.com/@confidenceofthemob',
             icon: '🎵',
-            color: 'hover:text-pink-500', // TikTok has specific branding, but pink/black works for simplified
+            color: 'hover:text-pink-500',
             description: 'Short-form stories, quick facts, and viral moments.'
+        },
+        {
+            name: 'X (Twitter)',
+            url: 'https://x.com/confidenceOTmob',
+            icon: '✖', // Standard X character or simple text
+            color: 'hover:text-stone-100', // X is black/white, so light color on hover for dark theme
+            description: 'Real-time updates, threads, and direct interaction.'
         }
     ];
 
