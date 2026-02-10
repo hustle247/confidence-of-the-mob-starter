@@ -22,7 +22,7 @@ export default function Book() {
             <div className="space-y-3">
               <p className="text-sm text-stone-400 font-mono-file mb-3">AMAZON</p>
               <a
-                href="#"
+                href="https://a.co/d/4s7bzmO?ref=website"
                 className="block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold"
               >
                 📖 Kindle Edition
