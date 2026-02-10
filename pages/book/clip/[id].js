@@ -43,13 +43,13 @@ export default function BookClip() {
           <h1 className="text-4xl font-bold mb-4 text-white">
             {clip.topic}
           </h1>
-          
+
           <p className="text-lg text-gray-400 mb-8">
             Featuring: <strong className="text-gray-300">{clip.person}</strong>
           </p>
 
-          <AudioPlayer 
-            src={audioPath} 
+          <AudioPlayer
+            src={audioPath}
             title={`Audio Clip #${clip.clipNumber}`}
           />
 
@@ -59,7 +59,7 @@ export default function BookClip() {
               Want to hear the <span className="text-accent-red">full story</span>?
             </h2>
             <p className="text-lg mb-8 text-gray-300">
-              This is just a preview. Listen to the complete companion podcast series 
+              This is just a preview. Listen to the complete companion podcast series
               featuring extended interviews, deeper analysis, and never-before-heard stories.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
@@ -68,11 +68,11 @@ export default function BookClip() {
                   🎧 Listen to Full Podcast
                 </a>
               </Link>
-              <Link href="/subscribe">
+              {/* <Link href="/subscribe">
                 <a className="cta-button bg-transparent text-white font-bold py-3 px-8 rounded-lg border-2 border-white hover:bg-white/10 transition duration-300">
                   Subscribe for Updates
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
