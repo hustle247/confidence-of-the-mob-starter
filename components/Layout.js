@@ -84,7 +84,9 @@ export default function Layout({ children }) {
           </p>
           <div className="flex justify-center md:justify-start space-x-6">
             <a href="#" className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Privacy</a>
-            <a href="#" className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Contact</a>
+            <Link href="/contact" legacyBehavior>
+              <a className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Contact</a>
+            </Link>
             <a href="#" className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Social</a>
           </div>
         </div>
