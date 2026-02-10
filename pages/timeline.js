@@ -15,7 +15,7 @@ export default function Timeline() {
 
         <div className="relative">
           <img
-            src="/images/IMG_1324.jpg"
+            src="/images/timeline_document.jpg"
             alt="Fred Pastore Timeline Document"
             className="mx-auto rounded-xl border-2 border-stone-700 shadow-file max-w-full h-auto"
           />
