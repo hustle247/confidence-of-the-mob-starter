@@ -60,7 +60,7 @@ export default function BuyBook() {
                         </div>
 
                         {/* Direct Purchase - Autographed */}
-                        <div className="space-y-3">
+                        {/* <div className="space-y-3">
                             <p className="text-sm text-stone-400 font-mono-file mb-3">DIRECT PURCHASE</p>
                             <Link href="/subscribe" legacyBehavior>
                                 <a className="block p-4 bg-accent-red hover:bg-red-600 rounded-lg border-2 border-accent-red hover:border-red-600 transition duration-300 text-white font-bold text-center shadow-file">
@@ -70,7 +70,7 @@ export default function BuyBook() {
                             <p className="text-xs text-stone-500 italic mt-2">
                                 Limited edition autographed copies available directly from the author
                             </p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
