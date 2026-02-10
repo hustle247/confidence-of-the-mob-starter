@@ -47,21 +47,20 @@ export default function Home() {
                 🎧 Start Listening: Confidence of The Mob
               </a>
             </Link>
-            <Link href="/files" legacyBehavior>
+            {/* <Link href="/files" legacyBehavior>
               <a className="cta-button bg-stone-700 text-white border border-stone-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-stone-600 transition duration-300">
                 📂 Browse the Original Files
               </a>
-            </Link>
+            </Link> */}
           </div>
         </section>
 
         {/* 2. Feature Grid / Interactive Archive Links */}
-        <section id="archive" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-stone-800">
+        {/* <section id="archive" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-stone-800">
           <h2 className="text-3xl font-bold text-center mb-12">
             The <span className="text-accent-red">Fred Pastore</span> Archive
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1: AI Assistant (Ask Fred) */}
             <div className="bg-stone-800 p-6 rounded-xl shadow-file border-2 border-stone-700 hover:border-accent-red transition duration-500">
               <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest">DIGITAL INTERROGATION</p>
               <h3 className="text-2xl font-semibold mb-3">Ask Fred's Files (AI)</h3>
@@ -75,7 +74,6 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Feature 2: Mob Web */}
             <div className="bg-stone-800 p-6 rounded-xl shadow-file border-2 border-stone-700 hover:border-accent-red transition duration-500">
               <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest">VISUALIZED NETWORK</p>
               <h3 className="text-2xl font-semibold mb-3">The Mob Web</h3>
@@ -89,7 +87,6 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Feature 3: Timeline & Documents */}
             <div className="bg-stone-800 p-6 rounded-xl shadow-file border-2 border-stone-700 hover:border-accent-red transition duration-500">
               <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest">EVIDENCE & CHRONOLOGY</p>
               <h3 className="text-2xl font-semibold mb-3">Search Documents</h3>
@@ -103,7 +100,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* 3. About the Project / Book Teaser */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-stone-800">
