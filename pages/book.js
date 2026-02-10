@@ -29,9 +29,12 @@ export default function Book() {
               </a>
               <a
                 href="#"
-                className="block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold"
+                className="relative group block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold overflow-hidden"
               >
-                🎧 Audiobook
+                <span className="group-hover:opacity-0 transition-opacity duration-300 block">🎧 Audiobook</span>
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-white">
+                  Coming Soon
+                </span>
               </a>
               <a
                 href="#"
