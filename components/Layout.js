@@ -33,6 +33,9 @@ export default function Layout({ children }) {
             <Link href="/ask-fred" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Ask Fred</a>
             </Link>
+            <Link href="/contact" legacyBehavior>
+              <a className="text-stone-300 hover:text-accent-red transition duration-300">Contact</a>
+            </Link>
             {/* <Link href="/subscribe" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Subscribe</a>
             </Link> */}
@@ -69,6 +72,9 @@ export default function Layout({ children }) {
         <Link href="/ask-fred" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Ask Fred</a>
         </Link>
+        <Link href="/contact" legacyBehavior>
+          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+        </Link>
         {/* <Link href="/subscribe" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Subscribe</a>
         </Link> */}
@@ -83,7 +89,9 @@ export default function Layout({ children }) {
             // END OF FILE // &copy; {new Date().getFullYear()} Confidence of The Mob.
           </p>
           <div className="flex justify-center md:justify-start space-x-6">
-            <a href="#" className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Privacy</a>
+            <Link href="/privacy" legacyBehavior>
+              <a className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Privacy</a>
+            </Link>
             <Link href="/contact" legacyBehavior>
               <a className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Contact</a>
             </Link>
