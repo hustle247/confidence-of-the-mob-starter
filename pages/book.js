@@ -40,7 +40,7 @@ export default function Book() {
                 📚 Hardcover (Amazon)
               </a>
               <a
-                href="https://a.co/d/4s7bzmO?ref=website"
+                href="#"
                 className="block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold"
               >
                 📓 Paperback
