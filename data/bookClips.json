@@ -32,8 +32,16 @@
     "audioFile": "clip-7.mp3"
   },
   {
-    "id": 4,
+    "id": 10,
     "clipNumber": 5,
+    "page": 139,
+    "person": "Frank DiMento",
+    "topic": "Sharman's Doll life lesson story",
+    "audioFile": "clip-10.wav"
+  },
+  {
+    "id": 4,
+    "clipNumber": 6,
     "page": 131,
     "person": "Henry Vara",
     "topic": "Trust story (mother confirming Fred)",
@@ -41,7 +49,7 @@
   },
   {
     "id": 5,
-    "clipNumber": 6,
+    "clipNumber": 7,
     "page": 131,
     "person": "Irwin Chafetz",
     "topic": "Referral from Henry & early Vegas business",
@@ -49,7 +57,7 @@
   },
   {
     "id": 6,
-    "clipNumber": 7,
+    "clipNumber": 8,
     "page": 132,
     "person": "Frank DiMento",
     "topic": "Partnership & early years working with Fred",
@@ -57,7 +65,7 @@
   },
   {
     "id": 8,
-    "clipNumber": 8,
+    "clipNumber": 9,
     "page": 163,
     "person": "Eddy Inserra",
     "topic": "Flemmi office encounter & receptionist incident",
@@ -65,18 +73,10 @@
   },
   {
     "id": 9,
-    "clipNumber": 9,
+    "clipNumber": 10,
     "page": 178,
     "person": "Bobby Pastore",
     "topic": "Hawaiian jeweler recognizing Nina",
     "audioFile": "clip-9.wav"
-  },
-  {
-    "id": 10,
-    "clipNumber": 10,
-    "page": 165,
-    "person": "Frank DiMento",
-    "topic": "Sharman's Doll life lesson story",
-    "audioFile": "clip-10.wav"
   }
 ]
