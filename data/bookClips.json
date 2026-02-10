@@ -24,8 +24,16 @@
     "audioFile": "clip-3.wav"
   },
   {
-    "id": 4,
+    "id": 7,
     "clipNumber": 4,
+    "page": 117,
+    "person": "Multiple",
+    "topic": "C + R = J commentary compilation",
+    "audioFile": "clip-7.mp3"
+  },
+  {
+    "id": 4,
+    "clipNumber": 5,
     "page": 131,
     "person": "Henry Vara",
     "topic": "Trust story (mother confirming Fred)",
@@ -33,7 +41,7 @@
   },
   {
     "id": 5,
-    "clipNumber": 5,
+    "clipNumber": 6,
     "page": 131,
     "person": "Irwin Chafetz",
     "topic": "Referral from Henry & early Vegas business",
@@ -41,19 +49,11 @@
   },
   {
     "id": 6,
-    "clipNumber": 6,
+    "clipNumber": 7,
     "page": 132,
     "person": "Frank DiMento",
     "topic": "Partnership & early years working with Fred",
     "audioFile": "clip-6.wav"
-  },
-  {
-    "id": 7,
-    "clipNumber": 7,
-    "page": 138,
-    "person": "Multiple",
-    "topic": "C + R = J commentary compilation",
-    "audioFile": "clip-7.mp3"
   },
   {
     "id": 8,
