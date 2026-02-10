@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         {/* 4. Subscription CTA (Insider Access) */}
-        <section id="subscribe" className="bg-stone-900 py-16 md:py-24 border-t border-stone-700">
+        {/* <section id="subscribe" className="bg-stone-900 py-16 md:py-24 border-t border-stone-700">
           <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-stone-800 p-8 rounded-2xl shadow-file border-2 border-accent-red/50">
             <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">UNLOCK PREMIUM ACCESS</p>
             <h2 className="text-3xl font-bold mb-4">
@@ -178,7 +178,7 @@ export default function Home() {
               )}
             </form>
           </div>
-        </section>
+        </section> */}
         <PreorderPopup />
       </main>
 
