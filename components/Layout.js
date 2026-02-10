@@ -95,7 +95,9 @@ export default function Layout({ children }) {
             <Link href="/contact" legacyBehavior>
               <a className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Contact</a>
             </Link>
-            <a href="#" className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Social</a>
+            <Link href="/social" legacyBehavior>
+              <a className="text-stone-400 hover:text-accent-red transition duration-300 text-sm">Social</a>
+            </Link>
           </div>
         </div>
       </footer>
