@@ -117,11 +117,18 @@ export default function Home() {
               <p className="text-stone-400 mb-8 leading-relaxed">
                 The podcast lays out the narrative, but the companion book provides the chilling evidence: the documents proving corruption that stretched from the streets of Boston to the White House.
               </p>
-              <Link href="/book" legacyBehavior>
-                <a className="cta-button bg-stone-700 text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-stone-600 transition duration-300">
-                  Pre-Order The Book
-                </a>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/book" legacyBehavior>
+                  <a className="cta-button bg-stone-700 text-white font-bold py-3 px-6 rounded-lg shadow-file hover:bg-stone-600 transition duration-300 text-center">
+                    Pre-Order The Book
+                  </a>
+                </Link>
+                <Link href="/book" legacyBehavior>
+                  <a className="cta-button bg-accent-red text-white font-bold py-3 px-6 rounded-lg shadow-file hover:bg-red-700 transition duration-300 text-center">
+                    🎧 Audio Clips from the Book
+                  </a>
+                </Link>
+              </div>
             </div>
             {/* Book Cover Image */}
             <div className="mt-12 md:mt-0 md:order-1 flex justify-center">
