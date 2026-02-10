@@ -19,32 +19,8 @@ export default function AskFred() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
-
-    const userMessage = { role: 'user', content: input };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
-    try {
-      const res = await fetch('/api/ask-fred', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage.content }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
-      } else {
-        setMessages(prev => [...prev, { role: 'assistant', content: `[SYSTEM ERROR]: ${data.error || 'Connection failed.'}` }]);
-      }
-    } catch (error) {
-      setMessages(prev => [...prev, { role: 'assistant', content: '[SYSTEM ERROR]: Unable to reach the secure server.' }]);
-    } finally {
-      setIsLoading(false);
-    }
+    // Feature disabled for now
+    return;
   };
 
   return (
@@ -68,8 +44,8 @@ export default function AskFred() {
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[80%] p-4 rounded-lg ${msg.role === 'user'
-                    ? 'bg-accent-red text-white rounded-br-none'
-                    : 'bg-gray-700 text-gray-200 rounded-bl-none font-mono-file text-sm border border-gray-600'
+                  ? 'bg-accent-red text-white rounded-br-none'
+                  : 'bg-gray-700 text-gray-200 rounded-bl-none font-mono-file text-sm border border-gray-600'
                   }`}>
                   {msg.content}
                 </div>
@@ -99,9 +75,12 @@ export default function AskFred() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-accent-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="relative group bg-accent-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden min-w-[140px]"
               >
-                SEND
+                <span className="group-hover:opacity-0 transition-opacity duration-300 block">SEND</span>
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold">
+                  COMING SOON
+                </span>
               </button>
             </form>
           </div>
