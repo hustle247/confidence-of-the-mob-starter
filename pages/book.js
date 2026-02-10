@@ -38,7 +38,7 @@ export default function Book() {
                 className="relative group block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold overflow-hidden"
               >
                 <span className="group-hover:opacity-0 transition-opacity duration-300 block">📚 Hardcover (Amazon)</span>
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-accent-red">
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-white">
                   Available on February 26th
                 </span>
               </a>
@@ -47,7 +47,7 @@ export default function Book() {
                 className="relative group block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold overflow-hidden"
               >
                 <span className="group-hover:opacity-0 transition-opacity duration-300 block">📓 Paperback</span>
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-accent-red">
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-white">
                   Available on February 26th
                 </span>
               </a>
