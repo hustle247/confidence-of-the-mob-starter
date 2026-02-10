@@ -15,7 +15,7 @@ export default function MobWeb() {
 
         <div className="relative">
           <img
-            src="/images/players.jpeg"
+            src="/images/mob_players.jpg"
             alt="The Mob Web Players"
             className="mx-auto rounded-xl border-2 border-stone-700 shadow-file max-w-full h-auto"
           />
