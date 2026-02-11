@@ -14,29 +14,18 @@ export default function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setStatus('loading');
 
-        try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+        const subject = `[Confidence of The Mob] New Contact: ${formData.reason} from ${formData.name}`;
+        const body = `Name: ${formData.name}\nEmail: ${formData.email}\nReason: ${formData.reason}\n\nMessage:\n${formData.message}`;
 
-            if (res.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', reason: 'Book Signing', message: '' });
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            setStatus('error');
-        }
+        const mailtoLink = `mailto:eddyinserra@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+
+        // Show success message briefly
+        setStatus('success');
     };
 
     return (
