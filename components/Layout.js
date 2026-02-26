@@ -15,9 +15,9 @@ export default function Layout({ children }) {
             </a>
           </Link>
           <nav className="hidden md:flex space-x-6 text-sm font-medium">
-            <Link href="/podcast" legacyBehavior>
+            {/* <Link href="/podcast" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Podcast</a>
-            </Link>
+            </Link> */}
             {/* <Link href="/files" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Case Files</a>
             </Link> */}
@@ -62,9 +62,9 @@ export default function Layout({ children }) {
 
       {/* Mobile Menu (Dropdown) */}
       <div className={`md:hidden bg-stone-800 border-t border-stone-700 ${mobileMenuOpen ? 'block' : 'hidden'} absolute w-full z-40`}>
-        <Link href="/podcast" legacyBehavior>
+        {/* <Link href="/podcast" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Podcast</a>
-        </Link>
+        </Link> */}
         {/* <Link href="/files" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Case Files</a>
         </Link> */}
