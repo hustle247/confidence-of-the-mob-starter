@@ -56,7 +56,7 @@ export default function PreorderPopup() {
                         Get the <span className="text-accent-red">Full Story</span>
                     </h2>
                     <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                        Preorder the Kindle edition now for a special discounted price. Uncover the secrets before anyone else.
+                        Order the Kindle edition now for a special discounted price. Uncover the secrets before anyone else.
                     </p>
 
                     <div className="mb-6 flex items-center justify-center md:justify-start gap-4">
@@ -71,7 +71,7 @@ export default function PreorderPopup() {
                         onClick={handleClose}
                         className="w-full py-3 px-6 bg-accent-red hover:bg-red-600 text-white font-bold rounded-lg shadow-file transition-all transform hover:-translate-y-1 text-center"
                     >
-                        Preorder Now
+                        Order Now
                     </a>
 
                     <p className="mt-4 text-[10px] text-gray-500 text-center">

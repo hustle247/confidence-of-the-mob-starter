@@ -40,22 +40,20 @@ export default function BuyBook() {
                                 </span>
                             </a>
                             <a
-                                href="#"
-                                className="relative group block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold overflow-hidden"
+                                href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Advised/dp/B0GPD3RM9N/ref=cotmweb"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold"
                             >
-                                <span className="group-hover:opacity-0 transition-opacity duration-300 block">📚 Hardcover (Amazon)</span>
-                                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-white">
-                                    Available on February 26th
-                                </span>
+                                📚 Hardcover
                             </a>
                             <a
-                                href="#"
-                                className="relative group block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold overflow-hidden"
+                                href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block p-4 bg-stone-700 hover:bg-stone-600 rounded-lg border border-stone-600 hover:border-accent-red transition duration-300 text-white font-semibold"
                             >
-                                <span className="group-hover:opacity-0 transition-opacity duration-300 block">📓 Paperback</span>
-                                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold text-white">
-                                    Available on February 26th
-                                </span>
+                                📓 Paperback
                             </a>
                         </div>
 

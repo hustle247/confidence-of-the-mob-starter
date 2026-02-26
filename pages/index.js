@@ -120,7 +120,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/buy-book" legacyBehavior>
                   <a className="cta-button bg-stone-700 text-white font-bold py-3 px-6 rounded-lg shadow-file hover:bg-stone-600 transition duration-300 text-center">
-                    Pre-Order The Book
+                    Order The Book
                   </a>
                 </Link>
                 <Link href="/book" legacyBehavior>
