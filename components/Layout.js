@@ -39,6 +39,9 @@ export default function Layout({ children }) {
             {/* <Link href="/subscribe" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Subscribe</a>
             </Link> */}
+            <Link href="/social" legacyBehavior>
+              <a className="text-stone-300 hover:text-accent-red transition duration-300">Social</a>
+            </Link>
           </nav>
           <button
             id="mobile-menu-button"
@@ -83,6 +86,9 @@ export default function Layout({ children }) {
         {/* <Link href="/subscribe" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Subscribe</a>
         </Link> */}
+        <Link href="/social" legacyBehavior>
+          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Social</a>
+        </Link>
       </div>
 
       <main>{children}</main>
