@@ -42,9 +42,9 @@ export default function Home() {
 
           {/* Primary Actions */}
           <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link href="/podcast" legacyBehavior>
+            <Link href="/buy-book" legacyBehavior>
               <a className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300">
-                🎧 Podcast: Launching Soon
+                🎧 Order The Book
               </a>
             </Link>
             {/* <Link href="/files" legacyBehavior>

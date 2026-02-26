@@ -52,6 +52,11 @@ export default function Layout({ children }) {
         </div>
       </header>
 
+      {/* Sticky Banner */}
+      <div className="sticky top-[73px] z-40 bg-accent-red text-white py-2 text-center text-sm font-bold shadow-lg">
+        Podcast Series Coming Soon!
+      </div>
+
       {/* Mobile Menu (Dropdown) */}
       <div className={`md:hidden bg-stone-800 border-t border-stone-700 ${mobileMenuOpen ? 'block' : 'hidden'} absolute w-full z-40`}>
         <Link href="/podcast" legacyBehavior>
