@@ -27,8 +27,8 @@ export default function Layout({ children }) {
             <Link href="/buy-book" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Book</a>
             </Link>
-            <Link href="/timeline" legacyBehavior>
-              <a className="text-stone-300 hover:text-accent-red transition duration-300">Timeline</a>
+            <Link href="/documents" legacyBehavior>
+              <a className="text-stone-300 hover:text-accent-red transition duration-300">Documents</a>
             </Link>
             <Link href="/ask-fred" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Ask Fred</a>
@@ -74,8 +74,8 @@ export default function Layout({ children }) {
         <Link href="/buy-book" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Book</a>
         </Link>
-        <Link href="/timeline" legacyBehavior>
-          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Timeline</a>
+        <Link href="/documents" legacyBehavior>
+          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Documents</a>
         </Link>
         <Link href="/ask-fred" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Ask Fred</a>
