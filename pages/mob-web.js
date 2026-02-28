@@ -45,7 +45,7 @@ export default function MobWeb() {
             </div>
           </a>
           <p className="mt-6 text-stone-500 text-sm font-mono-file italic text-center">
-            "The internal structure of the Patriarca Family as documented in the official files."
+            "The internal structure of the Patriarca Family of Massachusetts. Photo courtesy of Jim Donahue."
           </p>
         </div>
       </div>
