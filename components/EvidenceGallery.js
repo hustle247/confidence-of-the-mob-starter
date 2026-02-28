@@ -15,10 +15,12 @@ export default function EvidenceGallery() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {docs.map((doc) => (
-                    <div
+                    <a
                         key={doc.id}
-                        className="group cursor-pointer border border-zinc-700 p-4 hover:border-accent-red transition-all bg-stone-900/50 backdrop-blur-sm"
-                        onClick={() => openDocument(doc.driveId)}
+                        href={`https://drive.google.com/file/d/${doc.driveId}/view?usp=sharing`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block border border-zinc-700 p-4 hover:border-accent-red transition-all bg-stone-900/50 backdrop-blur-sm no-underline"
                     >
                         <div className="relative h-64 w-full mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all border border-stone-800">
                             <Image
@@ -35,7 +37,7 @@ export default function EvidenceGallery() {
                         <p className="text-[10px] text-accent-red font-mono-file mb-1 tracking-widest uppercase">{doc.category}</p>
                         <h3 className="text-xl font-bold text-white mb-2">{doc.title}</h3>
                         <p className="text-stone-400 text-sm leading-relaxed">{doc.description}</p>
-                    </div>
+                    </a>
                 ))}
             </div>
         </section>
