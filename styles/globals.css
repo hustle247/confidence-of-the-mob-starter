@@ -98,5 +98,5 @@ a:hover {
 }
 
 .badge-limited {
-  @apply absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-red text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter shadow-lg z-20 whitespace-nowrap border border-white/20;
+  @apply absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-red text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter shadow-lg z-20 whitespace-nowrap border border-white/20;
 }

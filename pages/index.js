@@ -41,16 +41,18 @@ export default function Home() {
           </p>
 
           {/* Primary Actions */}
-          <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb" legacyBehavior>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300"
-              >
-                📚 Order The Book
-              </a>
-            </Link>
+          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <div className="relative">
+              <Link href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb" legacyBehavior>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300"
+                >
+                  📚 Order The Book
+                </a>
+              </Link>
+            </div>
             <div className="relative group">
               <div className="badge-limited">
                 Limited Supply
