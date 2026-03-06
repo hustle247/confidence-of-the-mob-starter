@@ -22,7 +22,7 @@ export default function BuyBook() {
                 <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">COMPANION BOOK</p>
                 <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Book</h1>
                 <p className="text-lg text-stone-400 mb-8">
-                    Read excerpts from the companion book. The definitive account of Fred Pastore's double life.
+                    The definitive account of Fred Pastore's double life.
                 </p>
 
                 {/* Purchase Options Section */}
