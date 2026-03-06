@@ -26,7 +26,7 @@ export default function Layout({ children }) {
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Mob Web</a>
             </Link>
             <Link href="/buy-book" legacyBehavior>
-              <a className="text-stone-300 hover:text-accent-red transition duration-300">Book</a>
+              <a className="text-stone-300 hover:text-accent-red transition duration-300">Purchase</a>
             </Link>
             <Link href="/documents" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Documents</a>
@@ -76,7 +76,7 @@ export default function Layout({ children }) {
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Mob Web</a>
         </Link>
         <Link href="/buy-book" legacyBehavior>
-          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Book</a>
+          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Purchase</a>
         </Link>
         <Link href="/documents" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Documents</a>
