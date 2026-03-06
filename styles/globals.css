@@ -86,3 +86,17 @@ a:hover {
   z-index: 10;
   /* Ensures all content is above the overlay */
 }
+
+/* Premium Button Enhancements */
+.premium-glow {
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.premium-glow:hover {
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.badge-limited {
+  @apply absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-red text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter shadow-lg z-20 whitespace-nowrap border border-white/20;
+}

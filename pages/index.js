@@ -51,11 +51,16 @@ export default function Home() {
                 📚 Order The Book
               </a>
             </Link>
-            <Link href="/buy-book" legacyBehavior>
-              <a className="cta-button bg-stone-700 text-white border border-stone-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-stone-600 transition duration-300">
-                ✍️ Autographed Editions
-              </a>
-            </Link>
+            <div className="relative group">
+              <div className="badge-limited">
+                Limited Supply
+              </div>
+              <Link href="/buy-book" legacyBehavior>
+                <a className="cta-button premium-glow bg-stone-700 text-white border border-stone-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-stone-600 transition duration-300">
+                  ✍️ Autographed Editions
+                </a>
+              </Link>
+            </div>
           </div>
         </section>
 
