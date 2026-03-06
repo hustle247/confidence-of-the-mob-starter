@@ -5,13 +5,14 @@ export default function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen antialiased">
+    <div className="min-h-screen antialiased relative">
+      <div className="scanlines"></div>
       {/* Header & Navigation */}
       <header className="sticky top-0 z-50 header-bg border-b border-stone-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" legacyBehavior>
-            <a className="text-xl font-bold tracking-wider text-white rounded-lg p-2 hover:text-accent-red transition duration-300 font-mono-file">
-              <span className="text-accent-red">//</span> CONFIDENCE OF THE MOB
+            <a className="text-xl font-bold tracking-wider text-white rounded-lg p-2 hover:text-accent-red transition duration-300 font-mono-file group">
+              <span className="text-accent-red animate-flicker block sm:inline">//</span> CONFIDENCE OF THE MOB
             </a>
           </Link>
           <nav className="hidden md:flex space-x-6 text-sm font-medium">
