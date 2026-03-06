@@ -41,7 +41,7 @@ export default function Home() {
           </p>
 
           {/* Primary Actions */}
-          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-10 sm:space-y-0 sm:space-x-6">
             <div className="relative">
               <Link href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb" legacyBehavior>
                 <a
