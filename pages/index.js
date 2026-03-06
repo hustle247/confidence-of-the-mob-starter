@@ -65,6 +65,51 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* 1.5 Reader Testimonials Section */}
+        <section className="bg-stone-900/40 py-16 border-t border-b border-stone-800/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs text-stone-500 font-mono-file mb-8 tracking-[0.3em] uppercase text-center">// READER EVIDENCE: DECLASSIFIED FEEDBACK //</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* J.H. Testimonial */}
+              <div className="bg-stone-800/50 p-8 rounded-xl border border-stone-700 hover:border-accent-red/50 transition duration-500 shadow-file">
+                <div className="flex text-accent-red mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <h4 className="text-white font-bold mb-2">"Powerful story"</h4>
+                <p className="text-stone-400 text-sm italic leading-relaxed mb-6">
+                  "Very revealing look at early efforts of the IRS to take down criminal racketeers through tax evasion, when other legal avenues were less effective. Looks at high level government pressure and it's consequences."
+                </p>
+                <div className="flex items-center justify-between text-[10px] font-mono-file tracking-widest uppercase text-stone-500">
+                  <span>From: J.H.</span>
+                  <span className="text-accent-red/70">Verified Purchase</span>
+                </div>
+              </div>
+
+              {/* CG27 Testimonial */}
+              <div className="bg-stone-800/50 p-8 rounded-xl border border-stone-700 hover:border-accent-red/50 transition duration-500 shadow-file flex flex-col justify-between">
+                <div>
+                  <div className="flex text-accent-red mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-white text-lg font-bold leading-tight mb-8">
+                    "I don’t know how you did it but somehow you made being an IRS agent sound pretty f*cking cool."
+                  </p>
+                </div>
+                <div className="text-[10px] font-mono-file tracking-widest uppercase text-stone-500">
+                  <span>From: CG27</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* 2. Feature Grid / Interactive Archive Links */}
         {/* <section id="archive" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-stone-800">
