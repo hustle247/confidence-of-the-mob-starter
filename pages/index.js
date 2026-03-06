@@ -51,11 +51,11 @@ export default function Home() {
                 📚 Order The Book
               </a>
             </Link>
-            {/* <Link href="/files" legacyBehavior>
+            <Link href="/book" legacyBehavior>
               <a className="cta-button bg-stone-700 text-white border border-stone-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-stone-600 transition duration-300">
-                📂 Browse the Original Files
+                ✍️ Autographed Editions
               </a>
-            </Link> */}
+            </Link>
           </div>
         </section>
 
