@@ -6,11 +6,11 @@ export default function BuyBook() {
     const [isOpen, setIsOpen] = useState(false);
 
     const purchaseOptions = [
-        { label: '📖 Kindle Edition', href: 'https://a.co/d/4s7bzmO?ref=website' },
-        { label: '📚 Hardcover', href: 'https://www.amazon.com/Confidence-Mob-Agent-Mafia-Advised/dp/B0GPD3RM9N/ref=cotmweb' },
-        { label: '📓 Paperback', href: 'https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb' },
-        { label: '✍️ Autographed Hardcover', href: 'https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00' },
-        { label: '✍️ Autographed Paperback', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01' },
+        { label: 'Kindle Edition', icon: '📱', price: 'Sale $2.99', href: 'https://a.co/d/4s7bzmO?ref=website' },
+        { label: 'Hardcover', icon: '📚', price: '$24.99', href: 'https://www.amazon.com/Confidence-Mob-Agent-Mafia-Advised/dp/B0GPD3RM9N/ref=cotmweb' },
+        { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb' },
+        { label: 'Autographed Hardcover', icon: '✍️', price: '$39.99', href: 'https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00' },
+        { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01' },
     ];
 
     return (
@@ -57,21 +57,38 @@ export default function BuyBook() {
                                             href={option.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="block px-6 py-4 text-white hover:bg-stone-600 hover:text-accent-red transition duration-200 font-semibold border-b border-stone-600 last:border-b-0"
+                                            className="group block px-6 py-4 text-white hover:bg-stone-600 transition duration-200 border-b border-stone-600 last:border-b-0"
                                             role="menuitem"
                                             onClick={() => setIsOpen(false)}
                                         >
-                                            {option.label}
+                                            <div className="flex justify-between items-center">
+                                                <div className="flex items-center">
+                                                    <span className="mr-3 text-xl">{option.icon}</span>
+                                                    <span className="font-semibold group-hover:text-accent-red transition-colors">{option.label}</span>
+                                                </div>
+                                                <span className="text-sm font-mono text-stone-400 group-hover:text-white transition-colors">{option.price}</span>
+                                            </div>
                                         </a>
                                     ))}
                                 </div>
                             </div>
                         )}
                     </div>
-                    <p className="text-xs text-stone-500 italic mt-6">
-                        Limited edition autographed copies available directly from the author via Stripe
-                    </p>
+
+                    {/* Trust Elements */}
+                    <div className="mt-8 flex flex-col items-center justify-center space-y-2">
+                        <div className="flex items-center text-stone-400 text-xs font-medium uppercase tracking-widest">
+                            <svg className="w-3 h-3 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                            </svg>
+                            Secure Checkout via Stripe
+                        </div>
+                        <p className="text-[10px] text-stone-500 italic max-w-xs leading-relaxed">
+                            Limited edition autographed copies available directly from the author. Verified secure transaction.
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
     );
