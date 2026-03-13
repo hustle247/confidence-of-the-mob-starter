@@ -73,7 +73,7 @@ export default function PreorderPopup() {
                     </div>
 
                     <a
-                        href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb"
+                        href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Advised-ebook/dp/B0GJTFM8F7/?ref=cotmweb"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={handleClose}
