@@ -73,7 +73,7 @@ export default function PreorderPopup() {
                     </div>
 
                     <a
-                        href="https://a.co/d/4s7bzmO"
+                        href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={handleClose}

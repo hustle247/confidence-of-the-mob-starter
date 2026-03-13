@@ -6,9 +6,9 @@ export default function BuyBook() {
     const [isOpen, setIsOpen] = useState(false);
 
     const purchaseOptions = [
-        { label: 'Kindle Edition', icon: '📱', price: 'Sale $2.99', href: 'https://a.co/d/4s7bzmO?ref=website' },
-        { label: 'Hardcover', icon: '📚', price: '$24.99', href: 'https://www.amazon.com/Confidence-Mob-Agent-Mafia-Advised/dp/B0GPD3RM9N/ref=cotmweb' },
-        { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/Confidence-Mob-Agent-Mafia-Then-Advised/dp/B0GMQ1B16F/ref=cotmweb' },
+        { label: 'Kindle Edition', icon: '📱', price: 'Sale $2.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb' },
+        { label: 'Hardcover', icon: '📚', price: '$24.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb' },
+        { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb' },
         { label: 'Autographed Hardcover', icon: '✍️', price: '$39.99', href: 'https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00' },
         { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01' },
     ];
