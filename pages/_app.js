@@ -8,6 +8,8 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Head>
         <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <Component {...pageProps} />
       <Analytics />
