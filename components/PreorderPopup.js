@@ -68,12 +68,12 @@ export default function PreorderPopup() {
                     </p>
 
                     <div className="mb-3 flex items-center gap-3">
-                        <span className="text-xl font-bold text-white">$2.99</span>
+                        <span className="text-xl font-bold text-white">$7.99</span>
                         <span className="text-xs text-gray-500 line-through decoration-red-500">$9.99</span>
                     </div>
 
                     <a
-                        href="https://www.amazon.com/Confidence-Mob-Agent-Mafia-Advised-ebook/dp/B0GJTFM8F7/?ref=cotmweb"
+                        href="https://www.amazon.com/dp/B0GSS9WHWC"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={handleClose}
