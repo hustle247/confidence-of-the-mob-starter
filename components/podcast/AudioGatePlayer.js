@@ -4,7 +4,6 @@ import { trackEvent } from '../../lib/tracking';
 export default function AudioGatePlayer({ 
   audioSrc, 
   episodeId,
-  isLocked,
   onGateReached
 }) {
   const audioRef = useRef(null);
@@ -13,8 +12,6 @@ export default function AudioGatePlayer({
   const [duration, setDuration] = useState(0);
 
   const togglePlay = () => {
-    if (isLocked) return;
-
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
@@ -39,14 +36,12 @@ export default function AudioGatePlayer({
 
   const handleEnded = () => {
     setIsPlaying(false);
-    if (!isLocked) {
-      onGateReached();
-      trackEvent('podcast_preview_gate_reached', { episode_id: episodeId, page: '/podcast' });
-    }
+    onGateReached();
+    trackEvent('podcast_preview_gate_reached', { episode_id: episodeId, page: '/podcast' });
   };
 
   const handleSeek = (e) => {
-    if (isLocked || duration === 0) return;
+    if (duration === 0) return;
     const seekTime = (e.target.value / 100) * duration;
     if (audioRef.current) {
       audioRef.current.currentTime = seekTime;
@@ -81,8 +76,7 @@ export default function AudioGatePlayer({
       <div className="flex items-center gap-6">
         <button 
           onClick={togglePlay}
-          disabled={isLocked}
-          className={`w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full bg-accent-red text-white transition-all ${isLocked ? 'opacity-50 cursor-not-allowed bg-stone-700' : 'hover:scale-105 hover:bg-red-600'}`}
+          className="w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full bg-accent-red text-white transition-all hover:scale-105 hover:bg-red-600"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
@@ -94,14 +88,14 @@ export default function AudioGatePlayer({
 
         <div className="flex-1 py-2">
           <div className="flex justify-between text-xs text-stone-500 font-mono-file mb-3 tracking-widest uppercase">
-            <span className={isLocked ? "text-stone-600" : "text-stone-300"}>{formatTime(currentTime)}</span>
+            <span className="text-stone-300">{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
           <div className="w-full relative h-1.5 flex items-center group/scrubber">
             {/* Track background */}
             <div className="absolute w-full bg-stone-800 rounded-full h-1.5 overflow-hidden">
               <div 
-                className={`h-full rounded-full transition-all duration-75 ${isLocked ? 'bg-stone-600' : 'bg-accent-red'}`} 
+                className="h-full rounded-full transition-all duration-75 bg-accent-red"
                 style={{ width: `${maxProgressPercentage}%` }}
               ></div>
             </div>
@@ -114,18 +108,16 @@ export default function AudioGatePlayer({
               step="0.1"
               value={progressPercentage}
               onChange={handleSeek}
-              disabled={isLocked || duration === 0}
-              className={`absolute w-full h-full opacity-0 outline-none ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+              disabled={duration === 0}
+              className="absolute w-full h-full opacity-0 outline-none cursor-pointer"
               aria-label="Audio scrubber"
             />
             
             {/* Visual Knob */}
-            {!isLocked && (
-              <div 
-                className="absolute h-3 w-3 bg-white rounded-full shadow pointer-events-none opacity-0 group-hover/scrubber:opacity-100 transition-opacity transform -translate-x-1/2"
-                style={{ left: `${maxProgressPercentage}%` }}
-              ></div>
-            )}
+            <div 
+              className="absolute h-3 w-3 bg-white rounded-full shadow pointer-events-none opacity-0 group-hover/scrubber:opacity-100 transition-opacity transform -translate-x-1/2"
+              style={{ left: `${maxProgressPercentage}%` }}
+            ></div>
           </div>
         </div>
       </div>
