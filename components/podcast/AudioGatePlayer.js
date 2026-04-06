@@ -29,7 +29,7 @@ export default function AudioGatePlayer({
   };
 
   const handleLoadedMetadata = () => {
-    if (audioRef.current) {
+    if (audioRef.current && !isNaN(audioRef.current.duration)) {
       setDuration(audioRef.current.duration);
     }
   };
@@ -41,9 +41,8 @@ export default function AudioGatePlayer({
   };
 
   const handleSeek = (e) => {
-    if (duration === 0) return;
-    const seekTime = (e.target.value / 100) * duration;
-    if (audioRef.current) {
+    const seekTime = (e.target.value / 100) * (duration || 0);
+    if (!isNaN(seekTime) && audioRef.current) {
       audioRef.current.currentTime = seekTime;
       setCurrentTime(seekTime);
     }
@@ -69,6 +68,8 @@ export default function AudioGatePlayer({
         src={audioSrc}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
+        onDurationChange={handleLoadedMetadata}
+        onCanPlay={handleLoadedMetadata}
         onEnded={handleEnded}
         preload="metadata"
       />
@@ -91,7 +92,7 @@ export default function AudioGatePlayer({
             <span className="text-stone-300">{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
-          <div className="w-full relative h-8 py-3 flex items-center group/scrubber touch-none">
+          <div className="w-full relative h-8 py-3 flex items-center group/scrubber">
             {/* Track background */}
             <div className="absolute w-full bg-stone-800 rounded-full h-1.5 overflow-hidden pointer-events-none">
               <div 
@@ -108,8 +109,7 @@ export default function AudioGatePlayer({
               step="0.1"
               value={progressPercentage}
               onChange={handleSeek}
-              disabled={duration === 0}
-              className="absolute w-full h-full opacity-0 outline-none cursor-pointer touch-pan-x"
+              className="absolute inset-0 w-full h-full opacity-0 outline-none cursor-pointer z-10"
               aria-label="Audio scrubber"
             />
             
