@@ -1,0 +1,105 @@
+import { useState, useRef, useEffect } from 'react';
+import { trackEvent } from '../../lib/tracking';
+
+export default function AudioGatePlayer({ 
+  audioSrc, 
+  gateAtSeconds,
+  durationSeconds,
+  episodeId,
+  isLocked,
+  onGateReached
+}) {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => {
+    // Force pause if gate is reached and it's not locked yet
+    if (currentTime >= gateAtSeconds && !isLocked) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      setIsPlaying(false);
+      onGateReached();
+      trackEvent('podcast_preview_gate_reached', { episode_id: episodeId, page: '/podcast' });
+    }
+  }, [currentTime, gateAtSeconds, isLocked, onGateReached, episodeId]);
+
+  const togglePlay = () => {
+    if (isLocked) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
+      trackEvent('podcast_preview_play_clicked', { episode_id: episodeId, page: '/podcast' });
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const progressPercentage = ((currentTime / durationSeconds) * 100).toFixed(2);
+  const maxProgressPercentage = Math.min(100, Math.max(0, progressPercentage));
+
+  const formatTime = (time) => {
+    const mins = Math.floor(time / 60);
+    const secs = Math.floor(time % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+
+  return (
+    <div className="bg-stone-900 border border-stone-800 rounded-xl p-6 shadow-file mt-8 relative overflow-hidden group">
+      {/* Decorative accent */}
+      <div className="absolute top-0 left-0 w-1 h-full bg-accent-red opacity-50 group-hover:opacity-100 transition-opacity"></div>
+      
+      <audio 
+        ref={audioRef} 
+        src={audioSrc}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={() => setIsPlaying(false)}
+        preload="metadata"
+      />
+      
+      <div className="flex items-center gap-6">
+        <button 
+          onClick={togglePlay}
+          disabled={isLocked}
+          className={`w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full bg-accent-red text-white transition-all ${isLocked ? 'opacity-50 cursor-not-allowed bg-stone-700' : 'hover:scale-105 hover:bg-red-600'}`}
+          aria-label={isPlaying ? "Pause" : "Play"}
+        >
+          {isPlaying ? (
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+          ) : (
+            <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
+          )}
+        </button>
+
+        <div className="flex-1 py-2">
+          <div className="flex justify-between text-xs text-stone-500 font-mono-file mb-3 tracking-widest uppercase">
+            <span className={isLocked ? "text-stone-600" : "text-stone-300"}>{formatTime(currentTime)}</span>
+            <span>{formatTime(durationSeconds)}</span>
+          </div>
+          <div className="w-full bg-stone-800 rounded-full h-1.5 relative overflow-hidden">
+            {/* Progress bar */}
+            <div 
+              className={`h-full transition-all duration-200 rounded-full ${isLocked ? 'bg-stone-600' : 'bg-accent-red'}`} 
+              style={{ width: `${maxProgressPercentage}%` }}
+            ></div>
+            {/* Gate indicator line */}
+            <div 
+              className="absolute top-0 bottom-0 bg-stone-400 w-px" 
+              style={{ left: `${(gateAtSeconds / durationSeconds) * 100}%` }}
+              title="Preview ends here"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
