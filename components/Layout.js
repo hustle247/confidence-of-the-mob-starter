@@ -26,7 +26,7 @@ export default function Layout({ children }) {
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Mob Web</a>
             </Link>
             <Link href="/buy-book" legacyBehavior>
-              <a className="text-stone-300 hover:text-accent-red transition duration-300">Purchase</a>
+              <a className="text-stone-300 hover:text-accent-red transition duration-300">Book</a>
             </Link>
             <Link href="/documents" legacyBehavior>
               <a className="text-stone-300 hover:text-accent-red transition duration-300">Documents</a>
@@ -60,9 +60,11 @@ export default function Layout({ children }) {
       </header>
 
       {/* Sticky Banner */}
-      <div className="sticky top-[73px] z-40 bg-accent-red text-white py-2 text-center text-sm font-bold shadow-lg">
-        Podcast Series Coming Soon!
-      </div>
+      <Link href="/podcast" legacyBehavior>
+        <a className="block sticky top-[73px] z-40 bg-accent-red hover:bg-red-600 transition-colors cursor-pointer text-white py-2 text-center text-sm font-bold shadow-lg">
+          Podcast Series Coming Soon!
+        </a>
+      </Link>
 
       {/* Mobile Menu (Dropdown) */}
       <div className={`md:hidden bg-stone-800 border-t border-stone-700 ${mobileMenuOpen ? 'block' : 'hidden'} absolute w-full z-40`}>
@@ -76,7 +78,7 @@ export default function Layout({ children }) {
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Mob Web</a>
         </Link>
         <Link href="/buy-book" legacyBehavior>
-          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Purchase</a>
+          <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Book</a>
         </Link>
         <Link href="/documents" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-stone-200 hover:bg-stone-700 transition duration-300" onClick={() => setMobileMenuOpen(false)}>Documents</a>
