@@ -57,8 +57,8 @@ export default function Contact() {
                     {status === 'success' ? (
                         <div className="text-center py-12">
                             <div className="text-5xl mb-4">✅</div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Message Sent Successfully!</h3>
-                            <p className="text-stone-400">Thanks for reaching out! We have received your message and will get back to you shortly.</p>
+                            <h3 className="text-2xl font-bold text-white mb-2">Your message has been sent!</h3>
+                            <p className="text-stone-400">Thanks for reaching out! Please give us 48 hours to respond.</p>
                             <button
                                 onClick={() => setStatus('idle')}
                                 className="mt-6 text-accent-red hover:underline font-mono-file text-sm"
