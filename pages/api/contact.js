@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         try {
             const { data, error } = await resend.emails.send({
                 from: 'Confidence of The Mob <contact@confidenceofthemob.com>',
-                to: ['contact@confidenceofthemob.com'],
+                to: ['eddyinserra@gmail.com'],
                 reply_to: email, // Set reply-to as the submitter's email
                 subject: `[Website Contact] ${reason} from ${name}`,
                 text: `Name: ${name}\nEmail: ${email}\nReason: ${reason}\n\nMessage:\n${message}`,
