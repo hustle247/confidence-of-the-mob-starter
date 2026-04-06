@@ -14,18 +14,29 @@ export default function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setStatus('loading');
 
-        const subject = `[Confidence of The Mob] New Contact: ${formData.reason} from ${formData.name}`;
-        const body = `Name: ${formData.name}\nEmail: ${formData.email}\nReason: ${formData.reason}\n\nMessage:\n${formData.message}`;
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        const mailtoLink = `mailto:eddyinserra@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (!res.ok) {
+                throw new Error('Failed to submit form');
+            }
 
-        window.location.href = mailtoLink;
-
-        // Show success message briefly
-        setStatus('success');
+            setStatus('success');
+            setFormData({ name: '', email: '', reason: 'Book Signing', message: '' });
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus('error');
+        }
     };
 
     return (
@@ -46,8 +57,8 @@ export default function Contact() {
                     {status === 'success' ? (
                         <div className="text-center py-12">
                             <div className="text-5xl mb-4">✅</div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Just press send on the email to send it over to us!</h3>
-                            <p className="text-stone-400">Your email client has been opened with your message.</p>
+                            <h3 className="text-2xl font-bold text-white mb-2">Message Sent Successfully!</h3>
+                            <p className="text-stone-400">Thanks for reaching out! We have received your message and will get back to you shortly.</p>
                             <button
                                 onClick={() => setStatus('idle')}
                                 className="mt-6 text-accent-red hover:underline font-mono-file text-sm"
