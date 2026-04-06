@@ -45,6 +45,15 @@ export default function AudioGatePlayer({
     }
   };
 
+  const handleSeek = (e) => {
+    if (isLocked || duration === 0) return;
+    const seekTime = (e.target.value / 100) * duration;
+    if (audioRef.current) {
+      audioRef.current.currentTime = seekTime;
+      setCurrentTime(seekTime);
+    }
+  };
+
   const progressPercentage = duration > 0 ? ((currentTime / duration) * 100).toFixed(2) : 0;
   const maxProgressPercentage = Math.min(100, Math.max(0, progressPercentage));
 
@@ -88,12 +97,35 @@ export default function AudioGatePlayer({
             <span className={isLocked ? "text-stone-600" : "text-stone-300"}>{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
-          <div className="w-full bg-stone-800 rounded-full h-1.5 relative overflow-hidden">
-            {/* Progress bar */}
-            <div 
-              className={`h-full transition-all duration-200 rounded-full ${isLocked ? 'bg-stone-600' : 'bg-accent-red'}`} 
-              style={{ width: `${maxProgressPercentage}%` }}
-            ></div>
+          <div className="w-full relative h-1.5 flex items-center group/scrubber">
+            {/* Track background */}
+            <div className="absolute w-full bg-stone-800 rounded-full h-1.5 overflow-hidden">
+              <div 
+                className={`h-full rounded-full transition-all duration-75 ${isLocked ? 'bg-stone-600' : 'bg-accent-red'}`} 
+                style={{ width: `${maxProgressPercentage}%` }}
+              ></div>
+            </div>
+            
+            {/* Interactive native range scrubber */}
+            <input 
+              type="range"
+              min="0"
+              max="100"
+              step="0.1"
+              value={progressPercentage}
+              onChange={handleSeek}
+              disabled={isLocked || duration === 0}
+              className={`absolute w-full h-full opacity-0 outline-none ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+              aria-label="Audio scrubber"
+            />
+            
+            {/* Visual Knob */}
+            {!isLocked && (
+              <div 
+                className="absolute h-3 w-3 bg-white rounded-full shadow pointer-events-none opacity-0 group-hover/scrubber:opacity-100 transition-opacity transform -translate-x-1/2"
+                style={{ left: `${maxProgressPercentage}%` }}
+              ></div>
+            )}
           </div>
         </div>
       </div>
