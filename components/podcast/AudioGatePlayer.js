@@ -91,16 +91,16 @@ export default function AudioGatePlayer({
             <span className="text-stone-300">{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
-          <div className="w-full relative h-1.5 flex items-center group/scrubber">
+          <div className="w-full relative h-8 py-3 flex items-center group/scrubber touch-none">
             {/* Track background */}
-            <div className="absolute w-full bg-stone-800 rounded-full h-1.5 overflow-hidden">
+            <div className="absolute w-full bg-stone-800 rounded-full h-1.5 overflow-hidden pointer-events-none">
               <div 
                 className="h-full rounded-full transition-all duration-75 bg-accent-red"
                 style={{ width: `${maxProgressPercentage}%` }}
               ></div>
             </div>
             
-            {/* Interactive native range scrubber */}
+            {/* Interactive native range scrubber (Expanded hit area) */}
             <input 
               type="range"
               min="0"
@@ -109,13 +109,13 @@ export default function AudioGatePlayer({
               value={progressPercentage}
               onChange={handleSeek}
               disabled={duration === 0}
-              className="absolute w-full h-full opacity-0 outline-none cursor-pointer"
+              className="absolute w-full h-full opacity-0 outline-none cursor-pointer touch-pan-x"
               aria-label="Audio scrubber"
             />
             
             {/* Visual Knob */}
             <div 
-              className="absolute h-3 w-3 bg-white rounded-full shadow pointer-events-none opacity-0 group-hover/scrubber:opacity-100 transition-opacity transform -translate-x-1/2"
+              className="absolute h-4 w-4 bg-white rounded-full shadow pointer-events-none opacity-0 group-hover/scrubber:opacity-100 transition-opacity transform -translate-x-1/2"
               style={{ left: `${maxProgressPercentage}%` }}
             ></div>
           </div>
