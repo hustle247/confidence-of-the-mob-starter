@@ -59,7 +59,7 @@ export default function AudioGatePlayer({
   };
 
   return (
-    <div className="bg-stone-900 border border-stone-800 rounded-xl p-6 shadow-file mt-8 relative overflow-hidden group">
+    <div className="bg-stone-900 border border-stone-800 rounded-xl p-6 shadow-file my-6 relative overflow-hidden group">
       {/* Decorative accent */}
       <div className="absolute top-0 left-0 w-1 h-full bg-accent-red opacity-50 group-hover:opacity-100 transition-opacity"></div>
       
@@ -101,7 +101,7 @@ export default function AudioGatePlayer({
               ></div>
             </div>
             
-            {/* Interactive native range scrubber (Expanded hit area) */}
+            {/* Interactive native range scrubber (Expanded hit area, opacity hack for Safari touch bypass) */}
             <input 
               type="range"
               min="0"
@@ -109,7 +109,9 @@ export default function AudioGatePlayer({
               step="0.1"
               value={progressPercentage}
               onChange={handleSeek}
-              className="absolute inset-0 w-full h-full opacity-0 outline-none cursor-pointer z-10"
+              onInput={handleSeek}
+              className="absolute inset-0 w-full h-full appearance-none bg-transparent cursor-pointer z-10 touch-pan-y"
+              style={{ opacity: 0.01 }}
               aria-label="Audio scrubber"
             />
             

@@ -35,20 +35,22 @@ export default function EpisodePreview({ previewData }) {
             {/* Mobile-optimized spacing and hierarchy */}
             <span className="text-accent-red font-mono-file tracking-widest text-xs uppercase mb-3 inline-block">EPISODE 01 PREVIEW</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 tracking-tight">{previewData.title}</h2>
-            <p className="text-stone-300 font-medium mb-5 text-lg sm:text-xl">{previewData.subtitle}</p>
-            <p className="text-stone-500 mb-6 leading-relaxed sm:text-lg">{previewData.description}</p>
+            <p className="text-stone-300 font-medium mb-2 text-lg sm:text-xl">{previewData.subtitle}</p>
+            
+            {/* Audio Player Positioned high for immediate viewport capture */}
+            <AudioGatePlayer 
+              audioSrc={previewData.audioSrc}
+              episodeId={previewData.episodeId}
+              onGateReached={handleAudioEnded}
+            />
+
+            <p className="text-stone-500 mt-6 mb-6 leading-relaxed sm:text-lg">{previewData.description}</p>
             
             <div className="p-5 sm:p-6 bg-stone-800/50 rounded-lg border-l-4 border-accent-red font-mono-file text-sm sm:text-base text-stone-300 italic shadow-inner whitespace-pre-line leading-relaxed">
               {previewData.teaserTranscript}
             </div>
           </div>
         </div>
-
-        <AudioGatePlayer 
-          audioSrc={previewData.audioSrc}
-          episodeId={previewData.episodeId}
-          onGateReached={handleAudioEnded}
-        />
 
         {/* ALWAYS show the CTA at the bottom, so users can subscribe anytime */}
         <div className="mt-10 pt-10 border-t border-stone-800 fade-in">
