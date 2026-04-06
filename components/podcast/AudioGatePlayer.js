@@ -3,8 +3,6 @@ import { trackEvent } from '../../lib/tracking';
 
 export default function AudioGatePlayer({ 
   audioSrc, 
-  gateAtSeconds,
-  durationSeconds,
   episodeId,
   isLocked,
   onGateReached
@@ -12,18 +10,7 @@ export default function AudioGatePlayer({
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    // Force pause if gate is reached and it's not locked yet
-    if (currentTime >= gateAtSeconds && !isLocked) {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-      setIsPlaying(false);
-      onGateReached();
-      trackEvent('podcast_preview_gate_reached', { episode_id: episodeId, page: '/podcast' });
-    }
-  }, [currentTime, gateAtSeconds, isLocked, onGateReached, episodeId]);
+  const [duration, setDuration] = useState(0);
 
   const togglePlay = () => {
     if (isLocked) return;
@@ -44,10 +31,25 @@ export default function AudioGatePlayer({
     }
   };
 
-  const progressPercentage = ((currentTime / durationSeconds) * 100).toFixed(2);
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+    if (!isLocked) {
+      onGateReached();
+      trackEvent('podcast_preview_gate_reached', { episode_id: episodeId, page: '/podcast' });
+    }
+  };
+
+  const progressPercentage = duration > 0 ? ((currentTime / duration) * 100).toFixed(2) : 0;
   const maxProgressPercentage = Math.min(100, Math.max(0, progressPercentage));
 
   const formatTime = (time) => {
+    if (!time || isNaN(time)) return "0:00";
     const mins = Math.floor(time / 60);
     const secs = Math.floor(time % 60);
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
@@ -62,7 +64,8 @@ export default function AudioGatePlayer({
         ref={audioRef} 
         src={audioSrc}
         onTimeUpdate={handleTimeUpdate}
-        onEnded={() => setIsPlaying(false)}
+        onLoadedMetadata={handleLoadedMetadata}
+        onEnded={handleEnded}
         preload="metadata"
       />
       
@@ -83,19 +86,13 @@ export default function AudioGatePlayer({
         <div className="flex-1 py-2">
           <div className="flex justify-between text-xs text-stone-500 font-mono-file mb-3 tracking-widest uppercase">
             <span className={isLocked ? "text-stone-600" : "text-stone-300"}>{formatTime(currentTime)}</span>
-            <span>{formatTime(durationSeconds)}</span>
+            <span>{formatTime(duration)}</span>
           </div>
           <div className="w-full bg-stone-800 rounded-full h-1.5 relative overflow-hidden">
             {/* Progress bar */}
             <div 
               className={`h-full transition-all duration-200 rounded-full ${isLocked ? 'bg-stone-600' : 'bg-accent-red'}`} 
               style={{ width: `${maxProgressPercentage}%` }}
-            ></div>
-            {/* Gate indicator line */}
-            <div 
-              className="absolute top-0 bottom-0 bg-stone-400 w-px" 
-              style={{ left: `${(gateAtSeconds / durationSeconds) * 100}%` }}
-              title="Preview ends here"
             ></div>
           </div>
         </div>

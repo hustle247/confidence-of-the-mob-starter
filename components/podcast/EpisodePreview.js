@@ -46,8 +46,6 @@ export default function EpisodePreview({ previewData }) {
 
       <AudioGatePlayer 
         audioSrc={previewData.audioSrc}
-        gateAtSeconds={previewData.gateAtSeconds}
-        durationSeconds={previewData.durationSeconds}
         episodeId={previewData.episodeId}
         isLocked={isGated && !hasSubscribed}
         onGateReached={handleGateReached}
