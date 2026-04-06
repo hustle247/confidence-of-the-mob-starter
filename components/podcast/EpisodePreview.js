@@ -38,8 +38,8 @@ export default function EpisodePreview({ previewData }) {
           <p className="text-stone-300 font-medium mb-4 text-lg">{previewData.subtitle}</p>
           <p className="text-stone-500 mb-6 leading-relaxed">{previewData.description}</p>
           
-          <div className="p-5 bg-stone-800/50 rounded-lg border-l-4 border-accent-red font-mono-file text-sm text-stone-300 italic shadow-inner">
-            "{previewData.teaserTranscript}"
+          <div className="p-5 bg-stone-800/50 rounded-lg border-l-4 border-accent-red font-mono-file text-sm text-stone-300 italic shadow-inner whitespace-pre-line">
+            {previewData.teaserTranscript}
           </div>
         </div>
       </div>
