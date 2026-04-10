@@ -48,7 +48,18 @@ export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) 
   };
 
   if (status === 'success') {
-    return null; // Handled by parent
+    if (onSuccess) {
+      return null; // Handled by parent if it's a modal like AudioGatePlayer
+    }
+    return (
+      <div className="mt-8 p-6 bg-stone-800/80 border border-stone-700/50 rounded-xl text-center shadow-inner animate-fade-in-up">
+        <svg className="w-12 h-12 text-accent-red mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h3 className="text-xl font-bold text-white mb-2 font-mono-file tracking-wider">SUCCESSFUL TRANSMISSION</h3>
+        <p className="text-stone-300 text-sm font-serif max-w-sm mx-auto">Your email has been securely logged into the archives. You are now on the insider list.</p>
+      </div>
+    );
   }
 
   return (
