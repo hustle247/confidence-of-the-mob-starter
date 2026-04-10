@@ -29,7 +29,7 @@ export default function AskFred() {
         <title>Ask Fred - Confidence of The Mob</title>
       </Head>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 h-[calc(100vh-80px)] flex flex-col">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 py-12 md:py-20 h-[calc(100vh-200px)] flex flex-col">
         <div className="text-center mb-8">
           <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">DIGITAL INTERROGATION</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white">Ask Fred's Files</h1>
@@ -69,18 +69,17 @@ export default function AskFred() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask a question about the investigation..."
-                className="flex-1 bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-accent-red focus:ring-1 focus:ring-accent-red font-mono-file text-sm"
-                disabled={isLoading}
+                className="flex-1 bg-stone-800 text-stone-500 border border-stone-700 rounded-lg px-4 py-3 focus:outline-none font-mono-file text-sm cursor-not-allowed"
+                disabled={true}
+                title="The AI Knowledge Base is currently compiling evidence. Check back soon."
               />
               <button
-                type="submit"
-                disabled={isLoading}
-                className="relative group bg-accent-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden min-w-[140px]"
+                type="button"
+                disabled={true}
+                title="The AI Knowledge Base is currently compiling evidence. Check back soon."
+                className="bg-stone-700 text-stone-400 px-6 py-3 rounded-lg font-bold cursor-not-allowed min-w-[140px]"
               >
-                <span className="group-hover:opacity-0 transition-opacity duration-300 block">SEND</span>
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-bold">
-                  COMING SOON
-                </span>
+                <span>COMING SOON</span>
               </button>
             </form>
           </div>

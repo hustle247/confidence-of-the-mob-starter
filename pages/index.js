@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { useState } from 'react';
 import PreorderPopup from '../components/PreorderPopup';
+import NewsletterGateForm from '../components/podcast/NewsletterGateForm';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -36,7 +37,10 @@ export default function Home() {
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 text-white">
             I thought my grandfather was just an accountant.<br className="hidden sm:inline" /> Then I opened <span className="text-accent-red">The Box.</span>
           </h1>
-          <p className="mt-4 text-lg text-stone-200 max-w-4xl mx-auto">
+          <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-stone-200 max-w-4xl mx-auto">
+            The IRS Agent Who Took Down the Mafia—Then Advised Them.
+          </h2>
+          <p className="mt-6 text-lg text-stone-400 max-w-3xl mx-auto font-serif">
             My mother found a dusty Florida orange crate full of my grandfather Fred Pastore's old papers. I expected boring ledgers. I found secret files, wiretap logs, and evidence he was a racket-busting IRS agent... and a target of the White House.
           </p>
 
@@ -47,9 +51,10 @@ export default function Home() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300"
+                  className="flex items-center justify-center gap-2 cta-button bg-accent-red text-white font-bold py-3 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300"
                 >
-                  📚 Order The Book
+                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                  Order The Book
                 </a>
               </Link>
             </div>
@@ -58,11 +63,19 @@ export default function Home() {
                 Limited Supply
               </div>
               <Link href="/buy-book" legacyBehavior>
-                <a className="cta-button premium-glow bg-stone-700 text-white border border-stone-600 font-bold py-3 px-8 rounded-lg shadow-file hover:bg-stone-600 transition duration-300">
-                  ✍️ Autographed Editions
+                <a className="flex items-center justify-center gap-2 cta-button premium-glow bg-stone-200 text-stone-900 border border-stone-300 font-extrabold py-3 px-8 rounded-lg shadow-file hover:bg-white transition duration-300 hover:scale-105 active:scale-95">
+                  <svg className="w-5 h-5 flex-shrink-0 text-stone-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                  Autographed Editions
                 </a>
               </Link>
             </div>
+          </div>
+
+          {/* Sub-Hero Email Capture */}
+          <div className="mt-16 max-w-xl mx-auto px-4 bg-stone-900/60 p-6 sm:p-8 rounded-2xl border border-stone-800 shadow-file backdrop-blur-sm relative z-20">
+            <h3 className="text-xl font-bold text-white mb-2 font-mono-file tracking-tight"><span className="text-accent-red">//</span> FOLLOW THE INVESTIGATION</h3>
+            <p className="text-sm text-stone-400 mb-6 font-serif">Sign up for exclusive access to Fred's case notes and upcoming podcast episodes before they hit the public feed.</p>
+            <NewsletterGateForm signupCTA="Become an Insider" />
           </div>
         </section>
         {/* 1.5 Reader Testimonials Section */}
@@ -188,7 +201,7 @@ export default function Home() {
             <div className="md:order-2">
               <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">The Full Story</p>
               <h2 className="text-3xl font-bold mb-6">
-                The IRS Agent Who Took Down the Mafia—Then Advised Them
+                Discover The Evidence
               </h2>
               <p className="text-stone-400 mb-6 leading-relaxed">
                 This story began with a box of dusty papers. It led to uncovering Fred Pastore's secret life as "The Elliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."

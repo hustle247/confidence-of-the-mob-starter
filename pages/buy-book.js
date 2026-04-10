@@ -18,18 +18,36 @@ export default function BuyBook() {
             <Head>
                 <title>Buy the Book - Confidence of The Mob</title>
             </Head>
-            <div className="max-w-4xl mx-auto">
-                <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">COMPANION BOOK</p>
-                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Book</h1>
-                <p className="text-lg text-stone-400 mb-8 leading-relaxed">
-                    The definitive account of Fred Pastore's double life. This story began with a box of dusty papers. It led to uncovering Fred Pastore's secret life as "The Elliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."
-                </p>
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div className="lg:col-span-5 flex flex-col justify-center items-center lg:sticky lg:top-32 relative group">
+                    <div className="absolute inset-0 bg-accent-red blur-[80px] opacity-10 group-hover:opacity-20 transition duration-700 pointer-events-none rounded-full"></div>
+                    <img 
+                        src="/images/book_no_bg.png" 
+                        alt="Confidence of The Mob Book Cover" 
+                        className="w-3/4 max-w-md rounded-r-3xl rounded-l-md shadow-2xl border-2 border-stone-800 relative z-10 hover:scale-[1.02] hover:-rotate-1 transition duration-700"
+                    />
+                    <div className="mt-8 opacity-60 flex gap-2">
+                      <span className="w-2 h-2 rounded-full bg-stone-500 block"></span>
+                      <span className="w-2 h-2 rounded-full bg-stone-500 block"></span>
+                      <span className="w-2 h-2 rounded-full bg-stone-500 block"></span>
+                    </div>
+                </div>
 
-                {/* Purchase Options Section */}
-                <div className="mb-12 p-8 bg-stone-800/80 backdrop-blur-sm rounded-xl border-2 border-stone-700 shadow-file text-center sm:relative">
-                    <h2 className="text-2xl font-bold mb-6 text-white text-left">
-                        Purchase <span className="text-accent-red">Options</span>
-                    </h2>
+                <div className="lg:col-span-7">
+                    <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">THE DECLASSIFIED EVIDENCE</p>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-white uppercase tracking-tight">Confidence of The Mob</h1>
+                    <p className="text-lg text-stone-300 mb-8 leading-relaxed font-serif">
+                        The definitive account of IRS Agent Fred Pastore's double life. This story began with a box of dusty papers. It led to uncovering Fred's secret life as "The Elliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."
+                    </p>
+
+                    {/* Purchase Options Section */}
+                    <div className="mb-12 p-8 sm:p-10 bg-stone-800/50 backdrop-blur-sm rounded-xl border border-stone-700 shadow-file sm:relative">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border-b border-stone-700 pb-4">
+                            <h2 className="text-2xl font-bold text-white">
+                                Purchase <span className="text-accent-red">Options</span>
+                            </h2>
+                            <span className="text-xs font-mono-file text-stone-500 uppercase tracking-widest mt-2 sm:mt-0">SECURE TRANSACTION CHECKOUT</span>
+                        </div>
 
                     {/* Mobile Sticky Wrapper */}
                     <div className="fixed bottom-0 left-0 right-0 p-4 bg-stone-900/95 border-t border-stone-700 backdrop-blur-md z-[100] sm:relative sm:p-0 sm:bg-transparent sm:border-t-0 sm:backdrop-blur-none">
@@ -78,20 +96,20 @@ export default function BuyBook() {
                         </div>
                     </div>
 
-                    {/* Trust Elements */}
-                    <div className="mt-8 flex flex-col items-center justify-center space-y-2 pb-4 sm:pb-0">
-                        <div className="flex items-center text-stone-400 text-xs font-medium uppercase tracking-widest">
-                            <svg className="w-3 h-3 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                            </svg>
-                            Secure Checkout via Stripe
+                        {/* Trust Elements */}
+                        <div className="mt-10 pt-6 border-t border-stone-700/50 flex flex-col items-center justify-center space-y-3 pb-4 sm:pb-0">
+                            <div className="flex items-center text-stone-400 text-xs font-medium uppercase tracking-widest">
+                                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                                </svg>
+                                Secure Checkout via Stripe / Amazon
+                            </div>
+                            <p className="text-[11px] text-stone-500 italic max-w-sm leading-relaxed text-center font-serif">
+                                Limited edition autographed copies are fulfilled directly from Eddy Inserra's inventory.
+                            </p>
                         </div>
-                        <p className="text-[10px] text-stone-500 italic max-w-xs leading-relaxed">
-                            Limited edition autographed copies available directly from the author. Verified secure transaction.
-                        </p>
                     </div>
                 </div>
-
             </div>
         </div>
     );

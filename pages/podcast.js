@@ -12,6 +12,12 @@ export default function Podcast() {
       
       <PodcastHero />
       
+      <div className="max-w-3xl mx-auto my-12 text-center animate-fade-in-up">
+        <p className="text-stone-300 text-lg md:text-xl font-serif leading-relaxed px-4">
+          The <span className="text-white font-bold italic">Confidence of The Mob</span> podcast is a deeply researched narrative documentary series. Unpacking decades of Fred Pastore's declassified IRS records, we bring the investigation to life through real audio tapes, insider interviews, and expert analysis of how the American Mafia infiltrated the government.
+        </p>
+      </div>
+      
       <EpisodePreview previewData={episodePreview} />
 
       {/* Optional Credibility Section placeholder */}

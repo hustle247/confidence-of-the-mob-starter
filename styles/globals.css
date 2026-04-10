@@ -59,13 +59,9 @@ a:hover {
   background-image: url('/images/thebox.jpg');
   background-size: cover;
   background-position: center 30%;
-  /* Adjusted for better centering */
-  background-attachment: fixed;
-  /* Creates parallax effect */
+  /* Removed background-attachment: fixed to fix mobile massive scroll void bug */
   position: relative;
-  /* Needed for pseudo-element positioning */
   z-index: 0;
-  /* Ensures content is above image */
 }
 
 .hero-background::before {

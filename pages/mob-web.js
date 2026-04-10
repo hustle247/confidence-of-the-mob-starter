@@ -7,10 +7,10 @@ export default function MobWeb() {
         <title>The Mob Web - Confidence of The Mob</title>
       </Head>
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">VISUALIZED NETWORK</p>
-        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">The Mob Web</h1>
+        <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">THE PLAYERS</p>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Cast of Characters</h1>
         <p className="text-lg text-stone-400 mb-12">
-          Explore the network of people, events, and relationships.
+          A visual directory of the key figures, targets, and operatives investigated by IRS Agent Fred Pastore.
         </p>
 
         <div className="relative mb-24">
