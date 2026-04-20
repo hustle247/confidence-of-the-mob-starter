@@ -42,6 +42,11 @@ export default function EvidenceGallery() {
                             <div className="flashlight-overlay" />
 
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all" />
+                            {doc.isNew && (
+                                <span className="absolute top-2 left-2 bg-accent-red text-white text-[10px] px-2 py-1 uppercase tracking-widest font-mono-file border border-red-500 z-[20] shadow-glow animate-pulse">
+                                    NEWLY DECLASSIFIED
+                                </span>
+                            )}
                             <span className="absolute bottom-2 right-2 bg-stone-800/80 text-white text-[10px] px-2 py-1 uppercase tracking-widest font-mono-file border border-stone-600 z-[20]">
                                 View Archive File
                             </span>
