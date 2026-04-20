@@ -9,8 +9,8 @@ export default function BuyBook() {
 
     const standardOptions = [
         { label: 'Kindle Edition', icon: '📱', price: 'Sale $7.99', href: 'https://www.amazon.com/dp/B0GSS9WHWC' },
-        { label: 'Hardcover', icon: '📚', price: '$24.99', href: 'https://www.amazon.com/dp/B0GSFCNRH9?ref=cotmweb' },
-        { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb' },
+        { label: 'Hardcover', icon: '📚', price: '$24.99', href: 'https://www.amazon.com/dp/B0GSFCNRH9?ref=cotmweb', image: '/images/hardcover_autographed.webp' },
+        { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb', image: '/images/softcover_autographed.webp' },
     ];
 
     return (
@@ -89,9 +89,15 @@ export default function BuyBook() {
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {standardOptions.map((opt, i) => (
                                 <div key={i} className="bg-stone-900 border border-stone-800 p-5 rounded-xl hover:border-stone-600 transition-colors flex flex-col h-full group">
-                                    <div className="w-full aspect-[4/5] bg-stone-950 border border-stone-800 rounded-md mb-4 flex flex-col items-center justify-center text-stone-700 font-mono-file text-[10px] text-center p-4">
-                                        <span className="text-2xl mb-2">{opt.icon}</span>
-                                        <span className="uppercase tracking-widest">[ {opt.label} <br/> Placeholder ]</span>
+                                    <div className="w-full aspect-[4/5] bg-stone-950 border border-stone-800 rounded-md mb-4 flex flex-col items-center justify-center text-stone-700 font-mono-file text-[10px] text-center overflow-hidden group/img relative">
+                                        {opt.image ? (
+                                            <img src={opt.image} alt={opt.label} className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                                        ) : (
+                                            <div className="p-4 flex flex-col items-center justify-center h-full w-full">
+                                                <span className="text-2xl mb-2">{opt.icon}</span>
+                                                <span className="uppercase tracking-widest">[ {opt.label} <br/> Placeholder ]</span>
+                                            </div>
+                                        )}
                                     </div>
                                     <h3 className="text-md sm:text-lg font-bold text-white mb-1 group-hover:text-accent-red transition-colors">{opt.label}</h3>
                                     <p className="text-stone-500 font-mono text-sm mb-4 flex-grow">{opt.price}</p>
