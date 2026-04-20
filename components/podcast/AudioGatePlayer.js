@@ -4,7 +4,8 @@ import { trackEvent } from '../../lib/tracking';
 export default function AudioGatePlayer({ 
   audioSrc, 
   episodeId,
-  onGateReached
+  onGateReached,
+  onPlay
 }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -18,6 +19,7 @@ export default function AudioGatePlayer({
     } else {
       audioRef.current.play();
       setIsPlaying(true);
+      if (onPlay) onPlay();
       trackEvent('podcast_preview_play_clicked', { episode_id: episodeId, page: '/podcast' });
     }
   };

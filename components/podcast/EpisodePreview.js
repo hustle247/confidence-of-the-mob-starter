@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AudioGatePlayer from './AudioGatePlayer';
 import NewsletterGateForm from './NewsletterGateForm';
 import SignupSuccess from './SignupSuccess';
@@ -7,6 +7,21 @@ import AudioEndModal from './AudioEndModal';
 export default function EpisodePreview({ previewData }) {
   const [showModal, setShowModal] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
+
+  useEffect(() => {
+    if (!hasSubscribed) {
+      const timer = setTimeout(() => {
+        setShowModal(true);
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasSubscribed]);
+
+  const handleAudioPlay = () => {
+    if (!hasSubscribed) {
+      setShowModal(true);
+    }
+  };
 
   const handleAudioEnded = () => {
     if (!hasSubscribed) {
@@ -41,6 +56,7 @@ export default function EpisodePreview({ previewData }) {
             <AudioGatePlayer 
               audioSrc={previewData.audioSrc}
               episodeId={previewData.episodeId}
+              onPlay={handleAudioPlay}
               onGateReached={handleAudioEnded}
             />
 
