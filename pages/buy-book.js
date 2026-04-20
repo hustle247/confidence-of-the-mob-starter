@@ -8,7 +8,7 @@ export default function BuyBook() {
     ];
 
     const standardOptions = [
-        { label: 'Kindle Edition', icon: '📱', price: 'Sale $7.99', href: 'https://www.amazon.com/dp/B0GSS9WHWC' },
+        { label: 'Kindle Edition', icon: '📱', price: 'Sale $7.99', href: 'https://www.amazon.com/dp/B0GSS9WHWC', image: '/images/kindle.webp' },
         { label: 'Hardcover', icon: '📚', price: '$24.99', href: 'https://www.amazon.com/dp/B0GSFCNRH9?ref=cotmweb', image: '/images/hardcover_autographed.webp' },
         { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb', image: '/images/paperback_standard.webp' },
     ];
