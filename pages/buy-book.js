@@ -4,7 +4,7 @@ import Head from 'next/head';
 export default function BuyBook() {
     const autographedOptions = [
         { label: 'Autographed Hardcover', icon: '✍️', price: '$39.99', href: 'https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00', desc: 'Signed by Eddy Inserra. Perfect for collectors.' },
-        { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01', desc: 'Signed by Eddy Inserra. Ships directly to you.' },
+        { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01', desc: 'Signed by Eddy Inserra. Ships directly to you.', image: '/images/softcover_autographed.png' },
     ];
 
     const standardOptions = [
@@ -51,10 +51,16 @@ export default function BuyBook() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {autographedOptions.map((opt, i) => (
                                 <div key={i} className="bg-stone-800/80 p-6 rounded-xl border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.1)] hover:border-amber-500/60 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all flex flex-col h-full group">
-                                    <div className="w-full aspect-[3/4] bg-stone-900 border border-stone-700 rounded-md mb-6 flex flex-col items-center justify-center text-stone-600 font-mono-file text-xs text-center p-4 relative overflow-hidden">
-                                        <span className="text-3xl mb-3">{opt.icon}</span>
-                                        <span className="uppercase tracking-widest">[ {opt.label} <br/> Image Placeholder ]</span>
-                                        <div className="absolute top-4 right-[-30px] bg-amber-500 text-black font-bold text-[10px] w-[120px] text-center rotate-45 shadow-glow uppercase tracking-widest py-1 border border-amber-300">SIGNED</div>
+                                    <div className="w-full aspect-[3/4] bg-stone-900 border border-stone-700 rounded-md mb-6 flex flex-col items-center justify-center text-stone-600 font-mono-file text-xs text-center relative overflow-hidden group/img">
+                                        {opt.image ? (
+                                            <img src={opt.image} alt={opt.label} className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
+                                        ) : (
+                                            <div className="p-4 flex flex-col items-center justify-center h-full w-full">
+                                                <span className="text-3xl mb-3">{opt.icon}</span>
+                                                <span className="uppercase tracking-widest">[ {opt.label} <br/> Image Placeholder ]</span>
+                                            </div>
+                                        )}
+                                        <div className="absolute top-4 right-[-30px] bg-amber-500 text-black font-bold text-[10px] w-[120px] text-center rotate-45 shadow-glow uppercase tracking-widest py-1 border border-amber-300 z-10">SIGNED</div>
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-2">{opt.label}</h3>
                                     <p className="text-stone-400 text-sm mb-6 flex-grow">{opt.desc}</p>
