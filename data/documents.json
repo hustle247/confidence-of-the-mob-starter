@@ -1,5 +1,13 @@
 [
   {
+    "id": "033_jfkassassinationfiles_1961-01-01",
+    "title": "JFK Assasination Files Referencing Fred G. Pastore's Work at the IRS",
+    "description": "This declassified 1961 FBI intelligence report\u2014part of the JFK Assassination Records\u2014shows exactly how my grandfather, Fred G. Pastore, operated as Chief of the IRS Rackets Division in Boston.",
+    "thumbnail": "/images/archive/033_jfkassassinationfiles_1961-01-01-thumb.webp",
+    "driveId": "1VYSOVMIcKK4sxnMviVY61O5Rnf-GjV-q",
+    "category": "Government Memos"
+  },
+  {
     "id": "001_suggestionstogoafterracketeers_1955-05-11",
     "title": "Letter from Fred to the IRS Intelligence Chief.",
     "description": "Letter from Fred to the IRS Intelligence Chief. Subject is \"comments and suggestions on investigative procedures in net worth cases.  This is a document that describes how to investigate racketeers, all from Fred's perspective",
@@ -254,13 +262,5 @@
     "thumbnail": "/images/archive/032_instituteforintelligencesupervisors_1961-04-24-thumb.webp",
     "driveId": "1OJOAq6lreD-DM6QbNcW0PPovJrkJFCC1",
     "category": "Intelligence"
-  },
-  {
-    "id": "033_jfkassassinationfiles_1961-01-01",
-    "title": "JFK Assasination Files Referencing Fred G. Pastore's Work at the IRS",
-    "description": "This declassified 1961 FBI intelligence report—part of the JFK Assassination Records—shows exactly how my grandfather, Fred G. Pastore, operated as Chief of the IRS Rackets Division in Boston.",
-    "thumbnail": "/images/archive/033_jfkassassinationfiles_1961-01-01-thumb.webp",
-    "driveId": "1VYSOVMIcKK4sxnMviVY61O5Rnf-GjV-q",
-    "category": "Government Memos"
   }
 ]
