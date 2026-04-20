@@ -3,8 +3,8 @@ import Head from 'next/head';
 
 export default function BuyBook() {
     const autographedOptions = [
-        { label: 'Autographed Hardcover', icon: '✍️', price: '$39.99', href: 'https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00', desc: 'Signed by Eddy Inserra. Perfect for collectors.', image: '/images/hardcover_autographed.png' },
-        { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01', desc: 'Signed by Eddy Inserra. Ships directly to you.', image: '/images/softcover_autographed.png' },
+        { label: 'Autographed Hardcover', icon: '✍️', price: '$39.99', href: 'https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00', desc: 'Signed by Eddy Inserra. Perfect for collectors.', image: '/images/hardcover_autographed.webp' },
+        { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01', desc: 'Signed by Eddy Inserra. Ships directly to you.', image: '/images/softcover_autographed.webp' },
     ];
 
     const standardOptions = [
