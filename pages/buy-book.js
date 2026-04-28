@@ -63,7 +63,17 @@ export default function BuyBook() {
                                         <div className="absolute top-4 right-[-30px] bg-amber-500 text-black font-bold text-[10px] w-[120px] text-center rotate-45 shadow-glow uppercase tracking-widest py-1 border border-amber-300 z-10">SIGNED</div>
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-2">{opt.label}</h3>
-                                    <p className="text-stone-400 text-sm mb-6 flex-grow">{opt.desc}</p>
+                                    <p className="text-stone-400 text-sm mb-4 flex-grow">{opt.desc}</p>
+                                    
+                                    <div className="bg-stone-900/80 border border-stone-700/50 rounded-lg p-3 mb-6 flex items-center gap-3 shadow-inner group-hover:border-stone-600 transition-colors">
+                                        <div className="w-10 h-10 flex-shrink-0 bg-stone-950 rounded border border-stone-800 overflow-hidden relative">
+                                            <img src="/images/bookmark_front_and_back.webp" alt="Custom Bookmark" className="w-full h-full object-cover scale-110" />
+                                        </div>
+                                        <div>
+                                            <p className="text-accent-red font-mono-file text-[10px] uppercase tracking-widest mb-0.5">Bonus Included</p>
+                                            <p className="text-stone-300 text-xs leading-snug font-medium">Limited edition custom bookmark</p>
+                                        </div>
+                                    </div>
                                     <a 
                                         href={opt.href} 
                                         target="_blank" 
