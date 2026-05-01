@@ -3,28 +3,27 @@ import Link from 'next/link';
 
 export default function MediaKit() {
     const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
-    const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
     const assets = {
         coreIdentity: [
-            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: false, url: driveUrl, thumbnail: '/images/media-kit/bio.webp' },
-            { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: false, url: driveUrl, thumbnail: '/images/media-kit/bio.webp' },
-            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: driveUrl, thumbnail: '/images/media-kit/cover-3d.webp' },
-            { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: false, url: driveUrl, thumbnail: '/images/media-kit/cover-2d.webp' },
+            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: false, url: 'https://drive.google.com/open?id=1RweWbFpdcibk8zl0qKy9IZUCpy87Iarm&usp=drive_fs', thumbnail: '/images/media-kit/bio.webp' },
+            { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: false, url: 'https://drive.google.com/open?id=1RweWbFpdcibk8zl0qKy9IZUCpy87Iarm&usp=drive_fs', thumbnail: '/images/media-kit/bio.webp' },
+            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: 'https://drive.google.com/open?id=1q_pnjLi0DzuMd4sZQRT4tayrmuqvn-6i&usp=drive_fs', thumbnail: '/images/media-kit/cover-3d.webp' },
+            { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: false, url: 'https://drive.google.com/open?id=1xwXTBmNDtXinGrHo5t2jkwSWckZyhDfN&usp=drive_fs', thumbnail: '/images/media-kit/cover-2d.webp' },
         ],
         storyEvidence: [
-            { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: false, url: driveUrl, thumbnail: '/images/media-kit/archival-teasers.webp' },
-            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: driveUrl, thumbnail: '/images/media-kit/event-photos.webp' },
+            { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: false, url: 'https://drive.google.com/open?id=1_1VDYwVXj72_Igt88u49nIsyEvNtsazD&usp=drive_fs', thumbnail: '/images/media-kit/archival-teasers.webp' },
+            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: false, url: 'https://drive.google.com/open?id=1XbkvzB3XIL-rYhp3HeHMa4nNtUXAOXwf&usp=drive_fs', thumbnail: null },
+            { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: 'https://drive.google.com/open?id=1pJ3VPPXSiU_KKR5CwFJYy8Utk5J9G3b-&usp=drive_fs', thumbnail: '/images/media-kit/event-photos.webp' },
         ],
         editorialTools: [
-            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: driveUrl, thumbnail: '/images/media-kit/sample-chapter.webp' },
-            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: driveUrl, thumbnail: null },
-            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: driveUrl, thumbnail: '/images/media-kit/one-sheet.webp' },
+            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/sample-chapter.webp' },
+            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/one-sheet.webp' },
         ]
     };
 
