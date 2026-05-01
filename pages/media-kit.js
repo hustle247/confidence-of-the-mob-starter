@@ -2,27 +2,28 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function MediaKit() {
+    const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
     const assets = {
         coreIdentity: [
-            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: true },
-            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: true },
-            { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: true },
-            { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: true },
-            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: true },
-            { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: true },
+            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: false, url: driveUrl },
+            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: driveUrl },
+            { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: false, url: driveUrl },
+            { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: false, url: driveUrl },
+            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: driveUrl },
+            { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: false, url: driveUrl },
         ],
         storyEvidence: [
-            { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: true },
-            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: true },
-            { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: true },
-            { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: true },
+            { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: false, url: driveUrl },
+            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: false, url: driveUrl },
+            { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: false, url: driveUrl },
+            { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: driveUrl },
         ],
         editorialTools: [
-            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: true },
-            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: true },
-            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: true },
-            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: true },
-            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: true },
+            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: driveUrl },
+            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: driveUrl },
+            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: driveUrl },
+            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: driveUrl },
+            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: driveUrl },
         ]
     };
 
@@ -46,11 +47,10 @@ export default function MediaKit() {
                             Download high-resolution assets, archival evidence, press releases, and editorial tools for "Confidence of The Mob."
                         </p>
                         
-                        <button disabled className="inline-flex items-center gap-2 bg-stone-700 text-stone-400 font-bold py-4 px-8 rounded-lg border border-stone-600 cursor-not-allowed opacity-80">
+                        <a href={driveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent-red hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg border border-red-500 shadow-file transition-colors">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            Download Full Media Kit (.zip)
-                            <span className="text-[10px] font-mono-file tracking-widest uppercase ml-2 text-stone-500">(Pending Assets)</span>
-                        </button>
+                            Access Full Media Kit (Google Drive)
+                        </a>
                     </div>
                 </div>
 
@@ -170,9 +170,9 @@ function AssetCard({ asset }) {
                     Upload Pending
                 </button>
             ) : (
-                <a href={asset.url} download className="w-full text-center bg-stone-800 hover:bg-stone-700 text-white py-2 rounded text-sm font-bold transition flex items-center justify-center gap-2 border border-stone-700 group-hover:border-stone-500">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    Download
+                <a href={asset.url} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-stone-800 hover:bg-stone-700 text-white py-2 rounded text-sm font-bold transition flex items-center justify-center gap-2 border border-stone-700 group-hover:border-stone-500">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Open Folder
                 </a>
             )}
         </div>
