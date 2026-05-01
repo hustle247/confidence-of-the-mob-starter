@@ -128,7 +128,7 @@ export default function MediaKit() {
                         {/* Story & Evidence */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <span className="w-8 h-px bg-accent-red"></span> Story & Evidence Assets (The "Hook")
+                                <span className="w-8 h-px bg-accent-red"></span> Story & Evidence Assets
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {assets.storyEvidence.map(asset => (
@@ -140,7 +140,7 @@ export default function MediaKit() {
                         {/* Editorial Tools */}
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <span className="w-8 h-px bg-accent-red"></span> Editorial Tools (For the Journalist)
+                                <span className="w-8 h-px bg-accent-red"></span> Editorial Tools
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {assets.editorialTools.map(asset => (
