@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { name, email, reason, message } = req.body;
+        const { name, email, reason, message, company } = req.body;
 
         try {
             const { data, error } = await resend.emails.send({
@@ -12,12 +12,13 @@ export default async function handler(req, res) {
                 to: ['admin@confidenceofthemob.com'],
                 reply_to: email, // Set reply-to as the submitter's email
                 subject: `[Website Contact] ${reason} from ${name}`,
-                text: `Name: ${name}\nEmail: ${email}\nReason: ${reason}\n\nMessage:\n${message}`,
+                text: `Name: ${name}\nEmail: ${email}\nReason: ${reason}${company ? `\nCompany: ${company}` : ''}\n\nMessage:\n${message}`,
                 html: `
                     <h3>New Contact Form Submission</h3>
                     <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Email:</strong> ${email}</p>
                     <p><strong>Reason:</strong> ${reason}</p>
+                    ${company ? `<p><strong>Company / Outlet:</strong> ${company}</p>` : ''}
                     <hr />
                     <p><strong>Message:</strong></p>
                     <p>${message ? message.replace(/\n/g, '<br>') : 'No message provided.'}</p>

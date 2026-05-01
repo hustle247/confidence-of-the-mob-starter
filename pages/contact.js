@@ -6,7 +6,8 @@ export default function Contact() {
         name: '',
         email: '',
         reason: 'Book Signing',
-        message: ''
+        message: '',
+        company: ''
     });
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
@@ -32,7 +33,7 @@ export default function Contact() {
             }
 
             setStatus('success');
-            setFormData({ name: '', email: '', reason: 'Book Signing', message: '' });
+            setFormData({ name: '', email: '', reason: 'Book Signing', message: '', company: '' });
         } catch (error) {
             console.error('Error submitting form:', error);
             setStatus('error');
@@ -108,10 +109,27 @@ export default function Contact() {
                                     <option value="Book Signing">Book Signing</option>
                                     <option value="Speaking Engagement">Speaking Engagement</option>
                                     <option value="Press Inquiry">Press Inquiry</option>
+                                    <option value="Request Review Copy of the Book">Request Review Copy of the Book</option>
                                     <option value="Feedback">Just wanted to say hi</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
+
+                            {formData.reason === 'Request Review Copy of the Book' && (
+                                <div className="animate-fade-in-up">
+                                    <label htmlFor="company" className="block text-sm font-medium text-stone-400 mb-2 font-mono-file">Company / Publication Name</label>
+                                    <input
+                                        type="text"
+                                        id="company"
+                                        name="company"
+                                        required
+                                        value={formData.company}
+                                        onChange={handleChange}
+                                        className="w-full bg-stone-900 border border-stone-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-red focus:ring-1 focus:ring-accent-red transition duration-300"
+                                        placeholder="Company or Outlet Name"
+                                    />
+                                </div>
+                            )}
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-stone-400 mb-2 font-mono-file">Message (Optional)</label>
