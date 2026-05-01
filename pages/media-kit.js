@@ -3,27 +3,28 @@ import Link from 'next/link';
 
 export default function MediaKit() {
     const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
+    const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
     const assets = {
         coreIdentity: [
-            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: false, url: driveUrl },
-            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: driveUrl },
-            { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: false, url: driveUrl },
-            { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: false, url: driveUrl },
-            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: driveUrl },
-            { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: false, url: driveUrl },
+            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: false, url: driveUrl, thumbnail: '/images/media-kit/bio.webp' },
+            { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: false, url: driveUrl, thumbnail: '/images/media-kit/bio.webp' },
+            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: driveUrl, thumbnail: '/images/media-kit/cover-3d.webp' },
+            { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: false, url: driveUrl, thumbnail: '/images/media-kit/cover-2d.webp' },
         ],
         storyEvidence: [
-            { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: false, url: driveUrl },
-            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: false, url: driveUrl },
-            { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: false, url: driveUrl },
-            { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: driveUrl },
+            { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: false, url: driveUrl, thumbnail: '/images/media-kit/archival-teasers.webp' },
+            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: driveUrl, thumbnail: '/images/media-kit/event-photos.webp' },
         ],
         editorialTools: [
-            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: driveUrl },
-            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: driveUrl },
-            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: driveUrl },
-            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: driveUrl },
-            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: driveUrl },
+            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: driveUrl, thumbnail: '/images/media-kit/sample-chapter.webp' },
+            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: driveUrl, thumbnail: null },
+            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: driveUrl, thumbnail: '/images/media-kit/one-sheet.webp' },
         ]
     };
 
@@ -158,23 +159,59 @@ export default function MediaKit() {
 
 // Reusable component for individual asset downloads
 function AssetCard({ asset }) {
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+    };
+
     return (
-        <div className="bg-stone-900 border border-stone-800 rounded-lg p-5 flex flex-col justify-between hover:border-stone-600 transition-colors group">
-            <div>
-                <h3 className="text-white font-bold mb-1">{asset.label}</h3>
-                <p className="text-stone-400 text-sm mb-4">{asset.desc}</p>
-            </div>
+        <div 
+            className="bg-stone-900 border border-stone-800 rounded-lg flex flex-col justify-between hover:border-stone-600 transition-colors group overflow-hidden flashlight-card relative"
+            onMouseMove={handleMouseMove}
+        >
+            <div className="flashlight-overlay" />
             
-            {asset.pending ? (
-                <button disabled className="w-full text-center bg-stone-800/50 text-stone-500 py-2 rounded text-sm font-mono-file tracking-widest uppercase border border-stone-800 cursor-not-allowed">
-                    Upload Pending
-                </button>
+            {asset.thumbnail ? (
+                <div className="relative h-48 w-full border-b border-stone-800 overflow-hidden grayscale group-hover:grayscale-0 transition-all z-10">
+                    <img 
+                        src={asset.thumbnail} 
+                        alt={asset.label} 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all" />
+                </div>
             ) : (
-                <a href={asset.url} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-stone-800 hover:bg-stone-700 text-white py-2 rounded text-sm font-bold transition flex items-center justify-center gap-2 border border-stone-700 group-hover:border-stone-500">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Open Folder
-                </a>
+                <div className="relative h-48 w-full border-b border-stone-800 bg-stone-950 flex flex-col items-center justify-center z-10">
+                    {asset.pending ? (
+                        <p className="text-stone-500 font-mono-file text-sm uppercase tracking-widest text-center px-4">Upload Pending</p>
+                    ) : (
+                        <svg className="w-12 h-12 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    )}
+                </div>
             )}
+
+            <div className="p-5 flex flex-col flex-grow z-10 relative">
+                <div>
+                    <h3 className="text-white font-bold mb-1">{asset.label}</h3>
+                    <p className="text-stone-400 text-sm mb-4">{asset.desc}</p>
+                </div>
+                
+                <div className="mt-auto">
+                    {asset.pending ? (
+                        <button disabled className="w-full text-center bg-stone-800/50 text-stone-500 py-2 rounded text-sm font-mono-file tracking-widest uppercase border border-stone-800 cursor-not-allowed">
+                            Upload Pending
+                        </button>
+                    ) : (
+                        <a href={asset.url} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-stone-800 hover:bg-stone-700 text-white py-2 rounded text-sm font-bold transition flex items-center justify-center gap-2 border border-stone-700 group-hover:border-stone-500">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Download File
+                        </a>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }
