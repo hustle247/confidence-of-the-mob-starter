@@ -14,7 +14,7 @@ export default function MediaKit() {
         ],
         storyEvidence: [
             { id: 'archival-teasers', label: 'Archival Teasers', desc: '3–5 high-quality scans of FBI/IRS files', pending: false, url: 'https://drive.google.com/open?id=1_1VDYwVXj72_Igt88u49nIsyEvNtsazD&usp=drive_fs', thumbnail: '/images/media-kit/archival-teasers.webp' },
-            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'crj-graphic', label: 'The "C+R=J" Graphic', desc: 'Visual formula for social media', pending: false, url: 'https://drive.google.com/open?id=18f-2S0H4R3uuExJzIa_OcUlolizMKpsf&usp=drive_fs', thumbnail: null },
             { id: 'podcast-trailer', label: 'Podcast Trailer/Teaser', desc: 'Short audio/video clip', pending: false, url: 'https://drive.google.com/open?id=1XbkvzB3XIL-rYhp3HeHMa4nNtUXAOXwf&usp=drive_fs', thumbnail: null },
             { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: 'https://drive.google.com/open?id=1pJ3VPPXSiU_KKR5CwFJYy8Utk5J9G3b-&usp=drive_fs', thumbnail: '/images/media-kit/event-photos.webp' },
         ],
