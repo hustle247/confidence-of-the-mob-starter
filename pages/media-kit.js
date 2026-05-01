@@ -72,8 +72,7 @@ export default function MediaKit() {
                                 <div className="pt-4 border-t border-stone-800/50">
                                     <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-2">Social Links</p>
                                     <div className="flex gap-4">
-                                        <a href="#" className="text-stone-400 hover:text-white transition">Instagram</a>
-                                        <a href="#" className="text-stone-400 hover:text-white transition">Facebook</a>
+                                        <Link href="/social" className="text-stone-400 hover:text-white transition">Social Media Hub</Link>
                                         <Link href="/podcast" className="text-stone-400 hover:text-white transition">Podcast Page</Link>
                                     </div>
                                 </div>
