@@ -147,6 +147,58 @@ export default function Home() {
           </div>
         </section>
 
+        {/* As Seen On: Gangland Wire Section */}
+        <section className="bg-stone-900 py-16 md:py-24 border-b border-stone-800 relative overflow-hidden">
+          {/* Subtle background glow effect */}
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-accent-red/5 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-12">
+              <p className="text-xs text-accent-red font-mono-file mb-2 tracking-[0.3em] uppercase">// INTERROGATION TAPE: AS SEEN ON //</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+                Featured on <span className="text-accent-red">Gangland Wire</span>
+              </h2>
+            </div>
+
+            <div className="md:grid md:grid-cols-2 md:gap-12 items-center">
+              {/* Left: Video Embed */}
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-stone-700 shadow-file hover:border-accent-red transition-colors duration-500 bg-stone-950 group">
+                <iframe 
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/1vjX2Kmj2Y4?start=33" 
+                  title="Gangland Wire Podcast with Gary Jenkins" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              {/* Right: Context & CTA */}
+              <div className="mt-10 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left">
+                <img 
+                  src="https://yt3.googleusercontent.com/gB3N8YxeB5zLvqVT6qv4A_AdvBjmnJp_V6pr7aXQlOrr9ibpc-kCWjag56MFeYb9AhD4saIC7qc=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" 
+                  alt="Gangland Wire Podcast Logo" 
+                  className="h-20 md:h-24 object-contain mb-6 rounded shadow-file"
+                />
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Hosted by Gary Jenkins
+                </h3>
+                <p className="text-stone-400 mb-8 leading-relaxed text-lg">
+                  Watch Eddy discuss the explosive IRS files, the Boston mob, and the incredible investigation that started it all on the renowned Gangland Wire Podcast.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                  <Link href="/buy-book" legacyBehavior>
+                    <a className="cta-button bg-accent-red text-white font-bold py-4 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300 text-center w-full flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                      Order The Book
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 2. Feature Grid / Interactive Archive Links */}
         {/* <section id="archive" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-stone-800">
           <h2 className="text-3xl font-bold text-center mb-12">
