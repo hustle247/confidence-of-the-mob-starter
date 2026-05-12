@@ -19,7 +19,7 @@ export default function MediaKit() {
             { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: 'https://drive.google.com/open?id=1pJ3VPPXSiU_KKR5CwFJYy8Utk5J9G3b-&usp=drive_fs', thumbnail: '/images/media-kit/event-photos.webp' },
         ],
         editorialTools: [
-            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: '/Media Kit/Suggested Media Interview Questions - Confidence of The Mob.pdf', thumbnail: '/images/media-kit/interview-questions.webp' },
             { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/sample-chapter.webp' },
             { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: true, url: driveUrl, thumbnail: null },
             { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: '/Media Kit/Fast Facts - Confidence of The Mob Media Kit.pdf', thumbnail: '/images/media-kit/fast-facts.webp' },
