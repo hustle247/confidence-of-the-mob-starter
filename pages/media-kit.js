@@ -5,7 +5,7 @@ export default function MediaKit() {
     const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
     const assets = {
         coreIdentity: [
-            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: true, url: driveUrl, thumbnail: null },
+            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire (suit/tie)', pending: false, url: '/Media Kit/headshot_professional.jpg', thumbnail: '/images/media-kit/headshot-pro.webp' },
             { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: driveUrl, thumbnail: '/images/media-kit/headshot-casual.webp' },
             { id: 'bio-short', label: 'Author Bio (Short)', desc: '50-word version', pending: false, url: 'https://drive.google.com/open?id=1RweWbFpdcibk8zl0qKy9IZUCpy87Iarm&usp=drive_fs', thumbnail: '/images/media-kit/bio.webp' },
             { id: 'bio-long', label: 'Author Bio (Long)', desc: '250-word version', pending: false, url: 'https://drive.google.com/open?id=1RweWbFpdcibk8zl0qKy9IZUCpy87Iarm&usp=drive_fs', thumbnail: '/images/media-kit/bio.webp' },
