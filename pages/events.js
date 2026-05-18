@@ -11,8 +11,8 @@ export default function Events() {
       location: "Burlington, MA",
       description: "Join Eddy for an exclusive book signing at the Barnes & Noble in Burlington.",
       imageUrl: "/Media Kit/Book_Signing_Event_1.jpeg", // Using one of the media kit images if it exists, otherwise fallback works
-      linkUrl: "#",
-      linkText: "Event Details",
+      linkUrl: "https://fb.me/e/6wUC4cMHg",
+      linkText: "RSVP on Facebook",
     },
     {
       id: 2,
@@ -22,8 +22,8 @@ export default function Events() {
       location: "Used Book Superstore",
       description: "Book signing and sale event. Great opportunity to grab a last minute Father's Day gift!",
       imageUrl: "/Media Kit/Book_Signing_Event_2.jpeg",
-      linkUrl: "#",
-      linkText: "Event Details",
+      linkUrl: "https://fb.me/e/6nLGFB9ku",
+      linkText: "RSVP on Facebook",
     },
     {
       id: 3,
@@ -33,8 +33,8 @@ export default function Events() {
       location: "North End, Boston",
       description: "Join Eddy for a special author talk and book signing event at I Am Books in the North End.",
       imageUrl: "/Media Kit/Book_Signing_Event_3.jpeg",
-      linkUrl: "#",
-      linkText: "Event Details",
+      linkUrl: "https://fb.me/e/6H5bjXXOQ",
+      linkText: "RSVP on Facebook",
     }
   ];
 
