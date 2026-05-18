@@ -203,13 +203,13 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                   <a 
-                    href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
+                    href="https://open.spotify.com/episode/3s1pB7t1Tv9F443tKfu036" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="cta-button bg-accent-red text-white font-bold py-4 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300 text-center w-full flex items-center justify-center gap-2"
+                    className="cta-button bg-accent-red text-white font-bold py-4 px-8 rounded-lg shadow-file hover:bg-red-600 transition duration-300 text-center w-full flex items-center justify-center gap-2 uppercase tracking-wide font-mono-file"
                   >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    Order on Amazon
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    Listen on Spotify
                   </a>
                 </div>
               </div>
