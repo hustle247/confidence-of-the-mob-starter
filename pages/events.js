@@ -52,14 +52,14 @@ export default function Events() {
     },
     {
       id: 2,
-      title: "True Crime Radio",
+      title: "WBUR (Boston's NPR)",
       type: "Radio Interview",
       date: "Upcoming",
       location: "Live Radio",
       description: "A deep dive into the financial maneuvers of the mob and how the IRS brought them down.",
       imageUrl: "/images/radio_placeholder.jpg", // Placeholder
-      linkUrl: "#",
-      linkText: "Tune In",
+      linkUrl: "",
+      linkText: "Coming Soon",
     }
   ];
 
@@ -86,24 +86,43 @@ export default function Events() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {upcomingEvents.map((event) => (
               <div key={event.id} className="bg-stone-900 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-600 transition-colors duration-300 group flex flex-col">
-                <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="relative h-48 block bg-stone-800 overflow-hidden">
-                  <img 
-                    src={event.imageUrl} 
-                    alt={event.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  {/* Fallback if image fails to load */}
-                  <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
-                    [NO IMAGE AVAILABLE]
+                {event.linkUrl && event.linkUrl !== "#" ? (
+                  <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="relative h-48 block bg-stone-800 overflow-hidden">
+                    <img 
+                      src={event.imageUrl} 
+                      alt={event.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
+                      [NO IMAGE AVAILABLE]
+                    </div>
+                    <div className="absolute top-4 left-4 bg-accent-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
+                      {event.type}
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative h-48 block bg-stone-800 overflow-hidden">
+                    <img 
+                      src={event.imageUrl} 
+                      alt={event.title} 
+                      className="w-full h-full object-cover grayscale opacity-70"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
+                      [NO IMAGE AVAILABLE]
+                    </div>
+                    <div className="absolute top-4 left-4 bg-accent-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
+                      {event.type}
+                    </div>
                   </div>
-                  <div className="absolute top-4 left-4 bg-accent-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
-                    {event.type}
-                  </div>
-                </a>
+                )}
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex justify-between items-start mb-4">
                     <div>
@@ -114,10 +133,16 @@ export default function Events() {
                   <p className="text-stone-400 text-sm leading-relaxed mb-6 flex-grow">
                     {event.description}
                   </p>
-                  <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase mt-auto">
-                    {event.linkText} 
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                  </a>
+                  {event.linkUrl && event.linkUrl !== "#" ? (
+                    <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase mt-auto">
+                      {event.linkText} 
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase mt-auto">
+                      {event.linkText}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
@@ -132,24 +157,43 @@ export default function Events() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mediaAppearances.map((media) => (
               <div key={media.id} className="bg-stone-900 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-600 transition-colors duration-300 group flex flex-col">
-                <a href={media.linkUrl} target="_blank" rel="noopener noreferrer" className="relative h-48 block bg-stone-800 overflow-hidden">
-                  <img 
-                    src={media.imageUrl} 
-                    alt={media.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  {/* Fallback if image fails to load */}
-                  <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
-                    [NO IMAGE AVAILABLE]
+                {media.linkUrl && media.linkUrl !== "#" ? (
+                  <a href={media.linkUrl} target="_blank" rel="noopener noreferrer" className="relative h-48 block bg-stone-800 overflow-hidden">
+                    <img 
+                      src={media.imageUrl} 
+                      alt={media.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
+                      [NO IMAGE AVAILABLE]
+                    </div>
+                    <div className="absolute top-4 left-4 bg-stone-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
+                      {media.type}
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative h-48 block bg-stone-800 overflow-hidden">
+                    <img 
+                      src={media.imageUrl} 
+                      alt={media.title} 
+                      className="w-full h-full object-cover grayscale opacity-70"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
+                      [NO IMAGE AVAILABLE]
+                    </div>
+                    <div className="absolute top-4 left-4 bg-stone-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
+                      {media.type}
+                    </div>
                   </div>
-                  <div className="absolute top-4 left-4 bg-stone-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
-                    {media.type}
-                  </div>
-                </a>
+                )}
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex justify-between items-start mb-4">
                     <div>
@@ -160,10 +204,16 @@ export default function Events() {
                   <p className="text-stone-400 text-sm leading-relaxed mb-6 flex-grow">
                     {media.description}
                   </p>
-                  <a href={media.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase mt-auto">
-                    {media.linkText}
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                  </a>
+                  {media.linkUrl && media.linkUrl !== "#" ? (
+                    <a href={media.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase mt-auto">
+                      {media.linkText}
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase mt-auto">
+                      {media.linkText}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
