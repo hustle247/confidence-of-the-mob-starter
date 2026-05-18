@@ -84,12 +84,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Sub-Hero Email Capture */}
+          {/* Sub-Hero Email Capture (Hidden for now to prioritize reviews) */}
+          {/*
           <div className="mt-16 max-w-xl mx-auto px-4 bg-stone-900/60 p-6 sm:p-8 rounded-2xl border border-stone-800 shadow-file backdrop-blur-sm relative z-20">
             <h3 className="text-xl font-bold text-white mb-2 font-mono-file tracking-tight"><span className="text-accent-red">//</span> FOLLOW THE INVESTIGATION</h3>
             <p className="text-sm text-stone-400 mb-6 font-serif">Sign up for exclusive access to Fred's case notes and upcoming podcast episodes before they hit the public feed.</p>
             <NewsletterGateForm signupCTA="Become an Insider" />
           </div>
+          */}
         </section>
         {/* 1.5 Reader Testimonials Section */}
         <section className="bg-stone-900/40 py-16 border-t border-b border-stone-800/50">
