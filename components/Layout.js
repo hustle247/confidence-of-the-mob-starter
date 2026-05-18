@@ -50,6 +50,9 @@ export default function Layout({ children }) {
                 <Link href="/ask-fred" legacyBehavior>
                   <a className="block px-4 py-3 text-stone-300 hover:bg-stone-800 hover:text-accent-red border-b border-stone-800">Ask Fred (AI)</a>
                 </Link>
+                <Link href="/events" legacyBehavior>
+                  <a className="block px-4 py-3 text-stone-300 hover:bg-stone-800 hover:text-accent-red border-b border-stone-800">Events & Media</a>
+                </Link>
                 <Link href="/about" legacyBehavior>
                   <a className="block px-4 py-3 text-stone-300 hover:bg-stone-800 hover:text-accent-red">About Eddy</a>
                 </Link>
@@ -96,6 +99,9 @@ export default function Layout({ children }) {
           </Link>
           <Link href="/ask-fred" legacyBehavior>
             <a className="block px-6 py-2 text-sm text-stone-300 hover:text-accent-red transition" onClick={() => setMobileMenuOpen(false)}>Ask Fred (AI)</a>
+          </Link>
+          <Link href="/events" legacyBehavior>
+            <a className="block px-6 py-2 text-sm text-stone-300 hover:text-accent-red transition" onClick={() => setMobileMenuOpen(false)}>Events & Media</a>
           </Link>
           <Link href="/about" legacyBehavior>
             <a className="block px-6 py-2 text-sm text-stone-300 hover:text-accent-red transition" onClick={() => setMobileMenuOpen(false)}>About Eddy</a>
@@ -152,6 +158,7 @@ export default function Layout({ children }) {
                 <li><Link href="/about" className="text-stone-300 hover:text-accent-red transition duration-300 font-medium">About EDDY</Link></li>
                 <li><Link href="/contact" className="text-stone-300 hover:text-accent-red transition duration-300 font-medium">Contact</Link></li>
                 <li><Link href="/social" className="text-stone-300 hover:text-accent-red transition duration-300 font-medium">Social Media</Link></li>
+                <li><Link href="/events" className="text-stone-300 hover:text-accent-red transition duration-300 font-medium">Events & Media</Link></li>
                 <li><Link href="/privacy" className="text-stone-300 hover:text-accent-red transition duration-300 font-medium">Privacy Policy</Link></li>
                 <li><Link href="/media-kit" className="text-stone-300 hover:text-accent-red transition duration-300 font-medium">Media Kit / Press</Link></li>
               </ul>
