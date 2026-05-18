@@ -47,7 +47,7 @@ export default function Events() {
       location: "Online",
       description: "Eddy sits down with Gary Jenkins to discuss his time undercover and the fascinating case of Fred Pastore.",
       imageUrl: "/images/gangland_wire_placeholder.jpg", // Placeholder
-      linkUrl: "https://ganglandwire.com", // Placeholder URL, replace with actual
+      linkUrl: "https://ganglandwire.com/bostons-pinball-rackets-irs-wars-and-mob-secrets/",
       linkText: "Listen Now",
     },
     {
