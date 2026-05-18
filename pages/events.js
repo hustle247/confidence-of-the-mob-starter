@@ -57,7 +57,7 @@ export default function Events() {
       date: "Upcoming",
       location: "Live Radio",
       description: "A deep dive into the financial maneuvers of the mob and how the IRS brought them down.",
-      imageUrl: "/images/radio_placeholder.jpg", // Placeholder
+      imageUrl: "/images/wbur.png",
       linkUrl: "",
       linkText: "Coming Soon",
     }
