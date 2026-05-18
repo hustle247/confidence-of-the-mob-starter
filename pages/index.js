@@ -38,7 +38,7 @@ export default function Home() {
               <img 
                 src="/images/featured-badge.png" 
                 alt="As Featured On: Gangland Wire & WBUR" 
-                className="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300"
+                className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[380px] h-auto object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300"
               />
             </a>
           </Link>
