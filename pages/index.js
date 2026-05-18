@@ -32,7 +32,7 @@ export default function Home() {
 
       <main>
         {/* Featured On Badge Banner */}
-        <div className="w-full bg-stone-950/80 border-b border-stone-800 py-6 flex justify-center backdrop-blur-sm relative z-30">
+        <div className="w-full bg-stone-950/80 border-b border-stone-800 py-3 sm:py-4 flex justify-center backdrop-blur-sm relative z-30">
           <Link href="/events" legacyBehavior>
             <a className="block hover:scale-105 transition-transform duration-300 px-4 group">
               <img 
