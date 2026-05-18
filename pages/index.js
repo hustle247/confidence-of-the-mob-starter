@@ -31,6 +31,19 @@ export default function Home() {
 
 
       <main>
+        {/* Featured On Badge Banner */}
+        <div className="w-full bg-stone-950/80 border-b border-stone-800 py-6 flex justify-center backdrop-blur-sm relative z-30">
+          <Link href="/events" legacyBehavior>
+            <a className="block hover:scale-105 transition-transform duration-300 px-4 group">
+              <img 
+                src="/images/featured-badge.png" 
+                alt="As Featured On: Gangland Wire & WBUR" 
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300"
+              />
+            </a>
+          </Link>
+        </div>
+
         {/* 1. Hero / Main Hook Section */}
         <section className="hero-background max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 md:pt-24 md:pb-24 text-center">
           <p className="text-xs sm:text-sm text-accent-red font-mono-file mb-4 tracking-widest uppercase">THE FLORIDA CITRUS BOX</p>
