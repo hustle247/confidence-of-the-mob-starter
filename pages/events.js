@@ -10,7 +10,7 @@ export default function Events() {
       date: "Saturday, June 13th @ 2:00 PM",
       location: "Burlington, MA",
       description: "Join Eddy for an exclusive book signing at the Barnes & Noble in Burlington.",
-      imageUrl: "/images/barnes.jpg",
+      imageUrl: "/images/barnes.png",
       linkUrl: "https://fb.me/e/6wUC4cMHg",
       linkText: "RSVP on Facebook",
     },
