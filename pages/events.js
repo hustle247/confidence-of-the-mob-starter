@@ -13,6 +13,8 @@ export default function Events() {
       imageUrl: "/images/barnes.png",
       linkUrl: "https://fb.me/e/6wUC4cMHg",
       linkText: "RSVP on Facebook",
+      secondaryLinkUrl: "https://www.eventbrite.com/e/1990008539110?aff=oddtdtcreator",
+      secondaryLinkText: "Get Tickets on Eventbrite",
     },
     {
       id: 2,
@@ -24,6 +26,8 @@ export default function Events() {
       imageUrl: "/images/usbss.jpeg",
       linkUrl: "https://fb.me/e/6nLGFB9ku",
       linkText: "RSVP on Facebook",
+      secondaryLinkUrl: "https://www.eventbrite.com/e/1990056832557?aff=oddtdtcreator",
+      secondaryLinkText: "Get Tickets on Eventbrite",
     },
     {
       id: 3,
@@ -133,16 +137,24 @@ export default function Events() {
                   <p className="text-stone-400 text-sm leading-relaxed mb-6 flex-grow">
                     {event.description}
                   </p>
-                  {event.linkUrl && event.linkUrl !== "#" ? (
-                    <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase mt-auto">
-                      {event.linkText} 
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase mt-auto">
-                      {event.linkText}
-                    </span>
-                  )}
+                  <div className="mt-auto flex flex-col gap-3">
+                    {event.linkUrl && event.linkUrl !== "#" ? (
+                      <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase">
+                        {event.linkText} 
+                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase">
+                        {event.linkText}
+                      </span>
+                    )}
+                    {event.secondaryLinkUrl && event.secondaryLinkUrl !== "#" && (
+                      <a href={event.secondaryLinkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase">
+                        {event.secondaryLinkText} 
+                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
