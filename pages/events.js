@@ -74,17 +74,17 @@ export default function Events() {
         <meta name="description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th. Plus, check out the latest media appearances." />
         
         {/* Open Graph / iMessage / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://confidenceofthemob.com/events" />
-        <meta property="og:title" content="Upcoming Events & Media - Confidence of The Mob" />
-        <meta property="og:description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th." />
-        <meta property="og:image" content="https://confidenceofthemob.com/images/barnes.png" />
+        <meta property="og:type" content="website" key="ogtype" />
+        <meta property="og:url" content="https://confidenceofthemob.com/events" key="ogurl" />
+        <meta property="og:title" content="Upcoming Events & Media - Confidence of The Mob" key="ogtitle" />
+        <meta property="og:description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th." key="ogdesc" />
+        <meta property="og:image" content="https://confidenceofthemob.com/images/barnes.png" key="ogimage" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Upcoming Events & Media - Confidence of The Mob" />
-        <meta name="twitter:description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th." />
-        <meta name="twitter:image" content="https://confidenceofthemob.com/images/barnes.png" />
+        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+        <meta name="twitter:title" content="Upcoming Events & Media - Confidence of The Mob" key="twtitle" />
+        <meta name="twitter:description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th." key="twdesc" />
+        <meta name="twitter:image" content="https://confidenceofthemob.com/images/barnes.png" key="twimage" />
       </Head>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">

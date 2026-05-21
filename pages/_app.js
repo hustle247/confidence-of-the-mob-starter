@@ -14,13 +14,18 @@ function MyApp({ Component, pageProps }) {
         <link rel="manifest" href="/site.webmanifest" />
         
         {/* Global SEO & Open Graph defaults */}
-        <meta property="og:site_name" content="Confidence of The Mob" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Confidence of The Mob" />
-        <meta property="og:description" content="I thought my grandfather was just an accountant. Then I opened The Box. The true story of IRS Agent Fred Pastore." />
-        <meta property="og:image" content="https://confidenceofthemob.com/images/book_no_bg.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://confidenceofthemob.com" />
+        <meta property="og:site_name" content="Confidence of The Mob" key="ogsitename" />
+        <meta property="og:type" content="website" key="ogtype" />
+        <meta property="og:title" content="Confidence of The Mob" key="ogtitle" />
+        <meta property="og:description" content="I thought my grandfather was just an accountant. Then I opened The Box. The true story of IRS Agent Fred Pastore." key="ogdesc" />
+        <meta property="og:image" content="https://confidenceofthemob.com/images/book_no_bg.png" key="ogimage" />
+        
+        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+        <meta name="twitter:title" content="Confidence of The Mob" key="twtitle" />
+        <meta name="twitter:description" content="I thought my grandfather was just an accountant. Then I opened The Box. The true story of IRS Agent Fred Pastore." key="twdesc" />
+        <meta name="twitter:image" content="https://confidenceofthemob.com/images/book_no_bg.png" key="twimage" />
+        
+        <link rel="canonical" href="https://confidenceofthemob.com" key="canonical" />
 
         {/* Global JSON-LD Schema: Book & Author */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
