@@ -31,7 +31,7 @@ export default function Layout({ children }) {
               <span className="text-accent-red animate-flicker mr-2">//</span> <span className="whitespace-nowrap truncate max-w-[200px] sm:max-w-none">CONFIDENCE OF THE MOB</span>
             </a>
           </Link>
-          <nav className="hidden md:flex space-x-6 text-sm font-medium">
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
             <Link href="/podcast" legacyBehavior>
               <a className="text-white font-bold hover:text-accent-red transition duration-300">Podcast</a>
             </Link>
