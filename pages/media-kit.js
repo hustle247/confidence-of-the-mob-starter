@@ -94,7 +94,7 @@ export default function MediaKit() {
                                      <div>
                                          <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">Price</p>
                                          <p className="text-white font-bold text-sm">$16.99 (PB)</p>
-                                         <p className="text-white font-bold text-sm">$24.99 (HC)</p>
+                                         <p className="text-white font-bold text-sm">$34.99 (HC)</p>
                                      </div>
                                     <div className="col-span-2">
                                         <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">Distributor</p>
