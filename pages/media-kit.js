@@ -86,14 +86,16 @@ export default function MediaKit() {
                             </h2>
                             <div className="space-y-4">
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">ISBN</p>
-                                        <p className="text-white font-mono-file text-sm">9798995080404</p>
-                                    </div>
-                                    <div>
-                                        <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">Price</p>
-                                        <p className="text-white font-bold text-sm">$16.99 (Paperback)</p>
-                                    </div>
+                                     <div>
+                                         <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">ISBN</p>
+                                         <p className="text-white font-mono-file text-sm">9798995080404 (PB)</p>
+                                         <p className="text-white font-mono-file text-sm">979-8-9950804-1-1 (HC)</p>
+                                     </div>
+                                     <div>
+                                         <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">Price</p>
+                                         <p className="text-white font-bold text-sm">$16.99 (PB)</p>
+                                         <p className="text-white font-bold text-sm">$24.99 (HC)</p>
+                                     </div>
                                     <div className="col-span-2">
                                         <p className="text-stone-500 text-xs font-mono-file uppercase tracking-widest mb-1">Distributor</p>
                                         <p className="text-white text-sm">IngramSpark</p>
