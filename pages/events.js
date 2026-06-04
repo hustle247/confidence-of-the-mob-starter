@@ -30,6 +30,17 @@ export default function Events() {
       secondaryLinkText: "Get Tickets on Eventbrite",
     },
     {
+      id: 4,
+      title: "Barbara's Bookstore Book Signing",
+      type: "Book Signing",
+      date: "Sunday, June 28th @ 1:00 PM - 2:00 PM",
+      location: "Vernon Hills, IL",
+      description: "Meet local author Eddy Manfred Inserra III. Exclusive documents will be available to view onsite including IRS Racketeer Documents, real stories from East Boston, and the Kennedy connection.",
+      imageUrl: "",
+      linkUrl: "https://www.eventbrite.com/e/1991098351769?aff=oddtdtcreator",
+      linkText: "Get Tickets on Eventbrite",
+    },
+    {
       id: 3,
       title: "I Am Books Talk & Signing",
       type: "Author Talk",
