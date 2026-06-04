@@ -36,7 +36,7 @@ export default function Events() {
       date: "Sunday, June 28th @ 1:00 PM - 2:00 PM",
       location: "Vernon Hills, IL",
       description: "Meet local author Eddy Manfred Inserra III. Exclusive documents will be available to view onsite including IRS Racketeer Documents, real stories from East Boston, and the Kennedy connection.",
-      imageUrl: "",
+      imageUrl: "/images/barbaras.png",
       linkUrl: "https://barbarasbookstore.com/event/eddy-manfred-inserra-iii",
       linkText: "Store Event Page",
       secondaryLinkUrl: "https://www.eventbrite.com/e/1991098351769?aff=oddtdtcreator",
