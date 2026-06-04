@@ -37,8 +37,10 @@ export default function Events() {
       location: "Vernon Hills, IL",
       description: "Meet local author Eddy Manfred Inserra III. Exclusive documents will be available to view onsite including IRS Racketeer Documents, real stories from East Boston, and the Kennedy connection.",
       imageUrl: "",
-      linkUrl: "https://www.eventbrite.com/e/1991098351769?aff=oddtdtcreator",
-      linkText: "Get Tickets on Eventbrite",
+      linkUrl: "https://barbarasbookstore.com/event/eddy-manfred-inserra-iii",
+      linkText: "Store Event Page",
+      secondaryLinkUrl: "https://www.eventbrite.com/e/1991098351769?aff=oddtdtcreator",
+      secondaryLinkText: "Get Tickets on Eventbrite",
     },
     {
       id: 3,
