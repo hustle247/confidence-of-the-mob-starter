@@ -7,11 +7,7 @@ export default function BuyBook() {
         { label: 'Autographed Paperback', icon: '✍️', price: '$29.99', href: 'https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01', desc: 'Signed by Eddy Inserra. Ships directly to you.', image: '/images/softcover_autographed.webp' },
     ];
 
-    const standardOptions = [
-        { label: 'Kindle Edition', icon: '📱', price: 'Sale $7.99', href: 'https://www.amazon.com/dp/B0GSS9WHWC', image: '/images/kindle.webp' },
-        { label: 'Hardcover', icon: '📚', price: '$34.99', href: 'https://www.amazon.com/dp/B0GSFCNRH9?ref=cotmweb', image: '/images/hardcover_autographed.webp' },
-        { label: 'Paperback', icon: '📓', price: '$16.99', href: 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb', image: '/images/paperback_standard.webp' },
-    ];
+
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 pb-32 md:pb-24">
@@ -39,6 +35,19 @@ export default function BuyBook() {
                     <p className="text-lg text-stone-300 mb-12 leading-relaxed font-serif">
                         The definitive account of IRS Agent Fred Pastore's double life. This story began with a box of dusty papers. It led to uncovering Fred's secret life as "The Elliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."
                     </p>
+
+                    {/* Amazon Purchase Option */}
+                    <div className="mb-12 animate-fade-in-up">
+                        <a 
+                            href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="w-full inline-flex justify-center items-center bg-stone-200 hover:bg-white text-stone-950 font-bold py-5 px-8 rounded-xl transition-transform hover:scale-[1.01] shadow-[0_0_30px_rgba(255,255,255,0.05)] border border-stone-300"
+                        >
+                            <span className="mr-3 text-2xl">🛒</span>
+                            <span className="text-xl">Buy Now on Amazon</span>
+                        </a>
+                    </div>
 
                     {/* Autographed Editions */}
                     <div className="mb-12 animate-fade-in-up">
@@ -88,41 +97,7 @@ export default function BuyBook() {
                         </div>
                     </div>
 
-                    {/* Standard Editions */}
-                    <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 pb-2 border-b border-stone-800">
-                            <h2 className="text-xl font-bold text-white">
-                                Standard Editions
-                            </h2>
-                            <span className="text-xs font-mono-file text-stone-500 uppercase tracking-widest mt-2 sm:mt-0 pb-1">VIA AMAZON</span>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {standardOptions.map((opt, i) => (
-                                <div key={i} className="bg-stone-900 border border-stone-800 p-5 rounded-xl hover:border-stone-600 transition-colors flex flex-col h-full group">
-                                    <div className="w-full aspect-[4/5] bg-stone-950 border border-stone-800 rounded-md mb-4 flex flex-col items-center justify-center text-stone-700 font-mono-file text-[10px] text-center overflow-hidden group/img relative">
-                                        {opt.image ? (
-                                            <img src={opt.image} alt={opt.label} className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" />
-                                        ) : (
-                                            <div className="p-4 flex flex-col items-center justify-center h-full w-full">
-                                                <span className="text-2xl mb-2">{opt.icon}</span>
-                                                <span className="uppercase tracking-widest">[ {opt.label} <br/> Placeholder ]</span>
-                                            </div>
-                                        )}
-                                    </div>
-                                    <h3 className="text-md sm:text-lg font-bold text-white mb-1 group-hover:text-accent-red transition-colors">{opt.label}</h3>
-                                    <p className="text-stone-500 font-mono text-sm mb-4 flex-grow">{opt.price}</p>
-                                    <a 
-                                        href={opt.href} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="w-full text-center bg-stone-800 hover:bg-stone-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors border border-stone-700 text-sm"
-                                    >
-                                        View on Amazon
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+
                     
                     {/* Trust Elements */}
                     <div className="mt-16 pt-8 border-t border-stone-800 flex flex-col items-center justify-center space-y-3 pb-4">
