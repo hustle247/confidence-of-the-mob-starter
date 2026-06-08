@@ -8,8 +8,8 @@ export const episodePreview = {
   durationSeconds: 600, // Placeholder 10 minutes until actual audio is uploaded
   gateAtSeconds: 480, // 8 minute mark
   teaserTranscript: `"We had to keep the shades drawn. We couldn't leave the yard. Come to find out later — we were being watched. We were being followed."\n— Sharman Pastore, Fred's Daughter`,
-  signupHeadline: "Want to hear what happens next?",
-  signupBody: "Join the list and be first to hear the full episode when the season goes live.",
-  signupCTA: "Email me when it launches",
-  successMessage: "You’re in. We’ll email you when the first episode is live."
+  signupHeadline: "Hear the first 9 minutes of episode 1 right now",
+  signupBody: "Enter your email address to listen and get notified when the full podcast is released.",
+  signupCTA: "Listen Now",
+  successMessage: "You're in! You can now listen to the preview."
 };
