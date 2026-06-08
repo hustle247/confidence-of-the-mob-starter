@@ -20,13 +20,20 @@ export default function BuyBook() {
                     <img 
                         src="/images/book_no_bg.png" 
                         alt="Confidence of The Mob Book Cover" 
-                        className="w-3/4 max-w-sm rounded-r-3xl rounded-l-md shadow-2xl border-2 border-stone-800 relative z-10 hover:scale-[1.02] hover:-rotate-1 transition duration-700"
+                        className="w-3/4 max-w-sm rounded-r-3xl rounded-l-md shadow-2xl border-2 border-stone-800 relative z-10 hover:scale-[1.02] hover:-rotate-1 transition duration-700 mb-8"
                     />
-                    <div className="mt-8 opacity-60 flex gap-2">
-                      <span className="w-2 h-2 rounded-full bg-stone-500 block"></span>
-                      <span className="w-2 h-2 rounded-full bg-stone-500 block"></span>
-                      <span className="w-2 h-2 rounded-full bg-stone-500 block"></span>
-                    </div>
+                    
+                    <a 
+                        href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-3/4 max-w-sm inline-flex justify-center items-center bg-[#FF9900] hover:bg-[#e68a00] text-black font-extrabold py-4 px-6 rounded-lg transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,153,0,0.3)] border border-[#cc7a00] z-20"
+                    >
+                        <svg className="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                          <path d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-27.5 0 22-3.2 45.3-3.2 45.3zM273 234.3c-3 15-17.5 43.5-60 43.5-44.5 0-41.5-31.5-41.5-45.5 0-36 34.5-41.5 67.5-44.5 24-2.5 34 2.5 34 2.5v44zM392 384.2c-54.5 55-126 84.5-197.5 84.5-54 0-111-17.5-155.5-57.5-30.5-27-24-37 11.5-13.5 45.5 30 110.5 41 161 41 49 0 108.5-11 154-46.5 17.5-13.5 37.5-23.5 26.5 8zm-88.5-24.5c4.5-4 13.5-8 23-1 25.5 18.5 28.5 33.5 24.5 44-7 18-36 12-42 6.5-6-5.5-10-18.5-5.5-49.5z"/>
+                        </svg>
+                        <span className="text-lg tracking-tight">Buy on Amazon</span>
+                    </a>
                 </div>
 
                 <div className="lg:col-span-8">
@@ -35,19 +42,6 @@ export default function BuyBook() {
                     <p className="text-lg text-stone-300 mb-12 leading-relaxed font-serif">
                         The definitive account of IRS Agent Fred Pastore's double life. This story began with a box of dusty papers. It led to uncovering Fred's secret life as "The Elliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."
                     </p>
-
-                    {/* Amazon Purchase Option */}
-                    <div className="mb-12 animate-fade-in-up">
-                        <a 
-                            href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="w-full inline-flex justify-center items-center bg-stone-200 hover:bg-white text-stone-950 font-bold py-5 px-8 rounded-xl transition-transform hover:scale-[1.01] shadow-[0_0_30px_rgba(255,255,255,0.05)] border border-stone-300"
-                        >
-                            <span className="mr-3 text-2xl">🛒</span>
-                            <span className="text-xl">Buy Now on Amazon</span>
-                        </a>
-                    </div>
 
                     {/* Autographed Editions */}
                     <div className="mb-12 animate-fade-in-up">
