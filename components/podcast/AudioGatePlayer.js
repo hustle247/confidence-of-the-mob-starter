@@ -4,8 +4,9 @@ import { trackEvent } from '../../lib/tracking';
 export default function AudioGatePlayer({ 
   audioSrc, 
   episodeId,
-  onGateReached,
-  onPlay
+  isLocked,
+  onPlayAttempt,
+  onGateReached
 }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,9 +18,12 @@ export default function AudioGatePlayer({
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      if (isLocked) {
+        if (onPlayAttempt) onPlayAttempt();
+        return; // Prevent playback
+      }
       audioRef.current.play();
       setIsPlaying(true);
-      if (onPlay) onPlay();
       trackEvent('podcast_preview_play_clicked', { episode_id: episodeId, page: '/podcast' });
     }
   };

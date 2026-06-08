@@ -9,15 +9,13 @@ export default function EpisodePreview({ previewData }) {
   const [hasSubscribed, setHasSubscribed] = useState(false);
 
   useEffect(() => {
-    if (!hasSubscribed) {
-      const timer = setTimeout(() => {
-        setShowModal(true);
-      }, 10000);
-      return () => clearTimeout(timer);
+    const subscribed = localStorage.getItem('cotm_podcast_subscribed');
+    if (subscribed === 'true') {
+      setHasSubscribed(true);
     }
-  }, [hasSubscribed]);
+  }, []);
 
-  const handleAudioPlay = () => {
+  const handlePlayAttempt = () => {
     if (!hasSubscribed) {
       setShowModal(true);
     }
@@ -35,8 +33,8 @@ export default function EpisodePreview({ previewData }) {
 
   const handleSuccess = () => {
     setHasSubscribed(true);
-    // Optionally close the modal automatically after a delay
-    // setTimeout(() => setShowModal(false), 3000);
+    localStorage.setItem('cotm_podcast_subscribed', 'true');
+    setShowModal(false);
   };
 
   return (
@@ -56,7 +54,8 @@ export default function EpisodePreview({ previewData }) {
             <AudioGatePlayer 
               audioSrc={previewData.audioSrc}
               episodeId={previewData.episodeId}
-              onPlay={handleAudioPlay}
+              isLocked={!hasSubscribed}
+              onPlayAttempt={handlePlayAttempt}
               onGateReached={handleAudioEnded}
             />
 
