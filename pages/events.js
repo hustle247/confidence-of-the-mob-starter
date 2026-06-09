@@ -66,17 +66,6 @@ export default function Events() {
       imageUrl: "/images/gangland.jpeg",
       linkUrl: "https://ganglandwire.com/bostons-pinball-rackets-irs-wars-and-mob-secrets/",
       linkText: "Listen Now",
-    },
-    {
-      id: 2,
-      title: "WBUR (Boston's NPR)",
-      type: "Radio Interview",
-      date: "Upcoming",
-      location: "Live Radio",
-      description: "A deep dive into the financial maneuvers of the mob and how the IRS brought them down.",
-      imageUrl: "/images/wbur.png",
-      linkUrl: "",
-      linkText: "Coming Soon",
     }
   ];
 
