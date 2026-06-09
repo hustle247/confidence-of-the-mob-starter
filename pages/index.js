@@ -34,11 +34,14 @@ export default function Home() {
         {/* Featured On Badge Banner */}
         <div className="w-full bg-stone-950/80 border-b border-stone-800 py-3 sm:py-4 flex justify-center backdrop-blur-sm relative z-30">
           <Link href="/events" legacyBehavior>
-            <a className="block hover:scale-105 transition-transform duration-300 px-4 group">
+            <a className="flex items-center gap-4 hover:scale-[1.02] transition-transform duration-300 px-4 group">
+              <span className="text-stone-500 font-mono-file text-xs sm:text-sm uppercase tracking-widest group-hover:text-stone-300 transition-colors">
+                As Featured On
+              </span>
               <img 
-                src="/images/featured-badge.png" 
-                alt="As Featured On: Gangland Wire & WBUR" 
-                className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[380px] h-auto object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300"
+                src="/images/gangland.jpeg" 
+                alt="Gangland Wire Podcast" 
+                className="h-8 sm:h-10 w-auto rounded border border-stone-800 drop-shadow-[0_0_10px_rgba(220,38,38,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(220,38,38,0.4)] group-hover:border-accent-red/50 transition-all duration-300 grayscale group-hover:grayscale-0"
               />
             </a>
           </Link>
