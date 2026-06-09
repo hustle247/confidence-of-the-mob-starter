@@ -25,7 +25,7 @@ export default function Podcast() {
         <p className="text-stone-500 font-mono-file text-sm uppercase tracking-widest mb-6">Production Credits</p>
         <div className="text-stone-400 leading-relaxed text-sm sm:text-base space-y-2">
           <p><span className="text-white font-semibold italic">Confidence of The Mob</span> is created, hosted, and executive produced by <strong className="text-stone-200 font-bold">Eddy Inserra</strong>.</p>
-          <p>Produced by <strong className="text-stone-200 font-bold">Bobby Inserra</strong>.</p>
+          <p>Produced by <strong className="text-stone-200 font-bold">Bobby Pastore</strong>.</p>
           <p>Narrative production by <strong className="text-stone-200 font-bold">Tim Pilleri</strong> and <strong className="text-stone-200 font-bold">Lance Reenstierna</strong> of Crawlspace Media.</p>
           <p>Sound design by <strong className="text-stone-200 font-bold">Brendan Brady</strong>.</p>
         </div>
