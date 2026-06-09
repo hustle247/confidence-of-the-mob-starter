@@ -276,7 +276,7 @@ export default function Home() {
                 Discover The Evidence
               </h2>
               <p className="text-stone-400 mb-6 leading-relaxed">
-                This story began with a box of dusty papers. It led to uncovering Fred Pastore's secret life as "The Elliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."
+                This story began with a box of dusty papers. It led to uncovering Fred Pastore's secret life as "The Eliot Ness of Boston," who successfully busted rackets until he was targeted. He paid the price by leaving the IRS... only to go to work on "the other side."
               </p>
               <p className="text-stone-400 mb-8 leading-relaxed">
                 The podcast lays out the narrative, but the companion book provides the chilling evidence: the documents proving corruption that stretched from the streets of Boston to the White House.
