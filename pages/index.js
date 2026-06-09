@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Confidence of The Mob - The Box, The Agent, The Files</title>
+        <title>Confidence of The Mob — True Crime Book About IRS Agent Fred Pastore & the Boston Mafia.</title>
         <meta name="description" content="I thought my grandfather was just an accountant. Then I opened The Box. The never-before-seen files of IRS Agent Fred Pastore." />
       </Head>
 
