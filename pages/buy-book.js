@@ -102,7 +102,7 @@ export default function BuyBook() {
                             Secure Checkout via Stripe & Amazon
                         </div>
                         <p className="text-xs text-stone-600 italic max-w-sm leading-relaxed text-center font-serif">
-                            Limited edition autographed copies are safely fulfilled directly from Eddie Inserra's private inventory.
+                            Limited edition autographed copies are safely fulfilled directly from Eddy Inserra's private inventory.
                         </p>
                     </div>
 
