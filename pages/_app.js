@@ -4,13 +4,7 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { Analytics } from "@vercel/analytics/next";
 
-import { useRouter } from 'next/router';
-
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  const canonicalPath = router.asPath.split('?')[0];
-  const canonicalUrl = `https://www.confidenceofthemob.com${canonicalPath === '/' ? '' : canonicalPath}`;
-
   return (
     <Layout>
       <Head>
@@ -19,19 +13,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         
-        {/* Global SEO & Open Graph defaults */}
-        <meta property="og:site_name" content="Confidence of The Mob" key="ogsitename" />
-        <meta property="og:type" content="website" key="ogtype" />
-        <meta property="og:title" content="Confidence of The Mob" key="ogtitle" />
-        <meta property="og:description" content="I thought my grandfather was just an accountant. Then I opened The Box. The true story of IRS Agent Fred Pastore." key="ogdesc" />
-        <meta property="og:image" content="https://confidenceofthemob.com/images/book_no_bg.png" key="ogimage" />
-        
-        <meta name="twitter:card" content="summary_large_image" key="twcard" />
-        <meta name="twitter:title" content="Confidence of The Mob" key="twtitle" />
-        <meta name="twitter:description" content="I thought my grandfather was just an accountant. Then I opened The Box. The true story of IRS Agent Fred Pastore." key="twdesc" />
-        <meta name="twitter:image" content="https://confidenceofthemob.com/images/book_no_bg.png" key="twimage" />
-        
-        <link rel="canonical" href={canonicalUrl} key="canonical" />
+
 
         {/* Global JSON-LD Schema: Book & Author */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `

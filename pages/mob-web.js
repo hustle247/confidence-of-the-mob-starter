@@ -1,11 +1,11 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 
 export default function MobWeb() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-      <Head>
-        <title>The Mob Web - Confidence of The Mob</title>
-      </Head>
+      <Seo meta={PAGE_META["/mob-web"]} />
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">THE PLAYERS</p>
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Cast of Characters</h1>

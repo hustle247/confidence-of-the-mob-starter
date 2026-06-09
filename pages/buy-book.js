@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import Head from 'next/head';
 
 export default function BuyBook() {
@@ -11,9 +13,7 @@ export default function BuyBook() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 pb-32 md:pb-24">
-            <Head>
-                <title>Buy the Book - Confidence of The Mob</title>
-            </Head>
+            <Seo meta={PAGE_META["/buy-book"]} />
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 <div className="lg:col-span-4 flex flex-col justify-center items-center lg:sticky lg:top-32 relative group">
                     <div className="absolute inset-0 bg-accent-red blur-[80px] opacity-10 group-hover:opacity-20 transition duration-700 pointer-events-none rounded-full"></div>

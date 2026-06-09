@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import { useState } from 'react';
 
 export default function Contact() {
@@ -42,9 +44,7 @@ export default function Contact() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <Head>
-                <title>Contact - Confidence of The Mob</title>
-            </Head>
+            <Seo meta={PAGE_META["/contact"]} />
             <div className="max-w-2xl mx-auto">
                 <div className="text-center mb-12">
                     <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">GET IN TOUCH</p>

@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import PodcastHero from '../components/podcast/PodcastHero';
 import EpisodePreview from '../components/podcast/EpisodePreview';
 import { episodePreview } from '../content/podcastPreview';
@@ -6,9 +8,7 @@ import { episodePreview } from '../content/podcastPreview';
 export default function Podcast() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 fade-in">
-      <Head>
-        <title>Podcast - Confidence of The Mob</title>
-      </Head>
+      <Seo meta={PAGE_META["/podcast"]} />
       
       <PodcastHero />
       

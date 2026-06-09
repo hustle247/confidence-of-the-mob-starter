@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import Link from 'next/link';
 
 export default function Events() {
@@ -71,23 +73,7 @@ export default function Events() {
 
   return (
     <div className="bg-stone-950 min-h-screen">
-      <Head>
-        <title>Events & Media - Confidence of The Mob</title>
-        <meta name="description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th. Plus, check out the latest media appearances." />
-        
-        {/* Open Graph / iMessage / Facebook */}
-        <meta property="og:type" content="website" key="ogtype" />
-        <meta property="og:url" content="https://confidenceofthemob.com/events" key="ogurl" />
-        <meta property="og:title" content="Upcoming Events & Media - Confidence of The Mob" key="ogtitle" />
-        <meta property="og:description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th." key="ogdesc" />
-        <meta property="og:image" content="https://confidenceofthemob.com/images/barnes.png" key="ogimage" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" key="twcard" />
-        <meta name="twitter:title" content="Upcoming Events & Media - Confidence of The Mob" key="twtitle" />
-        <meta name="twitter:description" content="Join Eddy for upcoming book signings including Barnes & Noble on June 13th and the Used Book Superstore on June 20th." key="twdesc" />
-        <meta name="twitter:image" content="https://confidenceofthemob.com/images/barnes.png" key="twimage" />
-      </Head>
+      <Seo meta={PAGE_META["/events"]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import Head from 'next/head';
 import { useState } from 'react';
 import PreorderPopup from '../components/PreorderPopup';
@@ -21,10 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Confidence of The Mob — True Crime Book About IRS Agent Fred Pastore & the Boston Mafia.</title>
-        <meta name="description" content="I thought my grandfather was just an accountant. Then I opened The Box. The never-before-seen files of IRS Agent Fred Pastore." />
-      </Head>
+      <Seo meta={PAGE_META["/"]} />
 
 
 

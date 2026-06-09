@@ -1,13 +1,12 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import Link from 'next/link';
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About the Author - Confidence of The Mob</title>
-        <meta name="description" content="Meet Eddy Inserra, the author of Confidence of The Mob and the man who uncovered the files of IRS Agent Fred Pastore." />
-      </Head>
+      <Seo meta={PAGE_META["/about"]} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         

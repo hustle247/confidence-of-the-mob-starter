@@ -27,3 +27,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# large files
+public/Media Kit/
+public/full_media_kit.zip

@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import Head from 'next/head';
 
 export default function AskFred() {
@@ -25,9 +27,7 @@ export default function AskFred() {
 
   return (
     <>
-      <Head>
-        <title>Ask Fred - Confidence of The Mob</title>
-      </Head>
+      <Seo meta={PAGE_META["/ask-fred"]} />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 py-12 md:py-20 h-[calc(100vh-200px)] flex flex-col">
         <div className="text-center mb-8">

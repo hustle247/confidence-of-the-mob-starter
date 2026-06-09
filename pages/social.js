@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 
 export default function Social() {
     const socials = [
@@ -41,9 +43,7 @@ export default function Social() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <Head>
-                <title>Social Media - Confidence of The Mob</title>
-            </Head>
+            <Seo meta={PAGE_META["/social"]} />
             <div className="max-w-4xl mx-auto text-center">
                 <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">COMMUNITY</p>
                 <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Follow the Investigation</h1>

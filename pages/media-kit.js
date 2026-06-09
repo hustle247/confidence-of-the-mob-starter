@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import Link from 'next/link';
 
 export default function MediaKit() {
@@ -28,10 +30,7 @@ export default function MediaKit() {
 
     return (
         <>
-            <Head>
-                <title>Press & Media Kit - Confidence of The Mob</title>
-                <meta name="description" content="Official press and media kit for Confidence of The Mob by Eddy Manfred Inserra III." />
-            </Head>
+            <Seo meta={PAGE_META["/media-kit"]} />
 
             <div className="bg-stone-950 min-h-screen pb-24">
                 {/* Hero Section */}

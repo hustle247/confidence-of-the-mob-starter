@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
 import { useState, useEffect } from 'react';
 import EvidenceGallery from '../components/EvidenceGallery';
 
@@ -23,9 +25,7 @@ export default function Documents() {
 
   return (
     <div className="bg-stone-950 min-h-screen">
-      <Head>
-        <title>Documents - Confidence of The Mob</title>
-      </Head>
+      <Seo meta={PAGE_META["/documents"]} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         {isLoading ? (
