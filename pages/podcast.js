@@ -20,12 +20,15 @@ export default function Podcast() {
       
       <EpisodePreview previewData={episodePreview} />
 
-      {/* Optional Credibility Section placeholder */}
+      {/* Production Credits */}
       <div className="max-w-3xl mx-auto mt-24 text-center border-t border-stone-800 pt-16">
-        <p className="text-stone-500 font-mono-file text-sm uppercase tracking-widest mb-4">Investigative Archives</p>
-        <p className="text-stone-400 leading-relaxed text-lg">
-          The upcoming podcast series features real audio recordings, declassified agency memos, and exclusive interviews gathered over years of research. 
-        </p>
+        <p className="text-stone-500 font-mono-file text-sm uppercase tracking-widest mb-6">Production Credits</p>
+        <div className="text-stone-400 leading-relaxed text-sm sm:text-base space-y-2">
+          <p><span className="text-white font-semibold italic">Confidence of The Mob</span> is created, hosted, and executive produced by <strong className="text-stone-200 font-bold">Eddy Inserra</strong>.</p>
+          <p>Produced by <strong className="text-stone-200 font-bold">Bobby Inserra</strong>.</p>
+          <p>Narrative production by <strong className="text-stone-200 font-bold">Tim Pilleri</strong> and <strong className="text-stone-200 font-bold">Lance Reenstierna</strong> of Crawlspace Media.</p>
+          <p>Sound design by <strong className="text-stone-200 font-bold">Brendan Brady</strong>.</p>
+        </div>
       </div>
 
     </div>
