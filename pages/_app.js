@@ -4,7 +4,13 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { Analytics } from "@vercel/analytics/next";
 
+import { useRouter } from 'next/router';
+
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const canonicalPath = router.asPath.split('?')[0];
+  const canonicalUrl = `https://www.confidenceofthemob.com${canonicalPath === '/' ? '' : canonicalPath}`;
+
   return (
     <Layout>
       <Head>
@@ -25,7 +31,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:description" content="I thought my grandfather was just an accountant. Then I opened The Box. The true story of IRS Agent Fred Pastore." key="twdesc" />
         <meta name="twitter:image" content="https://confidenceofthemob.com/images/book_no_bg.png" key="twimage" />
         
-        <link rel="canonical" href="https://confidenceofthemob.com" key="canonical" />
+        <link rel="canonical" href={canonicalUrl} key="canonical" />
 
         {/* Global JSON-LD Schema: Book & Author */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
