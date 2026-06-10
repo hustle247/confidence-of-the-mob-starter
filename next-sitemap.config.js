@@ -28,9 +28,13 @@ module.exports = {
   },
   robotsTxtOptions: {
     policies: [
-      // Allow all crawlers, including AI crawlers (GPTBot, ClaudeBot,
-      // PerplexityBot, Google-Extended) — AI discoverability is desired.
+      // Allow all crawlers
       { userAgent: '*', allow: '/' },
+      // Explicitly allow AI crawlers for LLM visibility
+      { userAgent: 'GPTBot', allow: '/' },
+      { userAgent: 'ClaudeBot', allow: '/' },
+      { userAgent: 'PerplexityBot', allow: '/' },
+      { userAgent: 'Google-Extended', allow: '/' },
     ],
     additionalSitemaps: [],
   },
