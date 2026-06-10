@@ -43,4 +43,11 @@ export const RETAILERS: Retailer[] = [
     note: "Hawthorn Mall, Vernon Hills IL — hosting our June 28 signing",
     verified: true,
   },
+  {
+    name: "Book Passage",
+    group: "indie",
+    url: "https://www.bookpassage.com/book/9798995080404",
+    note: "San Francisco Bay Area independent bookstore",
+    verified: true,
+  },
 ];
