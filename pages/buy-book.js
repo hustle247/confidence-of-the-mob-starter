@@ -1,7 +1,36 @@
 import Link from 'next/link';
 import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
+import { RETAILERS } from "../lib/retailers";
 import Head from 'next/head';
+
+const RetailerCard = ({ name, note, url }) => {
+    const handleClick = () => {
+        if (typeof window !== 'undefined' && window.fbq) {
+            window.fbq('trackCustom', 'RetailerClick', { retailer: name });
+        }
+    };
+
+    return (
+        <a 
+            href={url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            onClick={handleClick}
+            className="flex items-center justify-between bg-stone-800 p-4 sm:p-5 rounded-lg border border-stone-700 hover:border-accent-red hover:shadow-file transition-all duration-300 group min-h-[44px]"
+        >
+            <div>
+                <h3 className="font-bold text-white text-lg">{name}</h3>
+                {note && <p className="text-stone-400 text-xs sm:text-sm mt-1">{note}</p>}
+            </div>
+            <div className="text-stone-500 group-hover:text-accent-red transition-colors ml-4 flex-shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+            </div>
+        </a>
+    );
+};
 
 export default function BuyBook() {
     const autographedOptions = [
@@ -88,6 +117,35 @@ export default function BuyBook() {
                                     </a>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* Retailer Section: Where to Buy */}
+                    <div className="mb-12 pt-12 border-t border-stone-800 animate-fade-in-up">
+                        <div className="mb-8">
+                            <p className="text-xs text-stone-500 font-mono-file mb-2 tracking-widest uppercase">// DISTRIBUTION CHANNELS //</p>
+                            <h2 className="text-3xl font-bold text-white font-serif">Where to Buy</h2>
+                        </div>
+
+                        {/* Group A: Major Retailers */}
+                        <div className="mb-8">
+                            <h3 className="text-sm font-mono-file text-stone-400 uppercase tracking-widest mb-4">Major Retailers</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {RETAILERS.filter(r => r.group === 'major').map((retailer, i) => (
+                                    <RetailerCard key={i} {...retailer} />
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Group B: Independent Bookstores */}
+                        <div className="pt-8 border-t border-stone-800">
+                            <h3 className="text-sm font-mono-file text-stone-400 uppercase tracking-widest mb-2">Support Independent Bookstores</h3>
+                            <p className="text-stone-500 text-sm italic mb-6">Every indie purchase supports the bookstores hosting our events.</p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {RETAILERS.filter(r => r.group === 'indie').map((retailer, i) => (
+                                    <RetailerCard key={i} {...retailer} />
+                                ))}
+                            </div>
                         </div>
                     </div>
 

@@ -3,6 +3,7 @@ import Script from 'next/script';
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { Analytics } from "@vercel/analytics/next";
+import { RETAILERS } from "../lib/retailers";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,8 +17,7 @@ function MyApp({ Component, pageProps }) {
 
 
         {/* Global JSON-LD Schema: Book & Author */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
-          {
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
               {
@@ -27,8 +27,16 @@ function MyApp({ Component, pageProps }) {
                   "@type": "Person",
                   "name": "Eddy Manfred Inserra III"
                 },
-                "image": "https://confidenceofthemob.com/images/book_no_bg.png",
-                "description": "The never-before-seen true story of IRS Agent Fred Pastore, compiled from declassified government files."
+                "image": "https://confidenceofthemob.com/images/book_no_bg_og.jpg",
+                "description": "The never-before-seen true story of IRS Agent Fred Pastore, compiled from declassified government files.",
+                "offers": RETAILERS.filter(r => r.verified).map(r => ({
+                  "@type": "Offer",
+                  "url": r.url,
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "USD",
+                  "price": "16.99",
+                  "seller": { "@type": "Organization", "name": r.name }
+                }))
               },
               {
                 "@type": "Person",
@@ -40,8 +48,7 @@ function MyApp({ Component, pageProps }) {
                 }
               }
             ]
-          }
-        `}} />
+          })}} />
       </Head>
       <Script
         id="fb-pixel"
