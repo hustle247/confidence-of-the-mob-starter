@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 import Head from 'next/head';
@@ -302,14 +303,13 @@ export default function Home() {
             </div>
             {/* Book Cover Image */}
             <div className="mt-12 md:mt-0 md:order-1 flex justify-center">
-              <img
-                src="/images/book_no_bg.png"
+              <Image
+                src="/images/book_no_bg.webp"
                 alt="Book Cover: Confidence of The Mob by Eddy Manfred Inserra III"
+                width={800}
+                height={1200}
                 className="w-2/3 md:w-full max-w-xs rounded-xl border-4 border-stone-700 shadow-file hover:border-accent-red transition duration-500 aspect-[4/6] object-cover"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'https://placehold.co/400x600/333333/ef4444?text=BOOK+COVER+PENDING+UPLOAD';
-                }}
+                priority
               />
             </div>
           </div>
