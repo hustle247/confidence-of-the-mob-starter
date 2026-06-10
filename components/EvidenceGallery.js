@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import docs from '../data/documents.json';
 
 export default function EvidenceGallery() {
@@ -23,11 +24,9 @@ export default function EvidenceGallery() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {docs.map((doc) => (
-                    <a
+                    <Link
                         key={doc.id}
-                        href={`https://drive.google.com/file/d/${doc.driveId}/view?usp=sharing`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`/documents/${doc.id}`}
                         className="group block border border-zinc-700 p-4 hover:border-accent-red transition-all bg-stone-900/50 backdrop-blur-sm no-underline flashlight-card"
                         onMouseMove={handleMouseMove}
                     >
@@ -54,7 +53,7 @@ export default function EvidenceGallery() {
                         <p className="text-[10px] text-accent-red font-mono-file mb-1 tracking-widest uppercase">{doc.category}</p>
                         <h3 className="text-xl font-bold text-white mb-2">{doc.title}</h3>
                         <p className="text-stone-400 text-sm leading-relaxed">{doc.description}</p>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>
