@@ -23,8 +23,9 @@ export default function Events() {
     const end = formatDate(event.schemaData.endDate);
     const title = event.schemaData.name;
     const desc = event.schemaData.description;
+    const placeName = event.schemaData.location.name;
     const addr = event.schemaData.location.address;
-    const loc = `${addr.streetAddress}, ${addr.addressLocality}, ${addr.addressRegion}`;
+    const loc = `${placeName}, ${addr.streetAddress}, ${addr.addressLocality}, ${addr.addressRegion} ${addr.postalCode}`;
 
     const icsContent = [
       'BEGIN:VCALENDAR',
