@@ -82,7 +82,7 @@ export default function Layout({ children }) {
       </div>
 
       {/* Mobile Menu (Dropdown) */}
-      <div className={`md:hidden bg-stone-800 border-t border-stone-700 ${mobileMenuOpen ? 'block' : 'hidden'} absolute w-full z-40`}>
+      <div className={`md:hidden bg-stone-800 border-t border-stone-700 ${mobileMenuOpen ? 'block' : 'hidden'} fixed w-full left-0 top-[73px] z-[45] shadow-2xl max-h-[calc(100vh-73px)] overflow-y-auto`}>
         <Link href="/podcast" legacyBehavior>
           <a className="block px-4 py-3 text-sm text-white font-bold hover:bg-stone-700 transition border-b border-stone-700" onClick={() => setMobileMenuOpen(false)}>Podcast</a>
         </Link>
