@@ -3,77 +3,25 @@ import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 import Link from 'next/link';
 
-export default function Events() {
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Barnes & Noble Book Signing",
-      type: "Book Signing",
-      date: "Saturday, June 13th @ 2:00 PM",
-      location: "Burlington, MA",
-      description: "Join Eddy for an exclusive book signing at the Barnes & Noble in Burlington.",
-      imageUrl: "/images/barnes.png",
-      linkUrl: "https://fb.me/e/6wUC4cMHg",
-      linkText: "RSVP on Facebook",
-      secondaryLinkUrl: "https://www.eventbrite.com/e/1990008539110?aff=oddtdtcreator",
-      secondaryLinkText: "Get Tickets on Eventbrite",
-    },
-    {
-      id: 2,
-      title: "Used Book Superstore Signing",
-      type: "Book Signing",
-      date: "Saturday, June 20th @ 9:00 AM - 11:00 AM",
-      location: "Used Book Superstore",
-      description: "Book signing and sale event. Great opportunity to grab a last minute Father's Day gift!",
-      imageUrl: "/images/usbss.jpeg",
-      linkUrl: "https://fb.me/e/6nLGFB9ku",
-      linkText: "RSVP on Facebook",
-      secondaryLinkUrl: "https://www.eventbrite.com/e/1990056832557?aff=oddtdtcreator",
-      secondaryLinkText: "Get Tickets on Eventbrite",
-    },
-    {
-      id: 4,
-      title: "Barbara's Bookstore Book Signing",
-      type: "Book Signing",
-      date: "Sunday, June 28th @ 1:00 PM - 2:00 PM",
-      location: "Vernon Hills, IL",
-      description: "Meet local author Eddy Manfred Inserra III. Exclusive documents will be available to view onsite including IRS Racketeer Documents, real stories from East Boston, and the Kennedy connection.",
-      imageUrl: "/images/barbaras.png",
-      linkUrl: "https://barbarasbookstore.com/event/eddy-manfred-inserra-iii",
-      linkText: "Store Event Page",
-      secondaryLinkUrl: "https://www.eventbrite.com/e/1991098351769?aff=oddtdtcreator",
-      secondaryLinkText: "Get Tickets on Eventbrite",
-    },
-    {
-      id: 3,
-      title: "I Am Books Talk & Signing",
-      type: "Author Talk",
-      date: "Thursday, September 24th @ 6:00 PM",
-      location: "North End, Boston",
-      description: "Join Eddy for a special author talk and book signing event at I Am Books in the North End.",
-      imageUrl: "/images/iambooks.jpeg",
-      linkUrl: "https://fb.me/e/6H5bjXXOQ",
-      linkText: "RSVP on Facebook",
-    }
-  ];
+import { upcomingEvents, mediaAppearances } from '../lib/events';
 
-  const mediaAppearances = [
-    {
-      id: 1,
-      title: "Gangland Wire Podcast Interview",
-      type: "Podcast",
-      date: "Recent",
-      location: "Online",
-      description: "Eddy sits down with Gary Jenkins to discuss his time undercover and the fascinating case of Fred Pastore.",
-      imageUrl: "/images/gangland.jpeg",
-      linkUrl: "https://ganglandwire.com/bostons-pinball-rackets-irs-wars-and-mob-secrets/",
-      linkText: "Listen Now",
-    }
-  ];
+export default function Events() {
+  const eventSchemas = upcomingEvents
+    .filter(e => e.schemaData)
+    .map(e => e.schemaData);
 
   return (
     <div className="bg-stone-950 min-h-screen">
       <Seo meta={PAGE_META["/events"]} />
+      
+      {eventSchemas.length > 0 && (
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchemas) }}
+          />
+        </Head>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
