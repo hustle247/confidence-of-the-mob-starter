@@ -8,10 +8,10 @@ export type Retailer = {
 
 export const RETAILERS: Retailer[] = [
   {
-    name: "Amazon",
+    name: "Walmart",
     group: "major",
-    url: "https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb",
-    note: "Paperback, Hardcover & Kindle",
+    url: "https://www.walmart.com/ip/Confidence-of-The-Mob-Paperback-9798995080404/20078317178",
+    note: "Paperback ordering",
     verified: true,
   },
   {
