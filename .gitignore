@@ -31,3 +31,7 @@ yarn-error.log*
 # large files
 public/Media Kit/
 public/full_media_kit.zip
+
+# generated SEO files
+public/sitemap*.xml
+public/robots.txt
