@@ -52,7 +52,7 @@ export default function EvidenceGallery() {
                         </div>
                         <p className="text-[10px] text-accent-red font-mono-file mb-1 tracking-widest uppercase">{doc.category}</p>
                         <h3 className="text-xl font-bold text-white mb-2">{doc.title}</h3>
-                        <p className="text-stone-400 text-sm leading-relaxed">{doc.description}</p>
+                        <p className="text-stone-400 text-base leading-relaxed">{doc.description}</p>
                     </Link>
                 ))}
             </div>

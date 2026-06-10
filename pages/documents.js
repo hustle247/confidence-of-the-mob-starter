@@ -61,7 +61,7 @@ export default function Documents() {
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl" />
             </div>
-            <p className="mt-6 text-stone-500 text-sm font-mono-file italic">
+            <p className="mt-6 text-stone-400 text-base font-mono-file italic">
               "The chronology of events as documented in the original files."
             </p>
           </div>

@@ -57,7 +57,7 @@ export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) 
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <h3 className="text-xl font-bold text-white mb-2 font-mono-file tracking-wider">SUCCESSFUL TRANSMISSION</h3>
-        <p className="text-stone-300 text-sm font-serif max-w-sm mx-auto">Your email has been securely logged into the archives. You are now on the insider list.</p>
+        <p className="text-stone-300 text-base font-serif max-w-sm mx-auto">Your email has been securely logged into the archives. You are now on the insider list.</p>
       </div>
     );
   }

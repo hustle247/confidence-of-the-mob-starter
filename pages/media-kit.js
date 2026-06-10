@@ -195,7 +195,7 @@ function AssetCard({ asset }) {
             <div className="p-5 flex flex-col flex-grow z-10 relative">
                 <div>
                     <h3 className="text-white font-bold mb-1">{asset.label}</h3>
-                    <p className="text-stone-400 text-sm mb-4">{asset.desc}</p>
+                    <p className="text-stone-400 text-base mb-4">{asset.desc}</p>
                 </div>
                 
                 <div className="mt-auto">

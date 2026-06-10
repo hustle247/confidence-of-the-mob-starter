@@ -113,7 +113,7 @@ export default function Layout({ children }) {
 
       {!cookieConsent && (
         <div className="fixed bottom-0 left-0 right-0 bg-stone-900 border-t border-stone-800 p-4 z-[100] flex flex-col md:flex-row justify-between items-center shadow-2xl animate-fade-in-up">
-          <p className="text-sm text-stone-400 mb-4 md:mb-0 max-w-4xl font-serif">
+          <p className="text-base text-stone-400 mb-4 md:mb-0 max-w-4xl font-serif">
             This site uses tracking cookies (including the Facebook Pixel) to measure interactions and improve your experience. 
             By clicking "Accept", you consent to our use of cookies per our <Link href="/privacy" className="text-accent-red hover:underline font-bold">Privacy Policy</Link>.
           </p>
@@ -133,7 +133,7 @@ export default function Layout({ children }) {
                   <span className="text-accent-red">//</span> CONFIDENCE OF THE MOB
                 </a>
               </Link>
-              <p className="text-stone-400 text-sm leading-relaxed mb-6">
+              <p className="text-stone-400 text-base leading-relaxed mb-6">
                 The true story of IRS Agent Fred Pastore: the man who took down the Mafia, then advised them. Uncover the files.
               </p>
               <div className="bg-stone-800/30 p-5 rounded-xl border border-stone-700 shadow-inner">

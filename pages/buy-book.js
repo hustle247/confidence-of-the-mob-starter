@@ -95,7 +95,7 @@ export default function BuyBook() {
                                         <div className="absolute top-4 right-[-30px] bg-amber-500 text-black font-bold text-[10px] w-[120px] text-center rotate-45 shadow-glow uppercase tracking-widest py-1 border border-amber-300 z-10">SIGNED</div>
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-2">{opt.label}</h3>
-                                    <p className="text-stone-400 text-sm mb-4 flex-grow">{opt.desc}</p>
+                                    <p className="text-stone-400 text-base mb-4 flex-grow">{opt.desc}</p>
                                     
                                     <div className="bg-stone-900/80 border border-stone-700/50 rounded-lg p-3 mb-6 flex items-center gap-3 shadow-inner group-hover:border-stone-600 transition-colors">
                                         <div className="w-10 h-10 flex-shrink-0 bg-stone-950 rounded border border-stone-800 overflow-hidden relative">
@@ -140,7 +140,7 @@ export default function BuyBook() {
                         {/* Group B: Independent Bookstores */}
                         <div className="pt-8 border-t border-stone-800">
                             <h3 className="text-sm font-mono-file text-stone-400 uppercase tracking-widest mb-2">Support Independent Bookstores</h3>
-                            <p className="text-stone-500 text-sm italic mb-6">Every indie purchase supports the bookstores hosting our events.</p>
+                            <p className="text-stone-400 text-base italic mb-6">Every indie purchase supports the bookstores hosting our events.</p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {RETAILERS.filter(r => r.group === 'indie').map((retailer, i) => (
                                     <RetailerCard key={i} {...retailer} />

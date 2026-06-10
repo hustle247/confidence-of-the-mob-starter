@@ -59,7 +59,7 @@ export default function EpisodePreview({ previewData }) {
               onGateReached={handleAudioEnded}
             />
 
-            <p className="text-stone-500 mt-6 mb-6 leading-relaxed sm:text-lg">{previewData.description}</p>
+            <p className="text-stone-400 mt-6 mb-6 leading-relaxed sm:text-lg">{previewData.description}</p>
             
             <div className="p-5 sm:p-6 bg-stone-800/50 rounded-lg border-l-4 border-accent-red font-mono-file text-sm sm:text-base text-stone-300 italic shadow-inner whitespace-pre-line leading-relaxed">
               {previewData.teaserTranscript}
