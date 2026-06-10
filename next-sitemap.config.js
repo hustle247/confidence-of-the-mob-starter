@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: 'https://www.confidenceofthemob.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false, // small site — single sitemap.xml, no index wrapper
-  exclude: ['/privacy', '/404', '/500', '/book/clip/*'],
+  exclude: ['/privacy', '/404', '/500', '/book/clip/*', '/success'],
   changefreq: 'monthly',
   priority: 0.7,
   transform: async (config, path) => {

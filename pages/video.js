@@ -1,16 +1,33 @@
 import Head from 'next/head';
 
+import Seo from "../components/Seo";
+import { PAGE_META } from "../lib/seo";
+
 export default function Video() {
     return (
         <div className="bg-stone-950 min-h-screen">
+            <Seo meta={PAGE_META["/video"]} />
             <Head>
-                <title>Video - Confidence of The Mob</title>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "VideoObject",
+                            "name": "Confidence of The Mob — Official Teaser",
+                            "description": "Official teaser for Confidence of The Mob, the true story of IRS Agent Fred Pastore and the Boston Mafia.",
+                            "thumbnailUrl": "https://i.ytimg.com/vi/I6T6HyMOtik/hqdefault.jpg",
+                            "embedUrl": "https://www.youtube.com/embed/I6T6HyMOtik",
+                            "publisher": { "@type": "Person", "name": "Eddy Manfred Inserra III" }
+                        })
+                    }}
+                />
             </Head>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">AUDIO-VISUAL ARCHIVE</p>
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Video</h1>
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Watch the Official Teaser</h1>
                     <p className="text-lg text-stone-400">
                         Preview the stories and investigations in motion.
                     </p>
