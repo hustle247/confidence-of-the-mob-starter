@@ -50,4 +50,11 @@ export const RETAILERS: Retailer[] = [
     note: "San Francisco Bay Area independent bookstore",
     verified: true,
   },
+  {
+    name: "ThriftBooks",
+    group: "indie",
+    url: "https://www.thriftbooks.com/w/confidence-of-the-mob-the-irs-agent-who-took-down-the-mafiathen-advised-them_eddy-manfred-inserra-iii/58328234/?clickref=1101lDsKMADV#edition=75557947&idiq=88909893",
+    note: "Independent used & new bookseller",
+    verified: true,
+  },
 ];
