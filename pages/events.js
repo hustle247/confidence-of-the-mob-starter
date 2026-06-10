@@ -10,6 +10,49 @@ export default function Events() {
     .filter(e => e.schemaData)
     .map(e => e.schemaData);
 
+  const handleDownloadICS = (e, event) => {
+    e.preventDefault();
+    if (!event.schemaData) return;
+    
+    const formatDate = (dateStr) => {
+      const d = new Date(dateStr);
+      return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    };
+
+    const start = formatDate(event.schemaData.startDate);
+    const end = formatDate(event.schemaData.endDate);
+    const title = event.schemaData.name;
+    const desc = event.schemaData.description;
+    const addr = event.schemaData.location.address;
+    const loc = `${addr.streetAddress}, ${addr.addressLocality}, ${addr.addressRegion}`;
+
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Confidence of The Mob//Events//EN',
+      'BEGIN:VEVENT',
+      `UID:${event.id}@confidenceofthemob.com`,
+      `DTSTAMP:${formatDate(new Date().toISOString())}`,
+      `DTSTART:${start}`,
+      `DTEND:${end}`,
+      `SUMMARY:${title}`,
+      `DESCRIPTION:${desc}`,
+      `LOCATION:${loc}`,
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'confidence_of_the_mob_event.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="bg-stone-950 min-h-screen">
       <Seo meta={PAGE_META["/events"]} />
@@ -103,6 +146,15 @@ export default function Events() {
                         {event.secondaryLinkText} 
                         <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                       </a>
+                    )}
+                    {event.schemaData && (
+                      <button 
+                        onClick={(e) => handleDownloadICS(e, event)}
+                        className="inline-flex items-center text-sm font-bold text-stone-400 hover:text-white transition-colors font-mono-file tracking-wider uppercase text-left pt-2 border-t border-stone-800"
+                      >
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Add to Calendar (.ics)
+                      </button>
                     )}
                   </div>
                 </div>
