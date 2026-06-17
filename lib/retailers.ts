@@ -57,4 +57,25 @@ export const RETAILERS: Retailer[] = [
     note: "Independent used & new bookseller",
     verified: true,
   },
+  {
+    name: "Strand Bookstore",
+    group: "indie",
+    url: "https://www.strandbooks.com/confidence-of-the-mob-9798995080411.html",
+    note: "New York independent bookstore",
+    verified: true,
+  },
+  {
+    name: "FOYLES",
+    group: "indie",
+    url: "https://www.foyles.co.uk/book/confidence-of-the-mob/eddy-manfred-inserra/9798995080411",
+    note: "United Kingdom",
+    verified: true,
+  },
+  {
+    name: "Booktopia",
+    group: "indie",
+    url: "https://www.booktopia.com.au/confidence-of-the-mob-eddy-manfred-inserra/book/9798995080404.html",
+    note: "Australia",
+    verified: true,
+  },
 ];
