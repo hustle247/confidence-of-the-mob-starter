@@ -152,6 +152,7 @@ export default function BuyBook() {
 
                     
                     {/* Goodreads Reviews */}
+                    {false && (
                     <div className="mt-12 pt-12 border-t border-stone-800 animate-fade-in-up">
                         <div className="mb-8">
                             <p className="text-xs text-stone-500 font-mono-file mb-2 tracking-widest uppercase">// READER REVIEWS //</p>
@@ -209,6 +210,7 @@ export default function BuyBook() {
 `}} 
                         />
                     </div>
+                    )}
 
                     {/* Trust Elements */}
                     <div className="mt-16 pt-8 border-t border-stone-800 flex flex-col items-center justify-center space-y-3 pb-4">
