@@ -151,6 +151,65 @@ export default function BuyBook() {
 
 
                     
+                    {/* Goodreads Reviews */}
+                    <div className="mt-12 pt-12 border-t border-stone-800 animate-fade-in-up">
+                        <div className="mb-8">
+                            <p className="text-xs text-stone-500 font-mono-file mb-2 tracking-widest uppercase">// READER REVIEWS //</p>
+                            <h2 className="text-3xl font-bold text-white font-serif">What People Are Saying</h2>
+                        </div>
+                        <div 
+                            className="w-full overflow-hidden bg-stone-900 border border-stone-800 p-4 sm:p-8 rounded-lg flex justify-center"
+                            dangerouslySetInnerHTML={{ __html: `
+<style>
+  #goodreads-widget {
+    font-family: georgia, serif;
+    padding: 0;
+    width: 100%;
+    max-width: 565px;
+  }
+  #goodreads-widget h1 {
+    font-weight:normal;
+    font-size: 16px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+  }
+  #goodreads-widget a {
+    text-decoration: none;
+    color:#f87171;
+  }
+  #goodreads-widget iframe {
+    background-color: transparent;
+    width: 100%;
+  }
+  #goodreads-widget a:hover { text-decoration: underline; }
+  #goodreads-widget a:active {
+    color:#f87171;
+  }
+  #gr_footer {
+    width: 100%;
+    border-top: 1px solid #444;
+    text-align: right;
+    padding-top: 8px;
+  }
+  #goodreads-widget .gr_branding{
+    color: #888;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+<div id="goodreads-widget">
+  <div id="gr_header"><h1><a rel="nofollow" href="https://www.goodreads.com/book/isbn/9798995080404">Goodreads reviews for Confidence of The Mob</a></h1></div>
+  <iframe sandbox="allow-scripts allow-same-origin allow-popups" id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&format=html&header_text=Goodreads+reviews+for+Confidence+of+The+Mob&isbn=9798995080404&links=f87171&review_back=1c1917&stars=f59e0b&text=d6d3d1" width="565" height="400" frameborder="0"></iframe>
+  <div id="gr_footer">
+    <a class="gr_branding" target="_blank" rel="nofollow noopener noreferrer" href="https://www.goodreads.com/book/isbn/9798995080404?utm_medium=api&utm_source=reviews_widget">Reviews from Goodreads.com</a>
+  </div>
+</div>
+`}} 
+                        />
+                    </div>
+
                     {/* Trust Elements */}
                     <div className="mt-16 pt-8 border-t border-stone-800 flex flex-col items-center justify-center space-y-3 pb-4">
                         <div className="flex items-center text-stone-500 text-xs font-medium uppercase tracking-widest">
