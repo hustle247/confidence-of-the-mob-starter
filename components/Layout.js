@@ -39,28 +39,50 @@ export default function Layout({ children }) {
 
       {/* Header & Navigation */}
       <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur-md border-b border-rule">
-        <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Main Header Bar */}
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" legacyBehavior>
-            <a className="font-type text-[0.95rem] tracking-[0.1em] shrink-0">
+            <a className="font-type text-[0.75rem] sm:text-[0.95rem] tracking-[0.05em] sm:tracking-[0.1em] shrink-1 truncate mr-2">
               <em className="not-italic text-stamp">■</em> CONFIDENCE OF THE MOB
             </a>
           </Link>
-          <nav className="flex items-center gap-7 font-display font-medium text-[0.85rem] tracking-[0.04em] uppercase">
+          <nav className="flex items-center gap-3 sm:gap-7 font-display font-medium text-[0.85rem] tracking-[0.04em] uppercase shrink-0">
+            {/* Desktop only links */}
             <div className="hidden md:flex items-center gap-7">
               <NavLink href="/">The Book</NavLink>
               <NavLink href="/podcast">Podcast</NavLink>
               <NavLink href="/documents">Case Files</NavLink>
               <NavLink href="/events">Events</NavLink>
+              <Link href="/ask-fred" legacyBehavior>
+                <a className="text-stamp font-bold hover:text-stamp-hover">Ask Fred</a>
+              </Link>
             </div>
-            <Link href="/ask-fred" legacyBehavior>
-              <a className="text-stamp font-bold hover:text-stamp-hover">Ask Fred</a>
-            </Link>
+            
+            {/* Order the Book button (always visible) */}
             <Link href="/buy-book" legacyBehavior>
-              <a className="bg-paper text-ink font-bold py-[0.55em] px-[1.1em] rounded-[3px] hover:bg-paper-dim transition">
-                Order the Book
+              <a className="bg-paper text-ink font-bold py-[0.45em] px-[0.6em] sm:py-[0.55em] sm:px-[1.1em] text-[0.7rem] sm:text-[0.85rem] rounded-[3px] hover:bg-paper-dim transition text-center leading-[1.1]">
+                Order the<br className="md:hidden block" /> <span className="hidden md:inline"> </span>Book
               </a>
             </Link>
           </nav>
+        </div>
+
+        {/* Mobile Sub-Navigation Bar */}
+        <div className="md:hidden border-t border-rule bg-ink-2/95 overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <nav className="flex items-center gap-5 px-4 py-[10px] font-display font-medium text-[0.75rem] tracking-[0.05em] uppercase whitespace-nowrap w-max mx-auto sm:mx-0">
+            <NavLink href="/">The Book</NavLink>
+            <NavLink href="/podcast">Podcast</NavLink>
+            <NavLink href="/documents">Case Files</NavLink>
+            <NavLink href="/events">Events</NavLink>
+            <Link href="/ask-fred" legacyBehavior>
+              <a className="text-stamp font-bold hover:text-stamp-hover">Ask Fred</a>
+            </Link>
+          </nav>
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
         </div>
       </header>
 
