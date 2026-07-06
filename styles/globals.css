@@ -1,185 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #1c1917;
-  /* Deep Charcoal (Tailwind warm-gray-900 equivalent) */
-  color: #f5f5f4;
-  /* Off-White (Tailwind stone-100 equivalent) */
-  scroll-behavior: smooth;
-  /* Subtle dark paper grain texture */
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 0), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 0);
-  background-size: 10px 10px;
-  margin: 0;
-  padding: 0;
-}
-
-.text-accent-red {
-  color: #B91C1C;
-  /* Deeper Red */
-}
-
-.font-mono-file {
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.header-bg {
-  background-color: rgba(26, 26, 26, 0.95);
-  backdrop-filter: blur(5px);
-}
-
-.shadow-file {
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.cta-button {
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button:hover {
-  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-/* Hero Background with Overlay */
-/* Hero Background with Overlay */
-.hero-background {
-  background-image: url('/images/thebox.jpg');
-  background-size: cover;
-  background-position: center 30%;
-  /* Removed background-attachment: fixed to fix mobile massive scroll void bug */
-  position: relative;
-  z-index: 0;
-}
-
-.hero-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Increased darkness for readability (90% black opacity) */
-  z-index: -1;
-  /* Puts overlay behind text but above background image */
-}
-
-.hero-background>* {
-  position: relative;
-  z-index: 10;
-  /* Ensures all content is above the overlay */
-}
-
-/* Premium Button Enhancements */
-.premium-glow {
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
-.premium-glow:hover {
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
-}
-
-.badge-limited {
-  @apply absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-red text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter shadow-lg z-20 whitespace-nowrap border border-white/20;
-}
-
-/* Atmospheric Effects */
-
-/* 1. Neon Flicker */
-@keyframes flicker {
-
-  0%,
-  18%,
-  22%,
-  25%,
-  32%,
-  53%,
-  80%,
-  94%,
-  100% {
-    opacity: 1;
+@layer base {
+  :root {
+    --ink: #161210;
+    --ink-2: #221c19;
+    --paper: #e7dcc3;
+    --paper-dim: #cfc3a8;
+    --stamp: #c8372d;
+    --stamp-hover: #da4237;
+    --text: #efe9dd;
+    --text-dim: #a89f8f;
+    --rule: #3a322c;
   }
 
-  20%,
-  24%,
-  35%,
-  50%,
-  85%,
-  92% {
-    opacity: 0.8;
+  body {
+    background-color: var(--ink);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.65;
+    background-image: radial-gradient(#ffffff06 1px, transparent 1px);
+    background-size: 22px 22px;
+    margin: 0;
+    padding: 0;
   }
 
-  23%,
-  51%,
-  93% {
-    opacity: 0.5;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--stamp);
+    outline-offset: 2px;
   }
 }
 
-.animate-flicker {
-  animation: flicker 4s linear infinite;
-}
-
-/* 2. Scanlines Overlay */
-.scanlines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom,
-      rgba(18, 16, 16, 0) 50%,
-      rgba(0, 0, 0, 0.1) 50%);
-  background-size: 100% 4px;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.3;
-}
-
-/* 3. Terminal Loader */
-.terminal-loader {
-  font-family: 'IBM Plex Mono', monospace;
-  color: #B91C1C;
-}
-
-.terminal-cursor {
-  display: inline-block;
-  width: 8px;
-  height: 15px;
-  background-color: #B91C1C;
-  margin-left: 4px;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-
-  from,
-  to {
-    opacity: 1;
+@layer components {
+  .stamp {
+    display: inline-block;
+    font-family: var(--font-type);
+    color: var(--stamp);
+    border: 3px solid var(--stamp);
+    border-radius: 4px;
+    padding: 0.2em 0.6em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+    font-size: 0.85rem;
   }
 
-  50% {
-    opacity: 0;
+  .eyebrow {
+    font-family: var(--font-type);
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-}
 
-/* Accessibility Focus States */
-:focus-visible {
-  outline: 2px solid #B91C1C;
-  outline-offset: 2px;
-  border-radius: 2px;
+  .eyebrow::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.9em 1.6em;
+    border-radius: 3px;
+    transition: all 0.15s;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: var(--stamp);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--stamp-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--rule);
+    color: var(--text-dim);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--paper-dim);
+    color: var(--text);
+  }
+
+  .folder {
+    background: var(--paper);
+    color: #241d15;
+    border-radius: 3px 10px 3px 3px;
+    position: relative;
+    padding: 32px 28px;
+    margin-top: 20px;
+  }
+
+  .folder::before {
+    content: attr(data-tab);
+    position: absolute;
+    top: -21px;
+    left: 14px;
+    background: var(--paper);
+    color: #6b5f47;
+    font-family: var(--font-type);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    padding: 4px 14px;
+    border-radius: 5px 5px 0 0;
+    text-transform: uppercase;
+  }
+
+  /* Blinking cursor animation for Ask Fred */
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--stamp);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .terminal-cursor {
+      animation: none;
+    }
+  }
 }

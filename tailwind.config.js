@@ -7,9 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accent-red': '#B91C1C', // Deeper red for a more serious, "blood" like tone
-        'off-white': '#f5f5f4', // Warm stone/paper white
-        'deep-charcoal': '#1c1917', // Warm very dark grey
+        ink: '#161210',
+        'ink-2': '#221c19',
+        paper: '#e7dcc3',
+        'paper-dim': '#cfc3a8',
+        stamp: '#c8372d',
+        'stamp-hover': '#da4237',
+        text: '#efe9dd',
+        'text-dim': '#a89f8f',
+        rule: '#3a322c',
       },
     },
   },

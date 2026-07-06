@@ -4,10 +4,34 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { Analytics } from "@vercel/analytics/next";
 import { RETAILERS } from "../lib/retailers";
+import { Libre_Franklin, Source_Serif_4, Special_Elite } from 'next/font/google';
+
+const libreFranklin = Libre_Franklin({
+  subsets: ['latin'],
+  weight: ['500', '700', '900'],
+  display: 'swap',
+  variable: '--font-display',
+});
+
+const sourceSerif4 = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-body',
+});
+
+const specialElite = Special_Elite({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-type',
+});
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <div className={`${libreFranklin.variable} ${sourceSerif4.variable} ${specialElite.variable} font-body text-text bg-ink`}>
+      <Layout>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
@@ -79,7 +103,8 @@ function MyApp({ Component, pageProps }) {
         />
       </noscript>
       <Analytics />
-    </Layout>
+      </Layout>
+    </div>
   );
 }
 
