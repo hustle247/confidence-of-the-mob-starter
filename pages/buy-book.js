@@ -75,6 +75,11 @@ export default function BuyBook() {
                             <p className="text-text-dim text-[1.1rem] max-w-[34em]">
                                 The definitive account of IRS Agent Fred Pastore's double life — <strong>the "Eliot Ness of Boston"</strong> who busted the rackets, was targeted for it, and went to work for the other side.
                             </p>
+                            <div className="mt-[28px] mb-[12px]">
+                                <a href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                                    Order on Amazon
+                                </a>
+                            </div>
                             <div className="flex gap-[26px] mt-[24px] flex-wrap">
                                 <div className="font-type text-[0.72rem] tracking-[0.12em] text-text-dim uppercase">
                                     <b className="block font-display text-[1rem] text-text tracking-[0.02em] mb-[2px]">Paperback</b>
