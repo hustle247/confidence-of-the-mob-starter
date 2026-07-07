@@ -7,10 +7,10 @@ export default function MediaKit() {
     const driveUrl = 'https://drive.google.com/drive/folders/10a0AWBf5K_tpBqyXDTcioDQCr-Mba-ua?usp=sharing';
     const assets = {
         coreIdentity: [
-            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire', pending: false, url: '/Media Kit/headshot_professional.jpg', thumbnail: '/images/media-kit/headshot-pro.webp' },
-            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: '/Media Kit/headshot_approachable.jpeg', thumbnail: '/images/media-kit/headshot-casual.webp' },
-            { id: 'bio', label: 'Author Bio', desc: 'Standard biography', pending: false, url: 'https://drive.google.com/open?id=1RweWbFpdcibk8zl0qKy9IZUCpy87Iarm&usp=drive_fs', thumbnail: '/images/media-kit/bio.webp' },
-            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: 'https://drive.google.com/open?id=1q_pnjLi0DzuMd4sZQRT4tayrmuqvn-6i&usp=drive_fs', thumbnail: '/images/media-kit/cover-3d.webp' },
+            { id: 'headshot-pro', label: 'Author Headshot (Professional)', desc: 'Professional attire', pending: false, url: '/Media Kit/headshot_professional.jpg', thumbnail: '/images/media-kit/headshot-pro.jpg' },
+            { id: 'headshot-casual', label: 'Author Headshot (Approachable)', desc: 'Lifestyle-oriented photo', pending: false, url: '/Media Kit/headshot_approachable.jpeg', thumbnail: '/images/media-kit/headshot-casual.jpg' },
+            { id: 'bio', label: 'Author Bio', desc: 'Standard biography', pending: false, url: 'https://drive.google.com/open?id=1RweWbFpdcibk8zl0qKy9IZUCpy87Iarm&usp=drive_fs', thumbnail: '/images/media-kit/bio.jpg' },
+            { id: 'cover-3d', label: 'High-Res Book Cover (3D)', desc: 'Mockup of the book standing up', pending: false, url: 'https://drive.google.com/open?id=1q_pnjLi0DzuMd4sZQRT4tayrmuqvn-6i&usp=drive_fs', thumbnail: '/images/media-kit/cover-3d.jpg' },
             { id: 'cover-2d', label: 'High-Res Book Cover (2D)', desc: 'Clean, front-facing JPEG/PNG', pending: false, url: 'https://drive.google.com/open?id=1xwXTBmNDtXinGrHo5t2jkwSWckZyhDfN&usp=drive_fs', thumbnail: '/images/media-kit/cover-2d.webp' },
         ],
         storyEvidence: [
@@ -20,11 +20,11 @@ export default function MediaKit() {
             { id: 'event-photos', label: 'Event Photos', desc: 'Action shots from signings', pending: false, url: 'https://drive.google.com/open?id=1pJ3VPPXSiU_KKR5CwFJYy8Utk5J9G3b-&usp=drive_fs', thumbnail: '/images/media-kit/event-photos.webp' },
         ],
         editorialTools: [
-            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: '/Media Kit/Suggested Media Interview Questions - Confidence of The Mob.pdf', thumbnail: '/images/media-kit/interview-questions.webp' },
-            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/sample-chapter.webp' },
-            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: '/Media Kit/PressRelease_July2026.pdf', thumbnail: '/images/media-kit/press-release.webp' },
-            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: '/Media Kit/Fast Facts - Confidence of The Mob Media Kit.pdf', thumbnail: '/images/media-kit/fast-facts.webp' },
-            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/one-sheet.webp' },
+            { id: 'interview-questions', label: 'Suggested Interview Questions', desc: '5–10 pre-written questions', pending: false, url: '/Media Kit/Suggested Media Interview Questions - Confidence of The Mob.pdf', thumbnail: '/images/media-kit/interview-questions.jpg' },
+            { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/sample-chapter.jpg' },
+            { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: '/Media Kit/PressRelease_July2026.pdf', thumbnail: '/images/media-kit/press-release.jpg' },
+            { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: '/Media Kit/Fast Facts - Confidence of The Mob Media Kit.pdf', thumbnail: '/images/media-kit/fast-facts.jpg' },
+            { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/one-sheet.jpg' },
         ]
     };
 
