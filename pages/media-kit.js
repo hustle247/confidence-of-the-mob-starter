@@ -24,6 +24,7 @@ export default function MediaKit() {
             { id: 'sample-chapter', label: 'Sample Chapter (PDF)', desc: 'Downloadable first chapter', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/sample-chapter.jpg' },
             { id: 'press-release', label: 'Press Release (Text & PDF)', desc: 'Ready for copy-paste', pending: false, url: '/Media Kit/PressRelease_July2026.pdf', thumbnail: '/images/media-kit/press-release.jpg' },
             { id: 'fast-facts', label: 'Fast Facts / Trivia Sheet', desc: 'Bulleted list of shocking stats', pending: false, url: '/Media Kit/Fast Facts - Confidence of The Mob Media Kit.pdf', thumbnail: '/images/media-kit/fast-facts.jpg' },
+            { id: 'media-highlights', label: 'Media Highlights', desc: 'Recent press features and coverage', pending: false, url: '/Media Kit/MediaHighlights_July2026.pdf', thumbnail: '/images/media-kit/media-highlights.jpg' },
             { id: 'one-sheet', label: 'The "One-Sheet" (PDF)', desc: 'Single-page summary', pending: false, url: 'https://drive.google.com/open?id=1DT167b2L2_8OjbDFTFoETV1SM5TvEzrx&usp=drive_fs', thumbnail: '/images/media-kit/one-sheet.jpg' },
         ]
     };
