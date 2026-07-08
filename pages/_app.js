@@ -74,6 +74,18 @@ function MyApp({ Component, pageProps }) {
             ]
           })}} />
       </Head>
+      {/* Google Analytics */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-M63SWN9QMY" strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-M63SWN9QMY');
+        `}
+      </Script>
+      {/* Facebook Pixel */}
       <Script
         id="fb-pixel"
         strategy="afterInteractive"
