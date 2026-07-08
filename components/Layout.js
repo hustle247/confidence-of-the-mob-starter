@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import NewsletterGateForm from './podcast/NewsletterGateForm';
+import GlobalNewsletterModal from './GlobalNewsletterModal';
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -137,6 +138,7 @@ export default function Layout({ children }) {
           </p>
         </div>
       </footer>
+      <GlobalNewsletterModal />
     </div>
   );
 }
