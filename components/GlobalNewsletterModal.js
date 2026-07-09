@@ -44,7 +44,11 @@ export default function GlobalNewsletterModal() {
   const handleSuccess = () => {
     setHasSubscribed(true);
     localStorage.setItem('cotm_podcast_subscribed', 'true');
-    // We don't automatically close it here so they can read the success message
+    // Redirect to the podcast page after a short delay so they can listen
+    setTimeout(() => {
+      setIsOpen(false);
+      router.push('/podcast');
+    }, 1500);
   };
 
   if (!isOpen) return null;
@@ -80,7 +84,7 @@ export default function GlobalNewsletterModal() {
           </>
         ) : (
           <div className="mt-4">
-            <SignupSuccess successMessage="You're in! We'll keep you updated on the full podcast release." />
+            <SignupSuccess successMessage="You're in! Redirecting you to the podcast..." />
           </div>
         )}
 
