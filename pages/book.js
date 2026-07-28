@@ -35,21 +35,21 @@ export default function Book() {
         <div className="grid gap-6">
           {bookClips.map((clip) => (
             <Link key={clip.id} href={`/book/clip/${clip.id}`} legacyBehavior>
-              <a className="block p-6 bg-accent-red hover:bg-stone-800 rounded-xl border-2 border-accent-red hover:border-stone-700 transition duration-500 shadow-file group">
+              <a className="block p-6 bg-stone-800 rounded-xl border-2 border-stone-700 hover:border-accent-red transition duration-500 shadow-file group">
                 <div className="flex justify-between items-start flex-wrap gap-4">
                   <div className="flex-1">
-                    <div className="flex gap-4 mb-3 text-sm text-white/80 group-hover:text-stone-400 font-mono-file flex-wrap transition-colors duration-300">
-                      <span className="font-semibold text-white group-hover:text-accent-red transition-colors duration-300">Page {clip.page}</span>
+                    <div className="flex gap-4 mb-3 text-sm text-stone-400 font-mono-file flex-wrap">
+                      <span className="font-semibold text-accent-red">Page {clip.page}</span>
                       <span>Clip #{clip.clipNumber}</span>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 text-white transition-colors duration-300">
+                    <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-accent-red transition duration-300">
                       {clip.topic}
                     </h3>
-                    <p className="text-white/90 group-hover:text-stone-400 transition-colors duration-300">
-                      Featuring: <strong className="text-white group-hover:text-stone-300 transition-colors duration-300">{clip.person}</strong>
+                    <p className="text-stone-400">
+                      Featuring: <strong className="text-stone-300">{clip.person}</strong>
                     </p>
                   </div>
-                  <div className="text-2xl text-white group-hover:text-accent-red group-hover:translate-x-1 transition duration-300">
+                  <div className="text-2xl text-accent-red group-hover:translate-x-1 transition duration-300">
                     ▶
                   </div>
                 </div>

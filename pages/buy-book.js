@@ -199,7 +199,7 @@ export default function BuyBook() {
                         <p className="text-text-dim max-w-[36em] text-[1.02rem] mb-[28px]">
                             Reviews are the lifeblood of independent authors. If you enjoyed the story, please consider leaving a quick review on Amazon to help others find it.
                         </p>
-                        <a href="https://www.amazon.com/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=B0GSF9DZC7" target="_blank" rel="noopener noreferrer" className="btn btn-primary inline-block">
+                        <a href="https://www.amazon.com/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=B0GSF9DZC7" target="_blank" rel="noopener noreferrer" className="btn inline-block !bg-[#E63946] hover:!bg-[#D62828] !text-white !border-none shadow-md">
                             Leave an Amazon Review
                         </a>
                     </div>
