@@ -22,7 +22,8 @@ export default function Events() {
     const start = formatDate(event.schemaData.startDate);
     const end = formatDate(event.schemaData.endDate);
     const title = event.schemaData.name;
-    const desc = event.schemaData.description;
+    // Add website link to the notes/description
+    const desc = `${event.schemaData.description}\\n\\nMore info: https://www.confidenceofthemob.com`;
     const placeName = event.schemaData.location.name;
     const addr = event.schemaData.location.address;
     const loc = `${placeName}, ${addr.streetAddress}, ${addr.addressLocality}, ${addr.addressRegion} ${addr.postalCode}`;
