@@ -11,9 +11,26 @@ export default function Book() {
       <div className="max-w-4xl mx-auto">
         <p className="text-xs text-accent-red font-mono-file mb-2 tracking-widest uppercase">EVIDENCE</p>
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Audio Clips</h1>
-        <p className="text-lg text-stone-400 mb-12">
+        <p className="text-lg text-stone-400 mb-8">
           Listen to exclusive audio interviews and stories from the investigation.
         </p>
+
+        <div className="bg-stone-900 border border-stone-800 rounded-xl p-6 mb-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-file">
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Already read the book?</h2>
+            <p className="text-stone-400 text-sm">
+              Reviews are the lifeblood of independent authors. If you enjoyed the story, please consider leaving a quick review on Amazon to help others find it.
+            </p>
+          </div>
+          <a 
+            href="https://www.amazon.com/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=B0GSF9DZC7" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="shrink-0 bg-accent-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded transition-colors font-mono-file text-sm tracking-wider uppercase"
+          >
+            Leave a Review
+          </a>
+        </div>
 
         <div className="grid gap-6">
           {bookClips.map((clip) => (

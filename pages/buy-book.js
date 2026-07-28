@@ -189,6 +189,21 @@ export default function BuyBook() {
                         ))}
                     </div>
                 </section>
+
+                <section className="bg-ink-2 border-t border-rule py-[70px]">
+                    <div className="max-w-[1100px] mx-auto px-6 text-center flex flex-col items-center">
+                        <p className="eyebrow">Reader Feedback</p>
+                        <h2 className="font-display font-black text-[clamp(1.6rem,3.2vw,2.3rem)] leading-[1.12] my-[16px] mb-[10px] tracking-[-0.01em]">
+                            Already read the book?
+                        </h2>
+                        <p className="text-text-dim max-w-[36em] text-[1.02rem] mb-[28px]">
+                            Reviews are the lifeblood of independent authors. If you enjoyed the story, please consider leaving a quick review on Amazon to help others find it.
+                        </p>
+                        <a href="https://www.amazon.com/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&channel=glance-detail&asin=B0GSF9DZC7" target="_blank" rel="noopener noreferrer" className="btn btn-primary inline-block">
+                            Leave an Amazon Review
+                        </a>
+                    </div>
+                </section>
             </main>
         </>
     );
