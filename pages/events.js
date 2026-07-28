@@ -3,7 +3,7 @@ import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 import Link from 'next/link';
 
-import { upcomingEvents, mediaAppearances } from '../lib/events';
+import { upcomingEvents, mediaAppearances, pastMediaStories } from '../lib/events';
 
 export default function Events() {
   const eventSchemas = upcomingEvents
@@ -228,6 +228,77 @@ export default function Events() {
                   ) : (
                     <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase mt-auto">
                       {media.linkText}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Past Coverage Section */}
+        <div className="mt-20">
+          <h2 className="text-2xl font-bold text-white mb-8 border-b border-stone-800 pb-4 font-mono-file uppercase tracking-wider">
+            <span className="text-accent-red mr-2">//</span> Past Coverage & Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {pastMediaStories.map((story) => (
+              <div key={story.id} className="bg-stone-900 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-600 transition-colors duration-300 group flex flex-col">
+                {story.linkUrl && story.linkUrl !== "#" ? (
+                  <a href={story.linkUrl} target="_blank" rel="noopener noreferrer" className="relative h-48 block bg-stone-800 overflow-hidden">
+                    <img 
+                      src={story.imageUrl} 
+                      alt={story.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
+                      [NO IMAGE AVAILABLE]
+                    </div>
+                    <div className="absolute top-4 left-4 bg-stone-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
+                      {story.type}
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative h-48 block bg-stone-800 overflow-hidden">
+                    <img 
+                      src={story.imageUrl} 
+                      alt={story.title} 
+                      className="w-full h-full object-cover grayscale opacity-70"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 hidden items-center justify-center bg-stone-800 text-stone-600 font-mono-file text-sm uppercase tracking-widest">
+                      [NO IMAGE AVAILABLE]
+                    </div>
+                    <div className="absolute top-4 left-4 bg-stone-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider shadow-lg">
+                      {story.type}
+                    </div>
+                  </div>
+                )}
+                <div className="p-6 flex-grow flex flex-col">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-accent-red transition-colors">{story.title}</h3>
+                      <p className="text-sm text-stone-500 font-mono-file">{story.date} • {story.location}</p>
+                    </div>
+                  </div>
+                  <p className="text-stone-400 text-sm leading-relaxed mb-6 flex-grow">
+                    {story.description}
+                  </p>
+                  {story.linkUrl && story.linkUrl !== "#" ? (
+                    <a href={story.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase mt-auto">
+                      {story.linkText}
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase mt-auto">
+                      {story.linkText}
                     </span>
                   )}
                 </div>
