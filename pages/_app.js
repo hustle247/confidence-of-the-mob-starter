@@ -1,5 +1,8 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { trackMetaEvent, FB_PIXEL_ID } from '../lib/meta-capi';
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { Analytics } from "@vercel/analytics/next";
@@ -29,6 +32,22 @@ const specialElite = Special_Elite({
 });
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Initial page load
+    trackMetaEvent('PageView');
+
+    const handleRouteChange = () => {
+      trackMetaEvent('PageView');
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <div className={`${libreFranklin.variable} ${sourceSerif4.variable} ${specialElite.variable} font-body text-text bg-ink`}>
       <Layout>
@@ -99,8 +118,7 @@ function MyApp({ Component, pageProps }) {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1268456198274255');
-            fbq('track', 'PageView');
+            fbq('init', '${FB_PIXEL_ID}');
           `,
         }}
       />
@@ -110,7 +128,7 @@ function MyApp({ Component, pageProps }) {
           height="1"
           width="1"
           style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=1268456198274255&ev=PageView&noscript=1"
+          src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
           alt=""
         />
       </noscript>

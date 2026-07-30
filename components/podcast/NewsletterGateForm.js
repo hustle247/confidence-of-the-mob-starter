@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { trackEvent } from '../../lib/tracking';
+import { trackMetaEvent } from '../../lib/meta-capi';
 
 export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) {
   const [email, setEmail] = useState('');
@@ -37,6 +38,10 @@ export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) 
 
       setStatus('success');
       trackEvent('podcast_newsletter_submit_success', { episode_id: episodeId, page: '/podcast', signup_context: 'audio_gate' });
+      
+      // Trigger Meta CAPI Lead Event
+      trackMetaEvent('Lead', {}, { email, firstName });
+      
       if (onSuccess) onSuccess();
 
     } catch (err) {

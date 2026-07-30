@@ -1,3 +1,4 @@
+import { trackMetaEvent } from '../lib/meta-capi';
 import Link from 'next/link';
 import Image from 'next/image';
 import Seo from "../components/Seo";
@@ -21,7 +22,15 @@ export default function Home() {
                 A Florida orange crate in my mother's attic held <strong className="text-text font-semibold">secret files, wiretap logs, and evidence</strong> that Fred Pastore — the IRS agent who took down the Boston Mafia — became a target of the White House. And then went to work for the other side.
               </p>
               <div className="flex gap-[16px] mt-[34px] flex-wrap items-center">
-                <a className="btn btn-primary" href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" target="_blank" rel="noopener noreferrer">Order the Book</a>
+                <a 
+                    className="btn btn-primary" 
+                    href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={() => trackMetaEvent('Purchase', { value: 16.99, currency: 'USD' })}
+                >
+                    Order the Book
+                </a>
                 <Link href="/buy-book" className="btn btn-ghost">
                   Autographed Copies
                 </Link>

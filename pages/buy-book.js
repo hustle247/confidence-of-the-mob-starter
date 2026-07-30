@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 import { RETAILERS } from "../lib/retailers";
+import { trackMetaEvent } from '../lib/meta-capi';
 
 const RetailerCard = ({ name, note, url, onClick }) => {
     return (
@@ -44,9 +45,7 @@ const IndieCard = ({ name, note, url, onClick }) => {
 
 export default function BuyBook() {
     const handleRetailerClick = (name) => {
-        if (typeof window !== 'undefined' && window.fbq) {
-            window.fbq('trackCustom', 'RetailerClick', { retailer: name });
-        }
+        trackMetaEvent('RetailerClick', { retailer: name });
     };
 
     return (
@@ -76,7 +75,13 @@ export default function BuyBook() {
                                 The definitive account of IRS Agent Fred Pastore's double life — <strong>the "Eliot Ness of Boston"</strong> who busted the rackets, was targeted for it, and went to work for the other side.
                             </p>
                             <div className="mt-[28px] mb-[12px]">
-                                <a href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                                <a 
+                                    href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="btn btn-primary"
+                                    onClick={() => trackMetaEvent('Purchase', { value: 16.99, currency: 'USD' })}
+                                >
                                     Order on Amazon
                                 </a>
                             </div>
@@ -120,7 +125,7 @@ export default function BuyBook() {
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Limited-edition custom bookmark included</li>
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Ships directly to you</li>
                             </ul>
-                            <a className="btn btn-primary w-full" href="https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00">Buy the signed hardcover</a>
+                            <a className="btn btn-primary w-full" href="https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00" onClick={() => trackMetaEvent('Purchase', { value: 39.99, currency: 'USD' })}>Buy the signed hardcover</a>
                         </article>
 
                         <article className="folder" data-tab="Edition 02">
@@ -135,7 +140,7 @@ export default function BuyBook() {
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Limited-edition custom bookmark included</li>
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Ships directly to you</li>
                             </ul>
-                            <a className="btn btn-primary w-full" href="https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01">Buy the signed paperback</a>
+                            <a className="btn btn-primary w-full" href="https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01" onClick={() => trackMetaEvent('Purchase', { value: 29.99, currency: 'USD' })}>Buy the signed paperback</a>
                         </article>
                     </div>
                     <p className="font-type text-[0.7rem] tracking-[0.14em] text-text-dim text-center mt-[22px] uppercase">

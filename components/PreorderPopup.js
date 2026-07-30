@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { trackMetaEvent } from '../lib/meta-capi';
 
 export default function PreorderPopup() {
     const [isOpen, setIsOpen] = useState(false);
@@ -76,7 +77,10 @@ export default function PreorderPopup() {
                         href="https://www.amazon.com/dp/B0GSS9WHWC"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={handleClose}
+                        onClick={() => {
+                            trackMetaEvent('Purchase', { value: 7.99, currency: 'USD' });
+                            handleClose();
+                        }}
                         className="w-full py-2 px-4 bg-accent-red hover:bg-red-600 text-white font-bold rounded-lg shadow-file transition-all text-xs text-center"
                     >
                         Order Kindle Now
