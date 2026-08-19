@@ -32,7 +32,9 @@ const driveFiles = [
     { "name": "029_seizure_of_personal_property_memo_1955-05-17.pdf", "id": "10KKUzw-JGvhyVHO6vUcNlTBRXgfF690r" },
     { "name": "030_telegram_from_fgp_to_rfk_jfk.pdf", "id": "1zQJuzqUZA4MhTwwitqbptIFQOCrWdRRr" },
     { "name": "031_cover_page_for_goldfine_boston_project_four_daily_diary.jpeg", "id": "1L_vON8q0JqlfyGpsTr2PdVHsFRphorGc" },
-    { "name": "032_institute_for_intelligence_supervisors_1961-04-24.pdf", "id": "1OJOAq6lreD-DM6QbNcW0PPovJrkJFCC1" }
+    { "name": "032_institute_for_intelligence_supervisors_1961-04-24.pdf", "id": "1OJOAq6lreD-DM6QbNcW0PPovJrkJFCC1" },
+    { "name": "033_jfkassassinationfiles_1961-01-01.pdf", "id": "1VYSOVMIcKK4sxnMviVY61O5Rnf-GjV-q" },
+    { "name": "034_gambling_raid_howard_johnsons_1961-01-27.pdf", "id": "1TvkoImloJKgpiR_Vqc1XK7Gou2AF5vk5" }
 ];
 
 const docs = JSON.parse(fs.readFileSync('data/documents.json', 'utf8'));
