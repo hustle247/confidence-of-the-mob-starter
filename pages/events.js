@@ -90,7 +90,7 @@ export default function Events() {
                     <img 
                       src={event.imageUrl} 
                       alt={event.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextElementSibling.style.display = 'flex';
@@ -108,7 +108,7 @@ export default function Events() {
                     <img 
                       src={event.imageUrl} 
                       alt={event.title} 
-                      className="w-full h-full object-cover grayscale opacity-70"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextElementSibling.style.display = 'flex';
@@ -178,7 +178,7 @@ export default function Events() {
                     <img 
                       src={media.imageUrl} 
                       alt={media.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextElementSibling.style.display = 'flex';
@@ -196,7 +196,7 @@ export default function Events() {
                     <img 
                       src={media.imageUrl} 
                       alt={media.title} 
-                      className="w-full h-full object-cover grayscale opacity-70"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextElementSibling.style.display = 'flex';
@@ -249,7 +249,7 @@ export default function Events() {
                     <img 
                       src={story.imageUrl} 
                       alt={story.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextElementSibling.style.display = 'flex';
@@ -267,7 +267,7 @@ export default function Events() {
                     <img 
                       src={story.imageUrl} 
                       alt={story.title} 
-                      className="w-full h-full object-cover grayscale opacity-70"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextElementSibling.style.display = 'flex';
