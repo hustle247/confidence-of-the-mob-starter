@@ -134,12 +134,12 @@ export default function Events() {
                   </p>
                   <div className="mt-auto flex flex-col gap-3">
                     {event.linkUrl && event.linkUrl !== "#" ? (
-                      <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-accent-red transition-colors font-mono-file tracking-wider uppercase">
+                      <a href={event.linkUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center text-sm font-bold text-white bg-accent-red hover:bg-red-600 transition-all duration-300 font-mono-file tracking-wider uppercase py-2.5 px-4 rounded-lg shadow-file group/btn">
                         {event.linkText} 
-                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                       </a>
                     ) : (
-                      <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase">
+                      <span className="inline-flex items-center text-sm font-bold text-stone-500 font-mono-file tracking-wider uppercase py-2 px-1">
                         {event.linkText}
                       </span>
                     )}
