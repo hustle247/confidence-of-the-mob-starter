@@ -73,10 +73,10 @@ export default function Home() {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <span className="stamp mb-4 inline-block text-[0.78rem]">National Broadcast · WGN-TV</span>
                 <h2 className="font-display font-black text-[clamp(1.75rem,3.4vw,2.5rem)] leading-[1.12] my-[14px] mb-[16px] tracking-[-0.01em]">
-                  Featured on WGN&apos;s <span className="text-paper-dim">Backstory</span>
+                  Featured on WGN&apos;s <span className="text-paper-dim">Backstory with Larry Potash</span>
                 </h2>
                 <p className="text-text-dim text-[1.05rem] leading-relaxed mb-6">
-                  Catch the official show trailer from WGN Chicago&apos;s <em>Backstory</em> featuring the story of Fred Pastore and <em>Confidence of The Mob</em>.
+                  Catch the official show trailer from WGN Chicago&apos;s <em>Backstory with Larry Potash</em> featuring the story of Fred Pastore and <em>Confidence of The Mob</em>.
                 </p>
 
                 <div className="bg-ink-2 border border-rule rounded-[6px] p-5 shadow-[0_10px_30px_-10px_#000a]">
@@ -99,7 +99,7 @@ export default function Home() {
                   <iframe
                     className="absolute inset-0 w-full h-full"
                     src="https://www.youtube.com/embed/fu7IWXKGf5Y?si=sRGX50KLCzHnJzpS"
-                    title="WGN Backstory Show Trailer - Confidence of The Mob"
+                    title="WGN Backstory with Larry Potash Show Trailer - Confidence of The Mob"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -107,7 +107,7 @@ export default function Home() {
                   ></iframe>
                 </div>
                 <div className="font-type text-[0.72rem] text-text-dim text-center mt-3 tracking-[0.14em] uppercase">
-                  EXHIBIT B · <em className="text-stamp not-italic">WGN-TV BACKSTORY SHOW TRAILER</em> · AIRS NOV 22
+                  EXHIBIT B · <em className="text-stamp not-italic">WGN-TV BACKSTORY WITH LARRY POTASH</em> · AIRS NOV 22
                 </div>
               </div>
             </div>
