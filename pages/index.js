@@ -66,6 +66,54 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------- WGN Backstory Show Trailer ---------- */}
+        <section className="py-[84px] border-b border-rule bg-ink">
+          <div className="max-w-[1100px] mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="lg:col-span-5 order-2 lg:order-1">
+                <span className="stamp mb-4 inline-block text-[0.78rem]">National Broadcast · WGN-TV</span>
+                <h2 className="font-display font-black text-[clamp(1.75rem,3.4vw,2.5rem)] leading-[1.12] my-[14px] mb-[16px] tracking-[-0.01em]">
+                  Featured on WGN&apos;s <span className="text-paper-dim">Backstory</span>
+                </h2>
+                <p className="text-text-dim text-[1.05rem] leading-relaxed mb-6">
+                  Catch the official show trailer from WGN Chicago&apos;s <em>Backstory</em> featuring the story of Fred Pastore and <em>Confidence of The Mob</em>.
+                </p>
+
+                <div className="bg-ink-2 border border-rule rounded-[6px] p-5 shadow-[0_10px_30px_-10px_#000a]">
+                  <div className="flex items-center gap-2 font-type text-[0.72rem] tracking-[0.16em] text-stamp uppercase mb-2">
+                    <span className="inline-block w-2 h-2 rounded-full bg-stamp animate-pulse"></span>
+                    <span>Air Date: November 22nd</span>
+                  </div>
+                  <p className="text-paper text-[0.95rem] leading-snug font-medium mb-3">
+                    Our featured episode airs <strong className="text-white">November 22nd</strong> on WGN.
+                  </p>
+                  <p className="border-t border-rule/70 pt-3 font-type text-[0.82rem] text-text-dim leading-relaxed">
+                    <span className="text-stamp font-bold mr-1.5">▶ [0:40]</span>
+                    Keep an eye out for our story right at the <strong className="text-text">40-second mark</strong> of the trailer!
+                  </p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 order-1 lg:order-2">
+                <div className="relative aspect-video rounded-[6px] overflow-hidden border border-rule shadow-[0_25px_60px_-15px_#000e] bg-ink-2">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/fu7IWXKGf5Y?si=sRGX50KLCzHnJzpS"
+                    title="WGN Backstory Show Trailer - Confidence of The Mob"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div className="font-type text-[0.72rem] text-text-dim text-center mt-3 tracking-[0.14em] uppercase">
+                  EXHIBIT B · <em className="text-stamp not-italic">WGN-TV BACKSTORY SHOW TRAILER</em> · AIRS NOV 22
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ---------- evidence / documents section ---------- */}
         <section className="py-[84px] max-w-[1100px] mx-auto px-6">
           <p className="eyebrow">The evidence</p>
