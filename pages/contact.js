@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Contact() {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -12,6 +14,17 @@ export default function Contact() {
         company: ''
     });
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
+
+    useEffect(() => {
+        if (!router.isReady) return;
+        const { reason } = router.query;
+        if (reason === 'review-copy' || reason === 'Request Review Copy of the Book') {
+            setFormData((prev) => ({
+                ...prev,
+                reason: 'Request Review Copy of the Book'
+            }));
+        }
+    }, [router.isReady, router.query]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

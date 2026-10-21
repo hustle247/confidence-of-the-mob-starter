@@ -105,7 +105,7 @@ export default function MediaKit() {
                                     <div className="flex flex-wrap gap-3">
                                         <a href="https://www.amazon.com/dp/B0GSF9DZC7" target="_blank" rel="noopener noreferrer" className="text-sm bg-stone-800 hover:bg-stone-700 text-white px-4 py-2 rounded border border-stone-700 transition">Amazon</a>
                                         <a href="https://www.barnesandnoble.com/w/confidence-of-the-mob-eddy-manfred-inserra/1149899240?ean=9798995080404" target="_blank" rel="noopener noreferrer" className="text-sm bg-stone-800 hover:bg-stone-700 text-white px-4 py-2 rounded border border-stone-700 transition">Barnes & Noble</a>
-                                        <Link href="/contact" className="text-sm bg-accent-red/20 hover:bg-accent-red/30 text-accent-red px-4 py-2 rounded border border-accent-red/30 transition ml-auto font-bold">Request Review Copy</Link>
+                                        <Link href="/contact?reason=review-copy" className="text-sm bg-accent-red/20 hover:bg-accent-red/30 text-accent-red px-4 py-2 rounded border border-accent-red/30 transition ml-auto font-bold">Request Review Copy</Link>
                                     </div>
                                 </div>
                             </div>
