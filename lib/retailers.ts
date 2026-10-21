@@ -33,14 +33,14 @@ export const RETAILERS: Retailer[] = [
     name: "I AM Books",
     group: "indie",
     url: "https://www.iambooksboston.com/item/eyqAGZ6JhY5lW2q4ODtq9g",
-    note: "Boston's North End — hosting our Sept 24 author talk",
+    note: "Boston's North End Italian American bookstore",
     verified: true,
   },
   {
     name: "Barbara's Bookstore",
     group: "indie",
     url: "https://barbarasbookstore.com/search?q=9798995080404",
-    note: "Hawthorn Mall, Vernon Hills IL — hosting our June 28 signing",
+    note: "Chicago independent bookstore",
     verified: true,
   },
   {
