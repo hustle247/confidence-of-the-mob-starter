@@ -155,6 +155,39 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------- Podcast / Audio Tapes (EXHIBIT C) ---------- */}
+        <section className="bg-ink-2 border-t border-rule py-[84px]">
+          <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-[56px] items-center">
+            <div>
+              <span className="stamp mb-[18px] text-[0.78rem]">EXHIBIT C · THE AUDIO TAPES</span>
+              <h2 className="font-display font-black text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.1] my-[14px] mb-[14px] tracking-[-0.01em]">
+                Hear the investigation come to life.
+              </h2>
+              <p className="text-text-dim max-w-[38em] text-[1.05rem] mb-[22px]">
+                Produced with <strong className="text-text font-semibold">Crawlspace Media</strong>, the companion narrative documentary podcast unpacks Fred Pastore&apos;s declassified files through real archival recordings and family interviews.
+              </p>
+              <div className="mt-[28px]">
+                <Link href="/podcast" className="btn btn-primary">
+                  Unlock the First 9 Minutes of Episode 1 (&lsquo;The Box&rsquo;) →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-ink border border-rule rounded-[6px] p-[28px] shadow-[0_20px_40px_-20px_#000a] relative">
+              <div className="flex items-center justify-between font-type text-[0.68rem] tracking-[0.18em] text-stamp uppercase border-b border-rule pb-[12px] mb-[18px]">
+                <span>TAPE EXCERPT · EPISODE 01 (&ldquo;THE BOX&rdquo;)</span>
+                <span className="text-text-dim">09:14 PREVIEW</span>
+              </div>
+              <blockquote className="font-body italic text-[1.15rem] leading-[1.55] text-text border-l-2 border-stamp pl-[16px] my-[16px]">
+                &ldquo;We had to keep the shades drawn. We couldn&apos;t leave the yard. Come to find out later — we were being watched. We were being followed.&rdquo;
+              </blockquote>
+              <cite className="font-type text-[0.72rem] tracking-[0.16em] text-paper-dim not-italic uppercase block mt-[12px]">
+                — Sharman Pastore · Fred&apos;s Daughter
+              </cite>
+            </div>
+          </div>
+        </section>
+
         {/* ---------- Ask Fred ---------- */}
         <section className="bg-ink-2 border-y border-rule py-[84px]">
           <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-[56px] items-center">
@@ -164,25 +197,25 @@ export default function Home() {
                 Ask Fred.
               </h2>
               <p className="text-text-dim max-w-[38em] text-[1.05rem]">
-                An AI trained on the case files, the book, and the archival record. Ask it anything — it answers from the documents, and shows you which ones.
+                An AI trained on the case files, the book, and the archival record. Explore sample interrogations and verified document citations right now — or request early access credentials for the full terminal launch.
               </p>
               <div className="mt-[34px]">
                 <Link href="/ask-fred" className="btn btn-primary">
-                  Start asking
+                  Preview Sample Interrogations →
                 </Link>
               </div>
             </div>
             
             <div className="bg-ink border border-rule rounded-[6px] font-type text-[0.85rem] overflow-hidden shadow-[0_20px_40px_-20px_#000a]" role="img" aria-label="Example conversation with the Ask Fred AI">
               <div className="bg-[#0d0b0a] p-[10px_16px] text-[0.68rem] tracking-[0.18em] text-text-dim border-b border-rule">
-                ASK FRED · CONNECTED TO CASE ARCHIVE
+                ASK FRED · SAMPLE ARCHIVE INTERROGATION
               </div>
               <div className="p-[22px] flex flex-col gap-[16px]">
                 <p className="text-paper-dim before:content-['YOU_›_'] before:text-text-dim">
-                  Why did Fred leave the IRS?
+                  Why did Fred leave the IRS in 1959?
                 </p>
                 <p className="text-text border-l-2 border-stamp pl-[14px] leading-[1.7] before:content-['FRED\'S_FILES_›_'] before:text-stamp before:block before:mb-[4px] before:text-[0.7rem]">
-                  The paper trail points to April 1959. His memorandum to Regional Commissioner Bacon objected to releasing Goldfine's records — and the pressure that followed came from above his pay grade. Want to see the memo itself?
+                  The paper trail points to April 1959. His memorandum to Regional Commissioner Bacon objected to releasing Goldfine&apos;s records — and the pressure that followed came from above his pay grade. Want to see the memo itself?
                   <span className="inline-block w-[8px] h-[14px] bg-stamp animate-pulse align-[-2px] ml-[2px]"></span>
                 </p>
               </div>

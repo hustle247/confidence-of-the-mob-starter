@@ -102,12 +102,14 @@ export default function Layout({ children }) {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-rule py-11 text-center">
+      <footer id="footer-newsletter" className="border-t border-rule py-11 text-center">
         <div className="max-w-[1100px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mb-12">
-            <div>
-              <NewsletterGateForm signupCTA="Follow The Investigation" />
-            </div>
+          <div className={`grid grid-cols-1 ${router.pathname === '/podcast' ? 'md:grid-cols-2 max-w-[700px] mx-auto' : 'md:grid-cols-3'} gap-12 text-left mb-12`}>
+            {router.pathname !== '/podcast' && (
+              <div>
+                <NewsletterGateForm signupCTA="Follow The Investigation" />
+              </div>
+            )}
             
             <div>
               <h4 className="eyebrow mb-5">The Case</h4>
