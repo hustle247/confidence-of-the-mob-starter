@@ -25,7 +25,7 @@ export const RETAILERS: Retailer[] = [
     name: "Bookshop.org",
     group: "indie",
     // TODO(Eddy): create a Bookshop.org affiliate account — 10% commission on referred sales
-    url: "https://bookshop.org/search?keywords=9798995080404",
+    url: "https://bookshop.org/beta-search?bkshp-astro=t&keywords=9798995080404+",
     note: "Every order supports local bookstores",
     verified: true,
   },

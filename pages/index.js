@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import { trackMetaEvent } from '../lib/meta-capi';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -5,6 +6,28 @@ import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 
 export default function Home() {
+  const [orderMenuOpen, setOrderMenuOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOrderMenuOpen(false);
+      }
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setOrderMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <>
       <Seo meta={PAGE_META["/"]} />
@@ -22,15 +45,77 @@ export default function Home() {
                 A Florida orange crate in my mother's attic held <strong className="text-text font-semibold">secret files, wiretap logs, and evidence</strong> that Fred Pastore — the IRS agent who took down the Boston Mafia — became a target of the White House. And then went to work for the other side.
               </p>
               <div className="flex gap-[16px] mt-[34px] flex-wrap items-center">
-                <a 
-                    className="btn btn-primary" 
-                    href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={() => trackMetaEvent('Purchase', { value: 16.99, currency: 'USD' })}
-                >
-                    Order the Book
-                </a>
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    type="button"
+                    onClick={() => setOrderMenuOpen((prev) => !prev)}
+                    aria-expanded={orderMenuOpen}
+                    aria-haspopup="menu"
+                    className="btn btn-primary inline-flex items-center gap-2 cursor-pointer"
+                  >
+                    <span>Order the Book</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform duration-150 ${orderMenuOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {orderMenuOpen && (
+                    <div
+                      role="menu"
+                      className="absolute left-0 mt-2 w-64 bg-ink-2 border border-rule rounded-[4px] shadow-[0_20px_40px_-10px_#000e] z-40 overflow-hidden divide-y divide-rule"
+                    >
+                      <a
+                        role="menuitem"
+                        href="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          trackMetaEvent('Purchase', { value: 16.99, currency: 'USD', retailer: 'Amazon' });
+                          setOrderMenuOpen(false);
+                        }}
+                        className="flex items-center justify-between px-4 py-3.5 text-left hover:bg-ink transition-colors group"
+                      >
+                        <div>
+                          <span className="font-display font-bold text-[0.9rem] text-text group-hover:text-stamp block uppercase tracking-[0.04em]">
+                            Via Amazon
+                          </span>
+                          <span className="font-type text-[0.68rem] text-text-dim tracking-[0.1em] uppercase">
+                            Paperback · Hardcover · Kindle
+                          </span>
+                        </div>
+                        <span className="text-stamp font-type text-sm group-hover:translate-x-0.5 transition-transform">→</span>
+                      </a>
+
+                      <a
+                        role="menuitem"
+                        href="https://bookshop.org/beta-search?bkshp-astro=t&keywords=9798995080404+"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          trackMetaEvent('Purchase', { value: 16.99, currency: 'USD', retailer: 'Bookshop.org' });
+                          setOrderMenuOpen(false);
+                        }}
+                        className="flex items-center justify-between px-4 py-3.5 text-left hover:bg-ink transition-colors group"
+                      >
+                        <div>
+                          <span className="font-display font-bold text-[0.9rem] text-text group-hover:text-stamp block uppercase tracking-[0.04em]">
+                            Via Independent Bookstore
+                          </span>
+                          <span className="font-type text-[0.68rem] text-text-dim tracking-[0.1em] uppercase">
+                            Bookshop.org · Supports Local Shops
+                          </span>
+                        </div>
+                        <span className="text-stamp font-type text-sm group-hover:translate-x-0.5 transition-transform">→</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
+
                 <Link href="/buy-book" className="btn btn-ghost">
                   Autographed Copies
                 </Link>
