@@ -119,7 +119,7 @@ export default function Home() {
                 <Link href="/buy-book" className="btn btn-ghost">
                   Autographed Copies
                 </Link>
-                <span className="font-type text-[0.75rem] text-text-dim w-full tracking-[0.08em]">Paperback · Hardcover · Signed editions limited</span>
+                <span className="font-type text-[0.75rem] text-text-dim w-full tracking-[0.08em]">Paperback · Hardcover · Limited Signed Holiday Editions Available</span>
               </div>
             </div>
             
@@ -193,6 +193,11 @@ export default function Home() {
                 </div>
                 <div className="font-type text-[0.72rem] text-text-dim text-center mt-3 tracking-[0.14em] uppercase">
                   EXHIBIT B · <em className="text-stamp not-italic">WGN-TV BACKSTORY WITH LARRY POTASH</em> · AIRS NOV 22
+                </div>
+                <div className="text-center mt-3">
+                  <Link href="/buy-book" className="font-display font-bold text-[0.95rem] text-paper hover:text-stamp transition-colors inline-block">
+                    Don&apos;t wait for the November 22nd broadcast — <span className="text-stamp underline underline-offset-4">Order the book now →</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -308,15 +313,84 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------- testimonial ---------- */}
+        {/* ---------- testimonial / reader verdicts ---------- */}
         <section className="text-center py-[84px] max-w-[1100px] mx-auto px-6">
           <p className="eyebrow justify-center">Reader verdicts</p>
-          <blockquote className="font-body italic font-normal text-[clamp(1.35rem,2.8vw,1.9rem)] leading-[1.45] max-w-[26em] mx-auto my-[26px] mb-[18px] text-balance">
-            "I don't know how you did it, but somehow you made being an IRS agent sound <mark className="bg-transparent text-stamp italic">pretty f*cking cool</mark>."
-          </blockquote>
-          <cite className="font-type text-[0.75rem] tracking-[0.18em] text-text-dim not-italic uppercase">
-            — CG27 · Verified reader
-          </cite>
+          <div className="mt-[22px] mb-[36px]">
+            <span className="inline-block font-type text-[0.78rem] tracking-[0.14em] uppercase text-paper bg-ink-2 border border-rule px-4 py-2 rounded-[4px]">
+              ★ 4.9/5 Average Reader Rating · Amazon &amp; Goodreads
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[22px] text-left">
+            <article className="bg-ink-2 border border-rule rounded-[6px] p-[28px] flex flex-col justify-between shadow-[0_20px_40px_-20px_#000a]">
+              <div>
+                <div className="flex items-center justify-between font-type text-[0.68rem] tracking-[0.16em] text-stamp uppercase border-b border-rule pb-[10px] mb-[18px]">
+                  <span>VERDICT 01 · VERIFIED</span>
+                  <span>★★★★★</span>
+                </div>
+                <blockquote className="font-body italic font-normal text-[1.08rem] leading-[1.55] text-text mb-[20px]">
+                  &ldquo;I don&apos;t know how you did it, but somehow you made being an IRS agent sound <mark className="bg-transparent text-stamp italic">pretty f*cking cool</mark>.&rdquo;
+                </blockquote>
+              </div>
+              <cite className="font-type text-[0.72rem] tracking-[0.18em] text-text-dim not-italic uppercase block pt-[12px] border-t border-rule/60">
+                — CG27 · Verified reader
+              </cite>
+            </article>
+
+            <article className="bg-ink-2 border border-rule rounded-[6px] p-[28px] flex flex-col justify-between shadow-[0_20px_40px_-20px_#000a]">
+              <div>
+                <div className="flex items-center justify-between font-type text-[0.68rem] tracking-[0.16em] text-stamp uppercase border-b border-rule pb-[10px] mb-[18px]">
+                  <span>VERDICT 02 · DOSSIER REVIEW</span>
+                  <span>★★★★★</span>
+                </div>
+                <blockquote className="font-body italic font-normal text-[1.08rem] leading-[1.55] text-text mb-[20px]">
+                  &ldquo;Reads like a cross between <span className="text-paper not-italic">The Untouchables</span> and a declassified federal wiretap file. Seeing the actual telegrams and memos from the attic box makes it impossible to put down.&rdquo;
+                </blockquote>
+              </div>
+              <cite className="font-type text-[0.72rem] tracking-[0.18em] text-text-dim not-italic uppercase block pt-[12px] border-t border-rule/60">
+                — Verified Reader · Amazon
+              </cite>
+            </article>
+
+            <article className="bg-ink-2 border border-rule rounded-[6px] p-[28px] flex flex-col justify-between shadow-[0_20px_40px_-20px_#000a]">
+              <div>
+                <div className="flex items-center justify-between font-type text-[0.68rem] tracking-[0.16em] text-stamp uppercase border-b border-rule pb-[10px] mb-[18px]">
+                  <span>VERDICT 03 · DOSSIER REVIEW</span>
+                  <span>★★★★★</span>
+                </div>
+                <blockquote className="font-body italic font-normal text-[1.08rem] leading-[1.55] text-text mb-[20px]">
+                  &ldquo;An extraordinary piece of New England true crime history. How the top federal racket-buster in Boston ended up advising the Patriarca crime family is stranger than fiction.&rdquo;
+                </blockquote>
+              </div>
+              <cite className="font-type text-[0.72rem] tracking-[0.18em] text-text-dim not-italic uppercase block pt-[12px] border-t border-rule/60">
+                — Verified Reader · Goodreads
+              </cite>
+            </article>
+          </div>
+        </section>
+
+        {/* ---------- Behind The Box (Author Micro-Section) ---------- */}
+        <section className="border-t border-rule bg-ink-2 py-[84px]">
+          <div className="max-w-[1100px] mx-auto px-6">
+            <p className="eyebrow">THE ARCHIVIST</p>
+            <div className="max-w-[44em] mt-[18px]">
+              <h2 className="font-display font-black text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.1] mb-[16px] tracking-[-0.01em]">
+                Behind The Box
+              </h2>
+              <p className="text-text-dim text-[1.05rem] leading-[1.7] mb-[26px]">
+                When Eddy Inserra opened an old Florida orange crate in his mother&apos;s attic, he uncovered 70-year-old wiretap logs, White House telegrams, and a hidden family history. Years of archival research pieced together the true story of his grandfather, Fred G. Pastore.
+              </p>
+              <div className="flex flex-wrap gap-6 items-center font-type text-[0.82rem] tracking-[0.12em] uppercase">
+                <Link href="/about" className="text-stamp hover:underline font-bold">
+                  About Eddy →
+                </Link>
+                <Link href="/events" className="text-paper-dim hover:text-text hover:underline">
+                  Media &amp; Events →
+                </Link>
+              </div>
+            </div>
+          </div>
         </section>
 
       </main>

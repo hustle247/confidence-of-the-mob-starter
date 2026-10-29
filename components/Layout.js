@@ -107,7 +107,13 @@ export default function Layout({ children }) {
           <div className={`grid grid-cols-1 ${router.pathname === '/podcast' ? 'md:grid-cols-2 max-w-[700px] mx-auto' : 'md:grid-cols-3'} gap-12 text-left mb-12`}>
             {router.pathname !== '/podcast' && (
               <div>
-                <NewsletterGateForm signupCTA="Follow The Investigation" />
+                <h4 className="font-display font-bold text-[1.25rem] text-text mb-2">
+                  Get the Unredacted Dossier
+                </h4>
+                <p className="text-sm text-text-dim leading-relaxed mb-4">
+                  Enter your email to receive a bonus declassified case file that didn&apos;t make the final cut of the book, plus alerts when new evidence drops.
+                </p>
+                <NewsletterGateForm signupCTA="Unlock the File" />
               </div>
             )}
             
