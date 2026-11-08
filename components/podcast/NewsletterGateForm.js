@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { trackEvent } from '../../lib/tracking';
-import { trackMetaEvent } from '../../lib/meta-capi';
+import { trackEvent } from '../../lib/meta-capi';
 
 export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) {
   const [email, setEmail] = useState('');
@@ -12,7 +11,7 @@ export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) 
     e.preventDefault();
     setStatus('submitting');
     setErrorMessage('');
-    trackEvent('podcast_newsletter_submit_started', { episode_id: episodeId, page: '/podcast', signup_context: 'audio_gate' });
+    trackEvent('PodcastNewsletterStart');
 
     try {
       const response = await fetch('/api/newsletter/subscribe', {
@@ -37,10 +36,13 @@ export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) 
       }
 
       setStatus('success');
-      trackEvent('podcast_newsletter_submit_success', { episode_id: episodeId, page: '/podcast', signup_context: 'audio_gate' });
-      
-      // Trigger Meta CAPI Lead Event
-      trackMetaEvent('Lead', {}, { email, firstName });
+
+      // Fire Lead event (Browser + CAPI deduplicated)
+      trackEvent(
+        'Lead',
+        { content_name: 'podcast_newsletter' },
+        { email, ...(firstName ? { firstName } : {}) }
+      );
       
       if (onSuccess) onSuccess();
 
@@ -48,7 +50,6 @@ export default function NewsletterGateForm({ episodeId, signupCTA, onSuccess }) 
       console.error(err);
       setStatus('error');
       setErrorMessage(err.message || 'Something went wrong. Please try again.');
-      trackEvent('podcast_newsletter_submit_failed', { episode_id: episodeId, page: '/podcast', signup_context: 'audio_gate', error: err.message });
     }
   };
 

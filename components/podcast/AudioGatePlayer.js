@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { trackEvent } from '../../lib/tracking';
+import { trackEvent } from '../../lib/meta-capi';
 
 export default function AudioGatePlayer({ 
   audioSrc, 
@@ -24,7 +24,7 @@ export default function AudioGatePlayer({
       }
       audioRef.current.play();
       setIsPlaying(true);
-      trackEvent('podcast_preview_play_clicked', { episode_id: episodeId, page: '/podcast' });
+      trackEvent('ViewContent', { content_type: 'podcast', content_name: 'podcast_preview' });
     }
   };
 
@@ -43,7 +43,7 @@ export default function AudioGatePlayer({
   const handleEnded = () => {
     setIsPlaying(false);
     onGateReached();
-    trackEvent('podcast_preview_gate_reached', { episode_id: episodeId, page: '/podcast' });
+    trackEvent('PodcastPreviewGate');
   };
 
   const handleSeek = (e) => {

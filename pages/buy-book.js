@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
 import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 import { RETAILERS } from "../lib/retailers";
-import { trackMetaEvent } from '../lib/meta-capi';
+import { trackEvent, getCookie } from '../lib/meta-capi';
 
 const RetailerCard = ({ name, note, url, onClick }) => {
     return (
@@ -44,8 +45,46 @@ const IndieCard = ({ name, note, url, onClick }) => {
 };
 
 export default function BuyBook() {
-    const handleRetailerClick = (name) => {
-        trackMetaEvent('RetailerClick', { retailer: name });
+    const [clientRefId, setClientRefId] = useState(null);
+
+    useEffect(() => {
+        trackEvent('ViewContent', {
+            content_type: 'product',
+            content_ids: ['9798995080404'],
+            content_name: 'Confidence of the Mob',
+            value: 16.99,
+            currency: 'USD',
+        });
+        const eid = getCookie('cotm_eid');
+        if (eid) {
+            setClientRefId(eid);
+        }
+    }, []);
+
+    const hardcoverStripeUrl = `https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00${
+        clientRefId ? `?client_reference_id=${encodeURIComponent(clientRefId)}` : ''
+    }`;
+    const paperbackStripeUrl = `https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01${
+        clientRefId ? `?client_reference_id=${encodeURIComponent(clientRefId)}` : ''
+    }`;
+
+    const handleRetailerClick = (name, url = '') => {
+        const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '');
+        const isHardcover = url.includes('9798995080411');
+        const format = isHardcover ? 'hardcover' : 'paperback';
+        const value = isHardcover ? 34.99 : 16.99;
+        let sku = `cotm-${slug}`;
+        if (slug === 'amazon') sku = 'cotm-amazon';
+        else if (slug.startsWith('bookshop')) sku = 'cotm-bookshop';
+
+        trackEvent('InitiateCheckout', {
+            retailer: slug === 'bookshoporg' ? 'bookshop' : slug,
+            format,
+            value,
+            currency: 'USD',
+            content_ids: [sku],
+            content_type: 'product',
+        });
     };
 
     return (
@@ -80,7 +119,16 @@ export default function BuyBook() {
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="btn btn-primary"
-                                    onClick={() => trackMetaEvent('Purchase', { value: 16.99, currency: 'USD' })}
+                                    onClick={() =>
+                                        trackEvent('InitiateCheckout', {
+                                            retailer: 'amazon',
+                                            format: 'paperback',
+                                            value: 16.99,
+                                            currency: 'USD',
+                                            content_ids: ['cotm-amazon'],
+                                            content_type: 'product',
+                                        })
+                                    }
                                 >
                                     Order on Amazon
                                 </a>
@@ -125,7 +173,22 @@ export default function BuyBook() {
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Limited-edition custom bookmark included</li>
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Ships directly to you</li>
                             </ul>
-                            <a className="btn btn-primary w-full" href="https://buy.stripe.com/3cI4gyeBpdEAcOCaH4bwk00" onClick={() => trackMetaEvent('Purchase', { value: 39.99, currency: 'USD' })}>Buy the signed hardcover</a>
+                            <a
+                                className="btn btn-primary w-full"
+                                href={hardcoverStripeUrl}
+                                onClick={() =>
+                                    trackEvent('InitiateCheckout', {
+                                        retailer: 'stripe',
+                                        format: 'hardcover',
+                                        value: 39.99,
+                                        currency: 'USD',
+                                        content_ids: ['cotm-hardcover-signed'],
+                                        content_type: 'product',
+                                    })
+                                }
+                            >
+                                Buy the signed hardcover
+                            </a>
                         </article>
 
                         <article className="folder" data-tab="Edition 02">
@@ -140,7 +203,22 @@ export default function BuyBook() {
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Limited-edition custom bookmark included</li>
                                 <li className="pl-[22px] relative"><span className="absolute left-0 text-stamp font-bold">✓</span> Ships directly to you</li>
                             </ul>
-                            <a className="btn btn-primary w-full" href="https://buy.stripe.com/aFa7sKfFt58429YdTgbwk01" onClick={() => trackMetaEvent('Purchase', { value: 29.99, currency: 'USD' })}>Buy the signed paperback</a>
+                            <a
+                                className="btn btn-primary w-full"
+                                href={paperbackStripeUrl}
+                                onClick={() =>
+                                    trackEvent('InitiateCheckout', {
+                                        retailer: 'stripe',
+                                        format: 'paperback',
+                                        value: 29.99,
+                                        currency: 'USD',
+                                        content_ids: ['cotm-paperback-signed'],
+                                        content_type: 'product',
+                                    })
+                                }
+                            >
+                                Buy the signed paperback
+                            </a>
                         </article>
                     </div>
                     <p className="font-type text-[0.7rem] tracking-[0.14em] text-text-dim text-center mt-[22px] uppercase">
@@ -159,13 +237,13 @@ export default function BuyBook() {
                                 name="Amazon" 
                                 note="Paperback · Hardcover · Kindle" 
                                 url="https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb" 
-                                onClick={() => handleRetailerClick('Amazon')}
+                                onClick={() => handleRetailerClick('Amazon', 'https://www.amazon.com/dp/B0GSF9DZC7?ref=cotmweb')}
                             />
                             {RETAILERS.filter(r => r.group === 'major').map((retailer, i) => (
                                 <RetailerCard 
                                     key={i} 
                                     {...retailer} 
-                                    onClick={() => handleRetailerClick(retailer.name)} 
+                                    onClick={() => handleRetailerClick(retailer.name, retailer.url)} 
                                 />
                             ))}
                         </div>
@@ -189,7 +267,7 @@ export default function BuyBook() {
                             <IndieCard 
                                 key={i} 
                                 {...retailer} 
-                                onClick={() => handleRetailerClick(retailer.name)} 
+                                onClick={() => handleRetailerClick(retailer.name, retailer.url)} 
                             />
                         ))}
                     </div>

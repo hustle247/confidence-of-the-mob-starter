@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { trackMetaEvent, FB_PIXEL_ID } from '../lib/meta-capi';
+import { trackEvent, FB_PIXEL_ID } from '../lib/meta-capi';
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import { Analytics } from "@vercel/analytics/next";
@@ -36,10 +36,10 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     // Initial page load
-    trackMetaEvent('PageView');
+    trackEvent('PageView');
 
     const handleRouteChange = () => {
-      trackMetaEvent('PageView');
+      trackEvent('PageView');
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);
@@ -118,7 +118,9 @@ function MyApp({ Component, pageProps }) {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${FB_PIXEL_ID}');
+            var eid=(document.cookie.match(/(?:^|; )cotm_eid=([^;]*)/)||[])[1];
+            if(!eid){eid=crypto.randomUUID();document.cookie='cotm_eid='+eid+'; path=/; max-age=31536000; SameSite=Lax';}
+            fbq('init', '${FB_PIXEL_ID}', {external_id: eid});
           `,
         }}
       />

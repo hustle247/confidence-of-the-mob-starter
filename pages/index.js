@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { trackMetaEvent } from '../lib/meta-capi';
+import { trackEvent } from '../lib/meta-capi';
 import Link from 'next/link';
 import Image from 'next/image';
 import Seo from "../components/Seo";
@@ -75,7 +75,14 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => {
-                          trackMetaEvent('Purchase', { value: 16.99, currency: 'USD', retailer: 'Amazon' });
+                          trackEvent('InitiateCheckout', {
+                            retailer: 'amazon',
+                            format: 'paperback',
+                            value: 16.99,
+                            currency: 'USD',
+                            content_ids: ['cotm-amazon'],
+                            content_type: 'product',
+                          });
                           setOrderMenuOpen(false);
                         }}
                         className="flex items-center justify-between px-4 py-3.5 text-left hover:bg-ink transition-colors group"
@@ -97,7 +104,14 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => {
-                          trackMetaEvent('Purchase', { value: 16.99, currency: 'USD', retailer: 'Bookshop.org' });
+                          trackEvent('InitiateCheckout', {
+                            retailer: 'bookshop',
+                            format: 'paperback',
+                            value: 16.99,
+                            currency: 'USD',
+                            content_ids: ['cotm-bookshop'],
+                            content_type: 'product',
+                          });
                           setOrderMenuOpen(false);
                         }}
                         className="flex items-center justify-between px-4 py-3.5 text-left hover:bg-ink transition-colors group"

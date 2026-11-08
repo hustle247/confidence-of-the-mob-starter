@@ -1,78 +1,62 @@
-import crypto from 'crypto';
+import { sendCapiEvent } from '../../lib/meta/capi';
 
-const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '1268456198274255';
-const ACCESS_TOKEN = process.env.META_CAPI_ACCESS_TOKEN;
-const TEST_EVENT_CODE = process.env.META_TEST_EVENT_CODE;
-
-// Helper function to hash user data as required by Meta (SHA256)
-const hashData = (data) => {
-  if (!data) return undefined;
-  return crypto.createHash('sha256').update(data.trim().toLowerCase()).digest('hex');
-};
+// Only these events may be relayed (prevents abuse of the endpoint)
+const ALLOWED = new Set([
+  'PageView',
+  'ViewContent',
+  'Lead',
+  'Contact',
+  'InitiateCheckout',
+  'PodcastPreviewGate',
+  'PodcastNewsletterStart',
+]);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
+    res.setHeader('Allow', ['POST']);
+    return res.status(405).json({ ok: false, message: 'Method Not Allowed' });
   }
 
-  if (!ACCESS_TOKEN) {
-    return res.status(500).json({ message: 'Meta CAPI Access Token is missing' });
+  const b = req.body || {};
+  if (!b.eventName || !b.eventId || !ALLOWED.has(b.eventName)) {
+    return res.status(400).json({ ok: false });
   }
 
-  const { eventName, eventId, eventUrl, eventData = {}, userData = {}, userAgent } = req.body;
+  const forwardedFor = req.headers['x-forwarded-for'];
+  const ip =
+    (typeof forwardedFor === 'string'
+      ? forwardedFor.split(',')[0]?.trim()
+      : Array.isArray(forwardedFor)
+      ? forwardedFor[0]?.split(',')[0]?.trim()
+      : undefined) || req.socket?.remoteAddress;
 
-  // Get client IP address
-  const clientIpAddress = req.headers['x-forwarded-for'] || req.socket?.remoteAddress;
+  const userAgent = req.headers['user-agent'] || b.userAgent || undefined;
+  const userData = b.userData || {};
 
-  // Format user data
-  const formattedUserData = {
-    client_ip_address: clientIpAddress,
-    client_user_agent: userAgent,
-    ...(userData.fbp && { fbp: userData.fbp }),
-    ...(userData.fbc && { fbc: userData.fbc }),
-    ...(userData.email && { em: [hashData(userData.email)] }),
-    ...(userData.phone && { ph: [hashData(userData.phone)] }),
-    ...(userData.firstName && { fn: [hashData(userData.firstName)] }),
-    ...(userData.lastName && { ln: [hashData(userData.lastName)] }),
-  };
+  const { ok, emailHash } = await sendCapiEvent({
+    eventName: b.eventName,
+    eventId: b.eventId,
+    eventSourceUrl: b.eventSourceUrl ?? b.eventUrl,
+    customData: b.customData ?? b.eventData,
+    ip,
+    userAgent,
+    fbp: b.fbp ?? userData.fbp,
+    fbc: b.fbc ?? userData.fbc,
+    externalId: req.cookies?.cotm_eid || b.externalId,
+    email: userData.email,
+    emailHash: req.cookies?.cotm_em,
+    phone: userData.phone,
+    firstName: userData.firstName,
+    lastName: userData.lastName,
+  });
 
-  const payload = {
-    data: [
-      {
-        event_name: eventName,
-        event_time: Math.floor(Date.now() / 1000),
-        action_source: 'website',
-        event_id: eventId,
-        event_source_url: eventUrl,
-        user_data: formattedUserData,
-        custom_data: eventData,
-      },
-    ],
-  };
-
-  if (TEST_EVENT_CODE) {
-    payload.test_event_code = TEST_EVENT_CODE;
+  // Remember the hashed email so later events (PageView etc.) match better
+  if (userData.email && emailHash) {
+    res.setHeader(
+      'Set-Cookie',
+      `cotm_em=${emailHash}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=15552000`
+    );
   }
 
-  try {
-    const response = await fetch(`https://graph.facebook.com/v21.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      console.error('Meta CAPI Error:', data);
-      return res.status(response.status).json({ message: 'Error sending event to Meta', error: data });
-    }
-
-    return res.status(200).json({ message: 'Event sent successfully', data });
-  } catch (error) {
-    console.error('Meta CAPI Exception:', error);
-    return res.status(500).json({ message: 'Internal Server Error' });
-  }
+  return res.status(ok ? 200 : 502).json({ ok });
 }

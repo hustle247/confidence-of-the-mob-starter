@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { trackEvent } from '../lib/meta-capi';
 
 export default function Contact() {
     const router = useRouter();
@@ -46,6 +47,15 @@ export default function Contact() {
             if (!res.ok) {
                 throw new Error('Failed to submit form');
             }
+
+            const nameParts = (formData.name || '').trim().split(/\s+/);
+            const firstName = nameParts[0] || undefined;
+            const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : undefined;
+            trackEvent(
+                'Contact',
+                { content_name: 'contact_form' },
+                { email: formData.email, firstName, lastName }
+            );
 
             setStatus('success');
             setFormData({ name: '', email: '', reason: 'Book Signing', message: '', company: '' });

@@ -1,8 +1,10 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import docs from '../../data/documents.json';
 import Seo from "../../components/Seo";
+import { trackEvent } from '../../lib/meta-capi';
 
 export async function getStaticPaths() {
     const paths = docs.map((doc) => ({
@@ -25,6 +27,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function DocumentPage({ document }) {
+    useEffect(() => {
+        if (document?.id) {
+            trackEvent('ViewContent', { content_type: 'document', content_name: document.id });
+        }
+    }, [document?.id]);
+
     // Attempt to extract the date from the ID (e.g., "001_suggestionstogoafterracketeers_1955-05-11")
     let dateStr = "UNKNOWN DATE";
     const dateMatch = document.id.match(/_(\d{4}-\d{2}-\d{2})$/);

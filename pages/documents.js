@@ -1,12 +1,17 @@
 import Head from 'next/head';
 import Seo from "../components/Seo";
 import { PAGE_META } from "../lib/seo";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import docs from '../data/documents.json';
+import { trackEvent } from '../lib/meta-capi';
 
 export default function Documents() {
   const [activeFilter, setActiveFilter] = useState('All Files');
+
+  useEffect(() => {
+    trackEvent('ViewContent', { content_type: 'document', content_name: 'documents_archive' });
+  }, []);
 
   const categories = ['All Files', ...Array.from(new Set(docs.map(d => d.category)))];
 
@@ -18,7 +23,10 @@ export default function Documents() {
   const featuredDocId = "031_specialprojectfourbinder_1959-10-01";
   const featuredDoc = docs.find(d => d.id === featuredDocId) || docs[0];
 
-  const openDocument = (driveId) => {
+  const openDocument = (driveId, docSlug) => {
+      if (docSlug) {
+          trackEvent('ViewContent', { content_type: 'document', content_name: docSlug });
+      }
       const url = `https://drive.google.com/file/d/${driveId}/view?usp=sharing`;
       window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -67,7 +75,7 @@ export default function Documents() {
               <p className="text-text-dim text-[0.98rem]">
                 {featuredDoc.description}
               </p>
-              <button onClick={() => openDocument(featuredDoc.driveId)} className="btn btn-primary mt-[22px]">
+              <button onClick={() => openDocument(featuredDoc.driveId, featuredDoc.id)} className="btn btn-primary mt-[22px]">
                 View the document
               </button>
             </div>
@@ -111,7 +119,7 @@ export default function Documents() {
                   <p className="text-[0.88rem] leading-[1.55] text-[#4d4433] flex-1 line-clamp-4">
                     {doc.description}
                   </p>
-                  <button onClick={() => openDocument(doc.driveId)} className="font-type text-[0.74rem] text-stamp tracking-[0.1em] inline-block mt-[16px] uppercase hover:underline text-left">
+                  <button onClick={() => openDocument(doc.driveId, doc.id)} className="font-type text-[0.74rem] text-stamp tracking-[0.1em] inline-block mt-[16px] uppercase hover:underline text-left">
                     View archive file →
                   </button>
                 </article>

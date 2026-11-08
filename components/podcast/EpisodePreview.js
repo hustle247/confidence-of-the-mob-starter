@@ -3,6 +3,7 @@ import AudioGatePlayer from './AudioGatePlayer';
 import NewsletterGateForm from './NewsletterGateForm';
 import SignupSuccess from './SignupSuccess';
 import AudioEndModal from './AudioEndModal';
+import { trackEvent } from '../../lib/meta-capi';
 
 export default function EpisodePreview({ previewData }) {
   const [showModal, setShowModal] = useState(false);
@@ -26,6 +27,7 @@ export default function EpisodePreview({ previewData }) {
     } else {
       teaserAudioRef.current.play();
       setIsTeaserPlaying(true);
+      trackEvent('ViewContent', { content_type: 'podcast', content_name: 'podcast_preview' });
     }
   };
 
