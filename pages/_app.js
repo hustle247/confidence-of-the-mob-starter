@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { trackEvent, FB_PIXEL_ID } from '../lib/meta-capi';
 import '../styles/globals.css';
@@ -33,12 +33,18 @@ const specialElite = Special_Elite({
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const lastTrackedUrlRef = useRef(null);
 
   useEffect(() => {
-    // Initial page load
-    trackEvent('PageView');
+    const initialUrl = window.location.pathname + window.location.search;
+    if (lastTrackedUrlRef.current !== initialUrl) {
+      lastTrackedUrlRef.current = initialUrl;
+      trackEvent('PageView');
+    }
 
-    const handleRouteChange = () => {
+    const handleRouteChange = (url) => {
+      if (lastTrackedUrlRef.current === url) return;
+      lastTrackedUrlRef.current = url;
       trackEvent('PageView');
     };
 
@@ -120,7 +126,9 @@ function MyApp({ Component, pageProps }) {
             'https://connect.facebook.net/en_US/fbevents.js');
             var eid=(document.cookie.match(/(?:^|; )cotm_eid=([^;]*)/)||[])[1];
             if(!eid){eid=crypto.randomUUID();document.cookie='cotm_eid='+eid+'; path=/; max-age=31536000; SameSite=Lax';}
+            fbq.disablePushState = true;
             fbq('init', '${FB_PIXEL_ID}', {external_id: eid});
+            window._cotmFbqInitialized = true;
           `,
         }}
       />
