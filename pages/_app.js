@@ -127,6 +127,7 @@ function MyApp({ Component, pageProps }) {
             var eid=(document.cookie.match(/(?:^|; )cotm_eid=([^;]*)/)||[])[1];
             if(!eid){eid=crypto.randomUUID();document.cookie='cotm_eid='+eid+'; path=/; max-age=31536000; SameSite=Lax';}
             fbq.disablePushState = true;
+            fbq.allowDuplicatePageViews = true;
             fbq('init', '${FB_PIXEL_ID}', {external_id: eid});
             window._cotmFbqInitialized = true;
           `,
